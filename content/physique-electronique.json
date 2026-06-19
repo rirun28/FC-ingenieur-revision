@@ -1,0 +1,189 @@
+{
+  "id": "physique-electronique",
+  "matiere": "Physique",
+  "chapitre": "Électronique Analogique — Bases",
+  "description": "Lois fondamentales des circuits électriques en régime stationnaire",
+  "resume": {
+    "sections": [
+      {
+        "titre": "Grandeurs fondamentales",
+        "contenu": "**Intensité I** (Ampères) : charge transportée par unité de temps. **Tension U** (Volts) : différence de potentiel entre deux points. **Puissance P = U × I** (Watts). **Énergie E = P × t** (Joules).\n\nConvention : le courant sort par la borne + du générateur et entre par la borne + du récepteur."
+      },
+      {
+        "titre": "Loi d'Ohm",
+        "formule": "U = R \\cdot I",
+        "contenu": "La tension aux bornes d'une résistance est proportionnelle au courant qui la traverse. R s'exprime en Ohms (Ω)."
+      },
+      {
+        "titre": "Loi des nœuds (Kirchhoff 1)",
+        "formule": "\\sum I_{entrants} = \\sum I_{sortants}",
+        "contenu": "La somme algébrique des courants en un nœud est nulle. Utile pour trouver un courant inconnu dans une branche."
+      },
+      {
+        "titre": "Loi des mailles (Kirchhoff 2)",
+        "formule": "\\sum U_k = 0 \\text{ (sur une maille fermée)}",
+        "contenu": "La somme algébrique des tensions dans une maille fermée est nulle. On choisit un sens de parcours : les tensions dans le sens sont + , contre le sens sont −."
+      },
+      {
+        "titre": "Résistances équivalentes",
+        "formule_serie": "R_{eq} = R_1 + R_2 + \\ldots",
+        "formule_parallele": "\\frac{1}{R_{eq}} = \\frac{1}{R_1} + \\frac{1}{R_2} + \\ldots",
+        "contenu": "**Série** : même courant, tensions s'additionnent. **Parallèle** : même tension, courants s'additionnent. Cas particulier de 2 résistances en parallèle : R_eq = R₁R₂/(R₁+R₂)."
+      },
+      {
+        "titre": "Pont diviseur de tension",
+        "formule": "U_2 = \\frac{R_2}{R_1 + R_2} \\cdot E",
+        "contenu": "Valable uniquement si **aucun courant ne sort** de la prise de tension (circuit ouvert ou entrée haute impédance). Si une charge est connectée, il faut recalculer avec la résistance équivalente."
+      },
+      {
+        "titre": "Pont diviseur de courant",
+        "formule": "I_1 = \\frac{R_2}{R_1 + R_2} \\cdot I",
+        "contenu": "La branche avec la **plus petite résistance** reçoit le **plus grand courant**. Attention : la formule croise les résistances (I₁ dépend de R₂ et réciproquement)."
+      },
+      {
+        "titre": "Théorème de superposition",
+        "contenu": "Dans un circuit **linéaire** avec plusieurs sources : la réponse totale = somme des réponses à chaque source prise seule.\n\nMéthode : pour chaque source, **éteindre** les autres (source de tension → court-circuit, source de courant → circuit ouvert), calculer la contribution, puis additionner."
+      },
+      {
+        "titre": "Théorème de Millman",
+        "formule": "V_{AB} = \\frac{\\sum \\frac{E_k}{R_k}}{\\sum \\frac{1}{R_k}}",
+        "contenu": "Permet de calculer directement la tension aux nœuds A et B quand plusieurs branches en parallèle contiennent chacune un générateur + résistance. Très efficace pour les réseaux en étoile."
+      },
+      {
+        "titre": "Théorème de Thévenin",
+        "contenu": "Tout circuit linéaire vu depuis deux bornes A-B est équivalent à :\n- **E_th** : tension à vide entre A et B\n- **R_th** : résistance vue de A-B, sources éteintes\n\nMéthode : (1) calculer U_AB à vide → E_th ; (2) éteindre les sources, calculer R_AB → R_th."
+      },
+      {
+        "titre": "Théorème de Norton",
+        "contenu": "Équivalent dual de Thévenin :\n- **I_N** : courant de court-circuit entre A et B\n- **R_N = R_th** : même résistance\n\nRelation : E_th = R_th × I_N. On passe facilement d'un modèle à l'autre."
+      }
+    ]
+  },
+  "methodes": [
+    {
+      "titre": "Reconnaître quand utiliser la loi des nœuds",
+      "contenu": "→ Quand on cherche un courant inconnu dans une branche et qu'on connaît les autres courants au même nœud. Signal : plusieurs branches se rejoignent en un point."
+    },
+    {
+      "titre": "Reconnaître quand utiliser la loi des mailles",
+      "contenu": "→ Quand on cherche une tension inconnue et qu'on peut tracer une boucle fermée contenant ce dipôle. Signal : circuit avec générateur(s) et résistances en série."
+    },
+    {
+      "titre": "Méthode de résolution d'un circuit complexe",
+      "contenu": "1. Identifier les nœuds et les mailles\n2. Orienter les courants (choisir un sens, même arbitraire)\n3. Écrire les équations de nœuds (autant que nœuds - 1)\n4. Écrire les équations de mailles (autant que mailles indépendantes)\n5. Résoudre le système"
+    },
+    {
+      "titre": "Piège : pont diviseur avec charge",
+      "contenu": "Le pont diviseur U₂ = R₂/(R₁+R₂)×E n'est valide qu'à vide. Si une résistance de charge R_L est connectée en parallèle de R₂, remplacer R₂ par R₂//R_L dans la formule."
+    },
+    {
+      "titre": "Piège : signe des tensions dans une maille",
+      "contenu": "Pour une résistance R parcourue par un courant I dans le sens du parcours : la tension vaut +RI (chute). Pour un générateur E parcouru dans le sens de sa fém (de − vers +) : tension = +E."
+    },
+    {
+      "titre": "Quand utiliser Thévenin ?",
+      "contenu": "→ Quand on veut étudier le comportement d'un circuit pour **différentes charges** R_L. On calcule E_th et R_th une fois, puis U = E_th × R_L / (R_th + R_L)."
+    },
+    {
+      "titre": "Quand utiliser Millman ?",
+      "contenu": "→ Quand le circuit a **plusieurs générateurs en parallèle** (chacun avec sa résistance interne). Plus rapide que d'écrire toutes les lois de Kirchhoff."
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q1",
+      "question": "Dans un nœud, I₁ = 3A entre, I₂ = 1A sort. Que vaut I₃ si I₃ sort aussi du nœud ?",
+      "type": "qcm",
+      "options": ["2A", "4A", "−2A", "1A"],
+      "reponse": 0,
+      "explication": "Loi des nœuds : I₁ = I₂ + I₃ → 3 = 1 + I₃ → I₃ = 2A"
+    },
+    {
+      "id": "q2",
+      "question": "Deux résistances R₁ = 4Ω et R₂ = 6Ω sont en série sous une tension E = 20V. Quelle est la tension aux bornes de R₂ ?",
+      "type": "qcm",
+      "options": ["12V", "8V", "10V", "6V"],
+      "reponse": 0,
+      "explication": "Pont diviseur : U₂ = R₂/(R₁+R₂) × E = 6/10 × 20 = 12V"
+    },
+    {
+      "id": "q3",
+      "question": "R₁ = 3Ω et R₂ = 6Ω sont en parallèle. Quelle est la résistance équivalente ?",
+      "type": "qcm",
+      "options": ["2Ω", "9Ω", "4,5Ω", "18Ω"],
+      "reponse": 0,
+      "explication": "R_eq = R₁×R₂/(R₁+R₂) = 3×6/(3+6) = 18/9 = 2Ω"
+    },
+    {
+      "id": "q4",
+      "question": "Pour éteindre une source de tension dans le théorème de superposition, on la remplace par :",
+      "type": "qcm",
+      "options": ["Un court-circuit", "Un circuit ouvert", "Une résistance nulle", "La source est gardée"],
+      "reponse": 0,
+      "explication": "Une source de tension idéale éteinte = court-circuit (U = 0). Une source de courant éteinte = circuit ouvert (I = 0)."
+    },
+    {
+      "id": "q5",
+      "question": "Le modèle de Thévenin d'un circuit est : E_th = 12V, R_th = 3Ω. On connecte une charge R_L = 9Ω. Quel courant circule dans R_L ?",
+      "type": "qcm",
+      "options": ["1A", "4A", "1,33A", "0,75A"],
+      "reponse": 0,
+      "explication": "I = E_th / (R_th + R_L) = 12 / (3 + 9) = 12/12 = 1A"
+    },
+    {
+      "id": "q6",
+      "question": "La loi des mailles dit que dans une maille fermée :",
+      "type": "qcm",
+      "options": [
+        "La somme algébrique des tensions = 0",
+        "La somme des courants = 0",
+        "Les tensions sont toutes égales",
+        "Les courants s'ajoutent"
+      ],
+      "reponse": 0,
+      "explication": "2ème loi de Kirchhoff : ΣUk = 0 sur toute maille fermée."
+    },
+    {
+      "id": "q7",
+      "question": "Un courant I = 6A se divise entre R₁ = 2Ω et R₂ = 4Ω en parallèle. Quel courant traverse R₁ ?",
+      "type": "qcm",
+      "options": ["4A", "2A", "3A", "1A"],
+      "reponse": 0,
+      "explication": "Pont diviseur de courant : I₁ = R₂/(R₁+R₂) × I = 4/6 × 6 = 4A (attention : le courant maximal va dans la plus petite résistance)"
+    },
+    {
+      "id": "q8",
+      "question": "La résistance de Thévenin se calcule en :",
+      "type": "qcm",
+      "options": [
+        "Éteignant toutes les sources et mesurant R vue depuis A-B",
+        "Mesurant la tension à vide entre A et B",
+        "Court-circuitant A-B et mesurant le courant",
+        "Additionnant toutes les résistances du circuit"
+      ],
+      "reponse": 0,
+      "explication": "R_th = résistance équivalente vue des bornes A-B, toutes sources éteintes (tensions → CC, courants → CO)."
+    },
+    {
+      "id": "q9",
+      "question": "Quelle est la puissance dissipée dans une résistance de 10Ω traversée par un courant de 2A ?",
+      "type": "qcm",
+      "options": ["40W", "20W", "200W", "5W"],
+      "reponse": 0,
+      "explication": "P = R × I² = 10 × 4 = 40W (ou P = U × I avec U = RI = 20V)"
+    },
+    {
+      "id": "q10",
+      "question": "Dans le théorème de Millman, V_AB dépend :",
+      "type": "qcm",
+      "options": [
+        "Des fém et des admittances (1/R) de chaque branche",
+        "Uniquement des résistances",
+        "Du courant total dans le circuit",
+        "De la résistance de charge uniquement"
+      ],
+      "reponse": 0,
+      "explication": "V_AB = Σ(Ek/Rk) / Σ(1/Rk) : chaque branche contribue proportionnellement à son admittance (1/R)."
+    }
+  ]
+}

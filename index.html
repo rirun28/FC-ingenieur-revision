@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="ICAM Rev">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <title>ICAM Révision</title>
+
+  <!-- KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+  <link rel="stylesheet" href="style.css?v=10">
+</head>
+<body>
+
+<header>
+  <button class="back-btn" title="Retour">←</button>
+  <h1>ICAM Révision</h1>
+</header>
+
+<main>
+  <!-- HOME / LISTE DES CHAPITRES -->
+  <div id="view-home" class="view active"></div>
+
+  <!-- RÉSUMÉ DU CHAPITRE -->
+  <div id="view-resume" class="view"></div>
+
+  <!-- MÉTHODES & TIPS -->
+  <div id="view-methodes" class="view"></div>
+
+  <!-- QUIZ -->
+  <div id="view-quiz" class="view"></div>
+
+  <!-- PROGRESSION GLOBALE -->
+  <div id="view-prog" class="view"></div>
+</main>
+
+<nav class="bottom">
+  <button data-tab="home" class="active">
+    <span class="icon">🏠</span>
+    Chapitres
+  </button>
+  <button data-tab="resume">
+    <span class="icon">📖</span>
+    Résumé
+  </button>
+  <button data-tab="methodes">
+    <span class="icon">💡</span>
+    Méthodes
+  </button>
+  <button data-tab="quiz">
+    <span class="icon">🎯</span>
+    Quiz
+  </button>
+  <button data-tab="prog">
+    <span class="icon">📊</span>
+    Progrès
+  </button>
+</nav>
+
+<script src="app.js?v=10"></script>
+</body>
+</html>
