@@ -52,6 +52,9 @@ const SCHEMAS = {
   // Cercle trigonométrique avec valeurs cos/sin
   cercle_trigo: '<svg viewBox="0 0 460 440" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:460px;display:block;margin:10px auto" font-family="system-ui,sans-serif"><line x1="40" y1="215" x2="420" y2="215" stroke="#475569" stroke-width="1"/><line x1="230" y1="25" x2="230" y2="405" stroke="#475569" stroke-width="1"/><text x="425" y="219" fill="#94a3b8" font-size="12">cos</text><text x="218" y="22" fill="#94a3b8" font-size="12">sin</text><circle cx="230" cy="215" r="165" fill="none" stroke="#60a5fa" stroke-width="2"/><line x1="230" y1="215" x2="395.0" y2="215.0" stroke="#334155" stroke-width="1"/><circle cx="395.0" cy="215.0" r="3.5" fill="#f59e0b"/><text x="417.0" y="219.0" fill="#22c55e" font-size="11" text-anchor="start">0</text><text x="365.0" y="218.0" fill="#cbd5e1" font-size="8.5" text-anchor="middle">(1; 0)</text><line x1="230" y1="215" x2="372.9" y2="132.5" stroke="#334155" stroke-width="1"/><circle cx="372.9" cy="132.5" r="3.5" fill="#f59e0b"/><text x="391.9" y="125.5" fill="#22c55e" font-size="11" text-anchor="start">&#x3C0;/6</text><text x="346.9" y="150.5" fill="#cbd5e1" font-size="8.5" text-anchor="middle">(&#x221A;3/2; 1/2)</text><line x1="230" y1="215" x2="346.7" y2="98.3" stroke="#334155" stroke-width="1"/><circle cx="346.7" cy="98.3" r="3.5" fill="#f59e0b"/><text x="362.2" y="86.8" fill="#22c55e" font-size="11" text-anchor="start">&#x3C0;/4</text><text x="325.5" y="122.5" fill="#cbd5e1" font-size="8.5" text-anchor="middle">(&#x221A;2/2; &#x221A;2/2)</text><line x1="230" y1="215" x2="312.5" y2="72.1" stroke="#334155" stroke-width="1"/><circle cx="312.5" cy="72.1" r="3.5" fill="#f59e0b"/><text x="323.5" y="57.1" fill="#22c55e" font-size="11" text-anchor="start">&#x3C0;/3</text><text x="297.5" y="101.1" fill="#cbd5e1" font-size="8.5" text-anchor="middle">(1/2; &#x221A;3/2)</text><line x1="230" y1="215" x2="230.0" y2="50.0" stroke="#334155" stroke-width="1"/><circle cx="230.0" cy="50.0" r="3.5" fill="#f59e0b"/><text x="230.0" y="32.0" fill="#22c55e" font-size="11" text-anchor="middle">&#x3C0;/2</text><text x="230.0" y="83.0" fill="#cbd5e1" font-size="8.5" text-anchor="middle">(0; 1)</text><line x1="230" y1="215" x2="147.5" y2="72.1" stroke="#334155" stroke-width="1"/><circle cx="147.5" cy="72.1" r="3.5" fill="#f59e0b"/><text x="136.5" y="57.1" fill="#22c55e" font-size="11" text-anchor="end">2&#x3C0;/3</text><text x="162.5" y="101.1" fill="#cbd5e1" font-size="8.5" text-anchor="middle">(-1/2; &#x221A;3/2)</text><line x1="230" y1="215" x2="113.3" y2="98.3" stroke="#334155" stroke-width="1"/><circle cx="113.3" cy="98.3" r="3.5" fill="#f59e0b"/><text x="97.8" y="86.8" fill="#22c55e" font-size="11" text-anchor="end">3&#x3C0;/4</text><text x="134.5" y="122.5" fill="#cbd5e1" font-size="8.5" text-anchor="middle">(-&#x221A;2/2; &#x221A;2/2)</text><line x1="230" y1="215" x2="87.1" y2="132.5" stroke="#334155" stroke-width="1"/><circle cx="87.1" cy="132.5" r="3.5" fill="#f59e0b"/><text x="68.1" y="125.5" fill="#22c55e" font-size="11" text-anchor="end">5&#x3C0;/6</text><text x="113.1" y="150.5" fill="#cbd5e1" font-size="8.5" text-anchor="middle">(-&#x221A;3/2; 1/2)</text><line x1="230" y1="215" x2="65.0" y2="215.0" stroke="#334155" stroke-width="1"/><circle cx="65.0" cy="215.0" r="3.5" fill="#f59e0b"/><text x="43.0" y="219.0" fill="#22c55e" font-size="11" text-anchor="end">&#x3C0;</text><text x="95.0" y="218.0" fill="#cbd5e1" font-size="8.5" text-anchor="middle">(-1; 0)</text><line x1="230" y1="215" x2="87.1" y2="297.5" stroke="#334155" stroke-width="1"/><circle cx="87.1" cy="297.5" r="3.5" fill="#f59e0b"/><text x="68.1" y="312.5" fill="#22c55e" font-size="11" text-anchor="end">7&#x3C0;/6</text><text x="113.1" y="285.5" fill="#cbd5e1" font-size="8.5" text-anchor="middle">(-&#x221A;3/2; -1/2)</text><line x1="230" y1="215" x2="113.3" y2="331.7" stroke="#334155" stroke-width="1"/><circle cx="113.3" cy="331.7" r="3.5" fill="#f59e0b"/><text x="97.8" y="351.2" fill="#22c55e" font-size="11" text-anchor="end">5&#x3C0;/4</text><text x="134.5" y="313.5" fill="#cbd5e1" font-size="8.5" text-anchor="middle">(-&#x221A;2/2; -&#x221A;2/2)</text><line x1="230" y1="215" x2="147.5" y2="357.9" stroke="#334155" stroke-width="1"/><circle cx="147.5" cy="357.9" r="3.5" fill="#f59e0b"/><text x="136.5" y="380.9" fill="#22c55e" font-size="11" text-anchor="end">4&#x3C0;/3</text><text x="162.5" y="334.9" fill="#cbd5e1" font-size="8.5" text-anchor="middle">(-1/2; -&#x221A;3/2)</text><line x1="230" y1="215" x2="230.0" y2="380.0" stroke="#334155" stroke-width="1"/><circle cx="230.0" cy="380.0" r="3.5" fill="#f59e0b"/><text x="230.0" y="406.0" fill="#22c55e" font-size="11" text-anchor="middle">3&#x3C0;/2</text><text x="230.0" y="353.0" fill="#cbd5e1" font-size="8.5" text-anchor="middle">(0; -1)</text><line x1="230" y1="215" x2="312.5" y2="357.9" stroke="#334155" stroke-width="1"/><circle cx="312.5" cy="357.9" r="3.5" fill="#f59e0b"/><text x="323.5" y="380.9" fill="#22c55e" font-size="11" text-anchor="start">5&#x3C0;/3</text><text x="297.5" y="334.9" fill="#cbd5e1" font-size="8.5" text-anchor="middle">(1/2; -&#x221A;3/2)</text><line x1="230" y1="215" x2="346.7" y2="331.7" stroke="#334155" stroke-width="1"/><circle cx="346.7" cy="331.7" r="3.5" fill="#f59e0b"/><text x="362.2" y="351.2" fill="#22c55e" font-size="11" text-anchor="start">7&#x3C0;/4</text><text x="325.5" y="313.5" fill="#cbd5e1" font-size="8.5" text-anchor="middle">(&#x221A;2/2; -&#x221A;2/2)</text><line x1="230" y1="215" x2="372.9" y2="297.5" stroke="#334155" stroke-width="1"/><circle cx="372.9" cy="297.5" r="3.5" fill="#f59e0b"/><text x="391.9" y="312.5" fill="#22c55e" font-size="11" text-anchor="start">11&#x3C0;/6</text><text x="346.9" y="285.5" fill="#cbd5e1" font-size="8.5" text-anchor="middle">(&#x221A;3/2; -1/2)</text><text x="230" y="232" fill="#64748b" font-size="9" text-anchor="middle">(cos; sin)</text></svg>',
 
+  // Mailles cubiques CC et CFC
+  mailles_cubiques: '<svg viewBox="0 0 320 190" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:320px;display:block;margin:10px auto" font-family="system-ui,sans-serif"><g><text x="70" y="20" text-anchor="middle" fill="#e2e8f0" font-size="12">Cubique Centrée (CC)</text><polygon points="30,60 100,60 100,130 30,130" fill="none" stroke="#475569" stroke-width="1.2"/><polygon points="50,45 120,45 120,115 50,115" fill="none" stroke="#475569" stroke-width="1.2"/><line x1="30" y1="60" x2="50" y2="45" stroke="#475569" stroke-width="1.2"/><line x1="100" y1="60" x2="120" y2="45" stroke="#475569" stroke-width="1.2"/><line x1="30" y1="130" x2="50" y2="115" stroke="#475569" stroke-width="1.2"/><line x1="100" y1="130" x2="120" y2="115" stroke="#475569" stroke-width="1.2"/><circle cx="30" cy="60" r="5" fill="#60a5fa"/><circle cx="100" cy="60" r="5" fill="#60a5fa"/><circle cx="30" cy="130" r="5" fill="#60a5fa"/><circle cx="100" cy="130" r="5" fill="#60a5fa"/><circle cx="50" cy="45" r="5" fill="#60a5fa"/><circle cx="120" cy="45" r="5" fill="#60a5fa"/><circle cx="50" cy="115" r="5" fill="#60a5fa"/><circle cx="120" cy="115" r="5" fill="#60a5fa"/><circle cx="75" cy="87" r="5.5" fill="#f59e0b"/><text x="75" y="155" text-anchor="middle" fill="#94a3b8" font-size="9">2 motifs · C=0,68</text><text x="75" y="167" text-anchor="middle" fill="#94a3b8" font-size="9">coordinence 8</text></g><g><text x="245" y="20" text-anchor="middle" fill="#e2e8f0" font-size="12">Faces Centrées (CFC)</text><polygon points="205,60 275,60 275,130 205,130" fill="none" stroke="#475569" stroke-width="1.2"/><polygon points="225,45 295,45 295,115 225,115" fill="none" stroke="#475569" stroke-width="1.2"/><line x1="205" y1="60" x2="225" y2="45" stroke="#475569" stroke-width="1.2"/><line x1="275" y1="60" x2="295" y2="45" stroke="#475569" stroke-width="1.2"/><line x1="205" y1="130" x2="225" y2="115" stroke="#475569" stroke-width="1.2"/><line x1="275" y1="130" x2="295" y2="115" stroke="#475569" stroke-width="1.2"/><circle cx="205" cy="60" r="5" fill="#60a5fa"/><circle cx="275" cy="60" r="5" fill="#60a5fa"/><circle cx="205" cy="130" r="5" fill="#60a5fa"/><circle cx="275" cy="130" r="5" fill="#60a5fa"/><circle cx="225" cy="45" r="5" fill="#60a5fa"/><circle cx="295" cy="45" r="5" fill="#60a5fa"/><circle cx="225" cy="115" r="5" fill="#60a5fa"/><circle cx="295" cy="115" r="5" fill="#60a5fa"/><circle cx="240" cy="95" r="5.5" fill="#22c55e"/><circle cx="260" cy="72" r="5.5" fill="#22c55e"/><circle cx="240" cy="130" r="5.5" fill="#22c55e"/><circle cx="205" cy="95" r="5.5" fill="#22c55e"/><text x="250" y="155" text-anchor="middle" fill="#94a3b8" font-size="9">4 motifs · C=0,74</text><text x="250" y="167" text-anchor="middle" fill="#94a3b8" font-size="9">coordinence 12</text></g></svg>',
+
   // Dôme de vapeur (diagramme T-v)
   dome_vapeur: '<svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:320px;display:block;margin:10px auto" font-family="system-ui,sans-serif"><line x1="35" y1="185" x2="305" y2="185" stroke="#475569" stroke-width="1.5"/><line x1="35" y1="20" x2="35" y2="185" stroke="#475569" stroke-width="1.5"/><text x="298" y="200" fill="#94a3b8" font-size="11">v</text><text x="20" y="28" fill="#94a3b8" font-size="11">T</text><path d="M70 185 Q90 60 165 45 Q240 60 280 185" fill="none" stroke="#60a5fa" stroke-width="2.5"/><circle cx="165" cy="45" r="4" fill="#f59e0b"/><text x="150" y="40" fill="#f59e0b" font-size="10">point critique</text><path d="M95 120 L240 120" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/><circle cx="110" cy="120" r="3.5" fill="#ef4444"/><circle cx="225" cy="120" r="3.5" fill="#22c55e"/><text x="92" y="113" fill="#ef4444" font-size="9">A</text><text x="228" y="113" fill="#22c55e" font-size="9">B</text><text x="55" y="150" fill="#ef4444" font-size="9">liquide</text><text x="52" y="162" fill="#ef4444" font-size="9">s-refroidi</text><text x="150" y="150" text-anchor="middle" fill="#cbd5e1" font-size="9">L + V</text><text x="262" y="150" fill="#22c55e" font-size="9">vapeur</text><text x="258" y="162" fill="#22c55e" font-size="9">surchauf.</text></svg>',
 
@@ -931,6 +934,185 @@ const CONTENT_DB = {
         options: ['\\(x=2,\\;y=1\\)', '\\(x=1,\\;y=2\\)', 'Aucune solution', 'Une infinité'],
         reponse: 0,
         explication: 'En additionnant : \\(2x = 4 \\Rightarrow x = 2\\), puis \\(y = 3 - 2 = 1\\).'
+      }
+    ]
+  },
+
+  'maths-edo': {
+    id: 'maths-edo',
+    matiere: 'Maths',
+    chapitre: 'Équations différentielles & Laplace',
+    description: 'EDO du 1er et 2nd ordre, et résolution par la transformée de Laplace',
+    resume: {
+      sections: [
+        {
+          titre: 'Vocabulaire des EDO',
+          formule: 'a_n\\,y^{(n)} + \\cdots + a_1\\,y\' + a_0\\,y = f(t)',
+          contenu: 'Une équation différentielle relie une fonction inconnue \\(y(t)\\) à ses dérivées. L\'ordre = celui de la dérivée la plus élevée.\n\n• Homogène (sans second membre) : \\(f(t) = 0\\).\n• Complète : \\(f(t) \\neq 0\\).\n\nProblème de Cauchy = EDO + conditions initiales. Une EDO d\'ordre \\(n\\) a une solution générale à \\(n\\) constantes, fixées par \\(n\\) conditions.'
+        },
+        {
+          titre: 'Structure de la solution',
+          formule: 'y(t) = y_h(t) + y_p(t)',
+          contenu: 'La solution générale d\'une EDO linéaire complète est la somme de :\n• \\(y_h\\) : solution de l\'équation homogène (solution générale sans second membre)\n• \\(y_p\\) : une solution particulière de l\'équation complète\n\nOn résout donc toujours en deux temps : d\'abord l\'homogène, puis une particulière.'
+        },
+        {
+          titre: 'EDO d\'ordre 1 — variables séparables',
+          formule: 'y\' = g(t)\\,h(y) \\;\\Rightarrow\\; \\frac{dy}{h(y)} = g(t)\\,dt',
+          contenu: 'On sépare ce qui dépend de \\(t\\) de ce qui dépend de \\(y\\), puis on intègre des deux côtés.\n\nExemple : \\(y\' = ty\\) → \\(\\dfrac{dy}{y} = t\\,dt\\) → \\(\\ln|y| = \\dfrac{t^2}{2} + C\\) → \\(y = C e^{t^2/2}\\).'
+        },
+        {
+          titre: 'EDO d\'ordre 1 — linéaire (facteur intégrant)',
+          formule: 'y\' + a(t)\\,y = b(t) \\qquad \\mu(t) = e^{\\int a(t)\\,dt}',
+          contenu: 'On multiplie par le facteur intégrant \\(\\mu(t)\\), ce qui fait apparaître une dérivée de produit :\n\\[ \\big(\\mu(t)\\,y\\big)\' = \\mu(t)\\,b(t) \\]\npuis on intègre.\n\nCas \\(a\\) constant : \\(\\mu = e^{at}\\) et \\(y_h = C e^{-at}\\).'
+        },
+        {
+          titre: 'EDO d\'ordre 2 — équation caractéristique',
+          formule: 'a y\'\' + b y\' + c y = 0 \\;\\Rightarrow\\; a r^2 + b r + c = 0',
+          contenu: 'On cherche \\(y_h\\) sous la forme \\(e^{rt}\\). Selon \\(\\Delta = b^2 - 4ac\\) :\n\n• \\(\\Delta > 0\\), racines \\(r_1 \\neq r_2\\) : \\(y_h = C_1 e^{r_1 t} + C_2 e^{r_2 t}\\)\n• \\(\\Delta = 0\\), racine double \\(r_0\\) : \\(y_h = (C_1 + C_2 t)e^{r_0 t}\\)\n• \\(\\Delta < 0\\), \\(r = \\alpha \\pm i\\beta\\) : \\(y_h = e^{\\alpha t}(C_1 \\cos\\beta t + C_2 \\sin\\beta t)\\)'
+        },
+        {
+          titre: 'Solution particulière (coefficients indéterminés)',
+          formule: '\\begin{array}{c|c} f(t) & \\text{forme de } y_p \\\\ \\hline \\\\[-9pt] K & A \\\\[3pt] t^n & A_n t^n + \\cdots + A_0 \\\\[3pt] K e^{\\lambda t}\\ (\\lambda \\text{ non racine}) & A e^{\\lambda t} \\\\[3pt] K e^{\\lambda t}\\ (\\lambda \\text{ racine simple}) & A t\\,e^{\\lambda t} \\\\[3pt] K\\cos\\omega t \\text{ ou } K\\sin\\omega t & A\\cos\\omega t + B\\sin\\omega t \\end{array}',
+          contenu: 'Quand \\(f(t)\\) a une forme simple, on cherche \\(y_p\\) de la même forme, on la substitue dans l\'EDO et on identifie les coefficients.\n\n⚠️ Si \\(\\lambda\\) est racine de l\'équation caractéristique, multiplier la forme par \\(t\\) (ou \\(t^2\\) si racine double).'
+        },
+        {
+          titre: 'Transformée de Laplace — définition',
+          formule: 'F(s) = \\mathcal{L}\\{f\\}(s) = \\int_0^{+\\infty} f(t)\\,e^{-st}\\,dt',
+          contenu: 'La transformée convertit une fonction du temps \\(t\\) en une fonction de la variable \\(s\\). Elle transforme une EDO en équation algébrique.\n\nDeux fonctions clés :\n• Échelon unité (Heaviside) \\(u(t)\\) : 0 si \\(t<0\\), 1 si \\(t \\geq 0\\).\n• Impulsion de Dirac \\(\\delta(t)\\) : avec \\(\\mathcal{L}\\{\\delta\\} = 1\\).'
+        },
+        {
+          titre: 'Transformées usuelles',
+          formule: '\\begin{array}{c|c} f(t) & F(s) \\\\ \\hline \\\\[-9pt] 1\\ (\\text{échelon}) & 1/s \\\\[3pt] t^n & n!/s^{n+1} \\\\[3pt] e^{at} & 1/(s-a) \\\\[4pt] \\sin\\omega t & \\omega/(s^2+\\omega^2) \\\\[4pt] \\cos\\omega t & s/(s^2+\\omega^2) \\\\[3pt] \\delta(t) & 1 \\end{array}',
+          contenu: 'Table de référence à connaître. On lit dans les deux sens : \\(\\mathcal{L}\\) (temps → \\(s\\)) et \\(\\mathcal{L}^{-1}\\) (\\(s\\) → temps).\n\nDécalage en \\(s\\) : \\(\\mathcal{L}\\{e^{at}f(t)\\} = F(s-a)\\).'
+        },
+        {
+          titre: 'Propriété clé : la dérivée',
+          formule: '\\mathcal{L}\\{f\'\\} = sF(s) - f(0)',
+          contenu: 'C\'est le cœur de la méthode :\n\\[ \\mathcal{L}\\{f\'\'\\} = s^2 F(s) - s f(0) - f\'(0) \\]\n\nDériver (opération difficile) devient une multiplication par \\(s\\) (algébrique), et les conditions initiales apparaissent naturellement.\n\nLinéarité : \\(\\mathcal{L}\\{\\alpha f + \\beta g\\} = \\alpha F + \\beta G\\).'
+        },
+        {
+          titre: 'Résolution d\'une EDO par Laplace',
+          formule: 'y(t) \\xrightarrow{\\mathcal{L}} Y(s) \\;\\to\\; \\text{isoler } Y(s) \\;\\xrightarrow{\\mathcal{L}^{-1}} y(t)',
+          contenu: '1. Transformer : appliquer \\(\\mathcal{L}\\) aux deux membres (les dérivées deviennent des produits par \\(s\\), les C.I. apparaissent).\n2. Isoler \\(Y(s)\\) : simple équation algébrique.\n3. Inverser : \\(y(t) = \\mathcal{L}^{-1}\\{Y(s)\\}\\) par décomposition en éléments simples, puis lecture de la table.\n\nAvantage : les conditions initiales sont intégrées d\'emblée.'
+        }
+      ]
+    },
+    methodes: [
+      {
+        titre: 'Résoudre une EDO séparable',
+        contenu: 'Exemple : \\(y\' = -2y\\), \\(y(0) = 3\\).\n\nÉtape 1 — séparer :\n\\[ \\frac{dy}{y} = -2\\,dt \\]\n\nÉtape 2 — intégrer :\n\\[ \\ln|y| = -2t + C_1 \\;\\Rightarrow\\; y = C e^{-2t} \\]\n\nÉtape 3 — condition initiale :\n\\[ y(0) = C = 3 \\;\\Rightarrow\\; y(t) = 3e^{-2t} \\]'
+      },
+      {
+        titre: 'EDO linéaire d\'ordre 1 (homogène + particulière)',
+        contenu: 'Exemple : \\(y\' + 2y = 4\\), \\(y(0) = 1\\).\n\nHomogène : \\(y\' + 2y = 0 \\Rightarrow y_h = C e^{-2t}\\).\n\nParticulière (second membre constant → \\(y_p\\) constante) :\n\\[ 2 y_p = 4 \\Rightarrow y_p = 2 \\]\n\nGénérale : \\(y = C e^{-2t} + 2\\). Condition : \\(y(0) = C + 2 = 1 \\Rightarrow C = -1\\).\n\\[ y(t) = 2 - e^{-2t} \\]'
+      },
+      {
+        titre: 'EDO d\'ordre 2 par l\'équation caractéristique',
+        contenu: 'Exemple : \\(y\'\' + 2y\' + 5y = 0\\).\n\nÉquation caractéristique :\n\\[ r^2 + 2r + 5 = 0, \\quad \\Delta = 4 - 20 = -16 < 0 \\]\n\nRacines complexes \\(r = -1 \\pm 2i\\) (donc \\(\\alpha = -1\\), \\(\\beta = 2\\)) :\n\\[ y_h = e^{-t}(C_1 \\cos 2t + C_2 \\sin 2t) \\]'
+      },
+      {
+        titre: 'Trouver une solution particulière',
+        contenu: 'Exemple : \\(y\'\' - 3y\' + 2y = 4e^{3t}\\).\n\nIci \\(\\lambda = 3\\) n\'est pas racine de \\(r^2 - 3r + 2\\) → on cherche \\(y_p = A e^{3t}\\).\n\nEn substituant (\\(y_p\'\' = 9Ae^{3t}\\), etc.) :\n\\[ 9A - 9A + 2A = 4 \\Rightarrow A = 2 \\]\n\\[ y_p = 2e^{3t} \\]\n\n⚠️ Si \\(\\lambda\\) avait été racine, on aurait pris \\(y_p = A t\\,e^{3t}\\).'
+      },
+      {
+        titre: 'Résoudre une EDO par Laplace',
+        contenu: 'Exemple : \\(y\' + 2y = 4\\), \\(y(0) = 1\\).\n\nÉtape 1 — transformer (\\(\\mathcal{L}\\{y\'\\} = sY - y(0)\\)) :\n\\[ sY - 1 + 2Y = \\frac{4}{s} \\Rightarrow (s+2)Y = 1 + \\frac{4}{s} \\]\n\nÉtape 2 — isoler et décomposer :\n\\[ Y(s) = \\frac{1}{s+2} + \\frac{4}{s(s+2)} = \\frac{2}{s} - \\frac{1}{s+2} \\]\n\nÉtape 3 — inverser (table) :\n\\[ y(t) = 2 - e^{-2t} \\]'
+      },
+      {
+        titre: '⚠️ Pièges sur les EDO',
+        contenu: '• Ne pas oublier la constante d\'intégration, fixée par les conditions initiales.\n• Si \\(\\lambda\\) (du second membre \\(e^{\\lambda t}\\)) est racine caractéristique, multiplier \\(y_p\\) par \\(t\\).\n• Solution complète = homogène + particulière (ne pas oublier \\(y_h\\)).\n• En Laplace, bien faire apparaître \\(f(0)\\) et \\(f\'(0)\\) via la formule de la dérivée.\n• \\(\\mathcal{L}\\{f\'\'\\} = s^2 F(s) - s f(0) - f\'(0)\\) : attention aux deux termes de C.I.'
+      }
+    ],
+    quiz: [
+      {
+        id: 'edo-q1',
+        question: 'L\'ordre d\'une EDO est :',
+        options: [
+          'L\'ordre de la dérivée la plus élevée',
+          'Le nombre de termes',
+          'Le degré du polynôme',
+          'Le nombre de conditions initiales'
+        ],
+        reponse: 0,
+        explication: 'L\'ordre = celui de la dérivée la plus élevée qui figure dans l\'équation.'
+      },
+      {
+        id: 'edo-q2',
+        question: 'La solution générale d\'une EDO linéaire complète est :',
+        options: ['\\(y_h + y_p\\)', '\\(y_h \\times y_p\\)', '\\(y_h - y_p\\)', '\\(y_p\\) seule'],
+        reponse: 0,
+        explication: 'Somme de la solution homogène et d\'une solution particulière.'
+      },
+      {
+        id: 'edo-q3',
+        question: 'Pour \\(y\' = -2y\\), \\(y(0)=3\\), la solution est :',
+        options: ['\\(3e^{-2t}\\)', '\\(3e^{2t}\\)', '\\(-2e^{3t}\\)', '\\(3 - 2t\\)'],
+        reponse: 0,
+        explication: 'Séparable : \\(y = Ce^{-2t}\\), et \\(y(0)=C=3\\) → \\(y = 3e^{-2t}\\).'
+      },
+      {
+        id: 'edo-q4',
+        question: 'Le facteur intégrant de \\(y\' + a(t)y = b(t)\\) est :',
+        options: ['\\(e^{\\int a\\,dt}\\)', '\\(e^{-\\int a\\,dt}\\)', '\\(\\int a\\,dt\\)', '\\(e^{at^2}\\)'],
+        reponse: 0,
+        explication: '\\(\\mu(t) = e^{\\int a(t)\\,dt}\\) transforme le membre de gauche en \\((\\mu y)\'\\).'
+      },
+      {
+        id: 'edo-q5',
+        question: 'Pour \\(y\'\' + 2y\' + 5y = 0\\), les racines caractéristiques sont :',
+        options: ['\\(-1 \\pm 2i\\)', '\\(1 \\pm 2i\\)', '\\(-1, -5\\)', '\\(2, 5\\)'],
+        reponse: 0,
+        explication: '\\(r^2+2r+5=0\\), \\(\\Delta=-16\\), \\(r = \\frac{-2 \\pm 4i}{2} = -1 \\pm 2i\\).'
+      },
+      {
+        id: 'edo-q6',
+        question: 'Si l\'équation caractéristique a une racine double \\(r_0\\), \\(y_h\\) vaut :',
+        options: [
+          '\\((C_1 + C_2 t)e^{r_0 t}\\)',
+          '\\(C_1 e^{r_0 t} + C_2 e^{r_0 t}\\)',
+          '\\(C_1 \\cos r_0 t\\)',
+          '\\(C_1 e^{r_0 t}\\)'
+        ],
+        reponse: 0,
+        explication: 'Racine double → \\(y_h = (C_1 + C_2 t)e^{r_0 t}\\).'
+      },
+      {
+        id: 'edo-q7',
+        question: 'La transformée de Laplace de \\(f\'\\) est :',
+        options: ['\\(sF(s) - f(0)\\)', '\\(sF(s)\\)', '\\(F(s)/s\\)', '\\(F(s) - f(0)\\)'],
+        reponse: 0,
+        explication: 'C\'est la propriété clé : \\(\\mathcal{L}\\{f\'\\} = sF(s) - f(0)\\).'
+      },
+      {
+        id: 'edo-q8',
+        question: 'La transformée de Laplace de \\(e^{at}\\) est :',
+        options: ['\\(\\dfrac{1}{s-a}\\)', '\\(\\dfrac{1}{s+a}\\)', '\\(\\dfrac{a}{s}\\)', '\\(\\dfrac{s}{s^2+a^2}\\)'],
+        reponse: 0,
+        explication: '\\(\\mathcal{L}\\{e^{at}\\} = \\dfrac{1}{s-a}\\) (pour \\(s>a\\)).'
+      },
+      {
+        id: 'edo-q9',
+        question: 'Pourquoi Laplace est-elle utile pour les EDO ?',
+        options: [
+          'Elle transforme l\'EDO en équation algébrique',
+          'Elle supprime les conditions initiales',
+          'Elle évite toute intégration',
+          'Elle élimine la variable s'
+        ],
+        reponse: 0,
+        explication: 'La dérivation devient une multiplication par \\(s\\) : on résout une simple équation en \\(s\\).'
+      },
+      {
+        id: 'edo-q10',
+        question: 'Pour \\(y\'\' - 3y\' + 2y = 4e^{3t}\\), quelle forme d\'essai pour \\(y_p\\) ?',
+        options: [
+          '\\(A e^{3t}\\) (car 3 n\'est pas racine)',
+          '\\(A t\\,e^{3t}\\)',
+          '\\(A\\cos 3t\\)',
+          '\\(A t^2\\)'
+        ],
+        reponse: 0,
+        explication: '\\(r^2-3r+2\\) a pour racines 1 et 2 ; 3 n\'est pas racine → \\(y_p = A e^{3t}\\).'
       }
     ]
   },
@@ -2091,6 +2273,316 @@ const CONTENT_DB = {
         explication: 'Elles représentent l\'énergie dissipée par frottement (singulières + linéaires).'
       }
     ]
+  },
+
+  'mat-structure': {
+    id: 'mat-structure',
+    matiere: 'Matériaux',
+    chapitre: 'Structure atomique & Liaisons',
+    description: 'Atome, modèle quantique, liaisons chimiques et classification des matériaux',
+    resume: {
+      sections: [
+        {
+          titre: 'L\'atome',
+          formule: '^{A}_{Z}X',
+          contenu: 'Un atome = noyau (protons + neutrons) entouré d\'un nuage d\'électrons (autant que de protons si neutre).\n\n• Numéro atomique \\(Z\\) = nombre de protons\n• Nombre de masse \\(A\\) = protons + neutrons\n\nIon : excès d\'électrons → anion (−) ; défaut → cation (+).\nIsotopes = même \\(Z\\), \\(A\\) différent. Mole : \\(N_A = 6{,}02\\times10^{23}\\) particules.'
+        },
+        {
+          titre: 'Le modèle quantique',
+          contenu: 'Un électron est décrit par 4 nombres quantiques :\n• \\(n\\) : couche (K, L, M, N…), \\(n \\geq 1\\)\n• \\(\\ell\\) : sous-couche (s, p, d, f), \\(0 \\leq \\ell \\leq n-1\\)\n• \\(m_\\ell\\) : orientation, \\(-\\ell \\leq m_\\ell \\leq \\ell\\)\n• \\(m_s\\) : spin, \\(\\pm\\tfrac{1}{2}\\)\n\nNombre max d\'électrons par couche : \\(2n^2\\). Par sous-couche : s²=2, p⁶=6, d¹⁰=10, f¹⁴=14.'
+        },
+        {
+          titre: 'Remplissage électronique',
+          contenu: 'Trois règles :\n• Principe de Pauli : pas deux électrons avec les mêmes 4 nombres quantiques.\n• Règle de Hund : on remplit un maximum de cases avant d\'apparier.\n• Règle de Klechkowski : remplissage par \\(n + \\ell\\) croissant (à \\(n+\\ell\\) égal, \\(n\\) le plus petit d\'abord).\n\nExemple (Fer, Z=26) : \\(1s^2\\,2s^2\\,2p^6\\,3s^2\\,3p^6\\,4s^2\\,3d^6\\).'
+        },
+        {
+          titre: 'Électronégativité',
+          formule: '\\% \\text{ covalent} = e^{-0{,}25\\,\\Delta X^2}',
+          contenu: 'L\'électronégativité \\(X\\) mesure la capacité d\'un atome à attirer les électrons d\'une liaison.\n\nLe type de liaison dépend de l\'écart \\(\\Delta X\\) :\n• \\(\\Delta X\\) faible → liaison covalente (électronégativités voisines)\n• \\(\\Delta X\\) élevé → liaison ionique (électronégativités très différentes)\n• métaux (\\(\\Delta X \\approx 0\\)) → liaison métallique'
+        },
+        {
+          titre: 'Les liaisons fortes',
+          contenu: '• Métallique : les électrons de valence forment un « nuage » libre entre les cations. Non directionnelle → conductivité, ductilité.\n• Covalente : partage d\'un doublet d\'électrons entre atomes d\'électronégativités proches. Directionnelle → rigidité, fragilité (ex : diamant).\n• Ionique : attraction entre cation (+) et anion (−), fort \\(\\Delta X\\). Non directionnelle (ex : NaCl).\n\nÉnergies (kcal/mol) : métallique 25–200 · ionique 150–370 · covalente 125–300.'
+        },
+        {
+          titre: 'Les liaisons faibles',
+          contenu: 'Énergie de 0,5 à 50 kJ/mol (~10 % d\'une covalente), agissant à plus longue distance.\n\n• Van der Waals : Keesom (dipôle permanent/permanent), Debye (permanent/induit), London (induit/induit).\n• Liaison hydrogène : entre un groupe A–H et un atome très électronégatif (O, N, halogène). Plus forte (~50 kJ/mol).\n\nElles expliquent p. ex. les températures d\'ébullition croissantes des hydrocarbures.'
+        },
+        {
+          titre: 'Classification des matériaux',
+          contenu: '4 grandes familles selon le type de liaison :\n\n• Métaux (liaison métallique) : denses, conducteurs, ductiles, E moyen à élevé.\n• Céramiques (ionique + covalente) : isolants, fragiles, E élevé, Tf élevée.\n• Polymères (covalente + Van der Waals) : légers, isolants, visco-élastiques, E faible, Tf faible.\n• Composites : matrice (cohésion) + renfort (résistance), ex. fibre de verre/carbone.\n\nAussi : semi-conducteurs, biomatériaux, nanomatériaux.'
+        },
+        {
+          titre: 'États de la matière & allotropie',
+          contenu: 'La stabilité du solide vient de l\'équilibre entre forces attractives et répulsives (distance interatomique d\'équilibre).\n\n• Cristallin : arrangement régulier, symétrie à courte ET longue portée (ex : quartz).\n• Amorphe : ordre à courte portée seulement (ex : verre).\n\nMême composition, structures différentes → propriétés différentes : graphite (feuillets, liaisons faibles interfeuillets → friable) vs diamant (covalent 3D → dur). C\'est l\'allotropie.'
+        }
+      ]
+    },
+    methodes: [
+      {
+        titre: 'Établir une configuration électronique',
+        contenu: 'On remplit les sous-couches par \\(n+\\ell\\) croissant (Klechkowski).\n\nOrdre : 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p, 5s…\n\nExemple pour le Fer (Z=26), on place 26 électrons :\n\\[ 1s^2\\,2s^2\\,2p^6\\,3s^2\\,3p^6\\,4s^2\\,3d^6 \\]\n\nVérification : \\(2+2+6+2+6+2+6 = 26\\) ✓'
+      },
+      {
+        titre: 'Déterminer le type de liaison',
+        contenu: 'On calcule l\'écart d\'électronégativité \\(\\Delta X\\) entre les deux éléments.\n\nExemple SiO₂ : \\(X_{Si}=1{,}8\\), \\(X_O=3{,}5\\) → \\(\\Delta X = 1{,}7\\).\n\nCaractère covalent :\n\\[ \\% = e^{-0{,}25 \\times 1{,}7^2} \\approx 0{,}49 \\Rightarrow 49\\% \\text{ covalent} \\]\ndonc ~51 % ionique. La liaison est mixte, à dominante ionique.'
+      },
+      {
+        titre: 'Relier liaison et propriétés',
+        contenu: 'Le type de liaison explique les propriétés macroscopiques (intrinsèques) :\n\n• Conductivité élevée des métaux → électrons libres (nuage).\n• Fragilité des céramiques → liaisons ionique/covalente rigides.\n• Tf basse des polymères → liaisons faibles (Van der Waals) entre chaînes.\n\nRègle générale : plus l\'énergie de liaison est élevée, plus \\(T_f\\) et le module de Young \\(E\\) sont élevés.'
+      },
+      {
+        titre: '⚠️ Pièges en structure atomique',
+        contenu: '• Liaison covalente = électronégativités PROCHES ; ionique = très DIFFÉRENTES (ne pas inverser).\n• Amorphe = ordre à courte portée seulement (pas de longue portée).\n• Les liaisons faibles ne sont pas « négligeables » : elles gouvernent les Tf des polymères.\n• Klechkowski : le 4s se remplit AVANT le 3d (car \\(n+\\ell\\) plus petit).'
+      }
+    ],
+    quiz: [
+      {
+        id: 'mat-q1',
+        question: 'Le numéro atomique Z d\'un atome correspond au nombre de :',
+        options: ['Protons', 'Neutrons', 'Protons + neutrons', 'Électrons de valence'],
+        reponse: 0,
+        explication: '\\(Z\\) = nombre de protons ; \\(A\\) = protons + neutrons.'
+      },
+      {
+        id: 'mat-q2',
+        question: 'Le nombre maximum d\'électrons sur une couche n est :',
+        options: ['\\(2n^2\\)', '\\(n^2\\)', '\\(2n\\)', '\\(n+2\\)'],
+        reponse: 0,
+        explication: 'Couche K (n=1) : 2 ; L (n=2) : 8 ; M (n=3) : 18… soit \\(2n^2\\).'
+      },
+      {
+        id: 'mat-q3',
+        question: 'La règle de Klechkowski remplit les orbitales par :',
+        options: ['\\(n + \\ell\\) croissant', '\\(n\\) croissant seulement', '\\(\\ell\\) croissant seulement', 'ordre alphabétique'],
+        reponse: 0,
+        explication: 'Par \\(n+\\ell\\) croissant ; à valeur égale, le \\(n\\) le plus petit d\'abord (ex : 4s avant 3d).'
+      },
+      {
+        id: 'mat-q4',
+        question: 'Une liaison covalente se forme entre atomes d\'électronégativités :',
+        options: ['Voisines', 'Très différentes', 'Nulles', 'Toujours identiques'],
+        reponse: 0,
+        explication: 'Covalente = électronégativités proches (partage d\'électrons). Ionique = très différentes.'
+      },
+      {
+        id: 'mat-q5',
+        question: 'La conductivité électrique élevée des métaux s\'explique par :',
+        options: [
+          'Les électrons libres (nuage électronique)',
+          'Les liaisons ioniques',
+          'Les liaisons hydrogène',
+          'L\'état amorphe'
+        ],
+        reponse: 0,
+        explication: 'La liaison métallique délocalise les électrons de valence → nuage libre conducteur.'
+      },
+      {
+        id: 'mat-q6',
+        question: 'Quelle famille a typiquement une température de fusion faible ?',
+        options: ['Les polymères', 'Les céramiques', 'Les métaux réfractaires', 'Les alliages'],
+        reponse: 0,
+        explication: 'Les polymères : liaisons faibles (Van der Waals) entre chaînes → Tf et E faibles.'
+      },
+      {
+        id: 'mat-q7',
+        question: 'Un matériau amorphe présente une symétrie :',
+        options: [
+          'À courte portée uniquement',
+          'À courte et longue portée',
+          'À longue portée uniquement',
+          'Parfaitement périodique'
+        ],
+        reponse: 0,
+        explication: 'Amorphe (ex : verre) = ordre local seulement ; cristallin = courte ET longue portée.'
+      },
+      {
+        id: 'mat-q8',
+        question: 'La liaison hydrogène est une liaison :',
+        options: [
+          'Faible mais plus forte que Van der Waals',
+          'Forte de type covalent',
+          'Métallique',
+          'Ionique'
+        ],
+        reponse: 0,
+        explication: 'C\'est une liaison faible (~50 kJ/mol), plus énergétique que les autres Van der Waals.'
+      },
+      {
+        id: 'mat-q9',
+        question: 'Diamant et graphite diffèrent par :',
+        options: [
+          'Leur structure cristalline (allotropie)',
+          'Leur composition chimique',
+          'Leur numéro atomique',
+          'Leur nombre de neutrons'
+        ],
+        reponse: 0,
+        explication: 'Même carbone, structures différentes (allotropie) : diamant 3D covalent dur, graphite feuillets friable.'
+      },
+      {
+        id: 'mat-q10',
+        question: 'Un composite est constitué de :',
+        options: [
+          'Une matrice + un renfort',
+          'Un seul métal pur',
+          'Uniquement des céramiques',
+          'Un gaz et un liquide'
+        ],
+        reponse: 0,
+        explication: 'Matrice (cohésion, transmet les efforts) + renfort (résistance/rigidité), ex. fibre de carbone/époxy.'
+      }
+    ]
+  },
+
+  'mat-cristallo': {
+    id: 'mat-cristallo',
+    matiere: 'Matériaux',
+    chapitre: 'Cristallographie',
+    description: 'Réseau, mailles CC/CFC/HC, compacité, masse volumique et défauts',
+    resume: {
+      sections: [
+        {
+          titre: 'Réseau, motif et maille',
+          formule: '\\vec{T} = n_1\\vec{a} + n_2\\vec{b} + n_3\\vec{c}',
+          contenu: 'La cristallographie étudie l\'organisation régulière des atomes.\n\n• Motif : entité chimique placée aux nœuds du réseau.\n• Réseau : ensemble des positions des nœuds.\n• Maille : plus petite entité dont la répétition (translations \\(\\vec{T}\\)) engendre le cristal.\n\nHypothèse de travail : atomes = sphères rigides. La structure résulte de la minimisation de l\'énergie.'
+        },
+        {
+          titre: 'Les trois structures métalliques',
+          schema: 'mailles_cubiques',
+          contenu: 'Empilements compacts de sphères :\n• CC (cubique centrée) : empilement moins compact.\n• CFC (cubique à faces centrées) : empilement ABCABC…\n• HC (hexagonale compacte) : empilement ABAB…\n\nCFC et HC sont les plus compacts (coordinence 12).'
+        },
+        {
+          titre: 'Caractéristiques des mailles',
+          formule: '\\begin{array}{c|c|c|c} & \\text{motifs} & \\text{coord.} & \\text{compacité} \\\\ \\hline \\\\[-9pt] \\text{CC} & 2 & 8 & 0{,}68 \\\\[3pt] \\text{CFC} & 4 & 12 & 0{,}74 \\\\[3pt] \\text{HC} & 6 & 12 & 0{,}74 \\end{array}',
+          contenu: 'Motifs par maille :\n• CC : \\(8\\times\\tfrac{1}{8} + 1 = 2\\)\n• CFC : \\(8\\times\\tfrac{1}{8} + 6\\times\\tfrac{1}{2} = 4\\)\n\nCoordinence = nombre de plus proches voisins équidistants.\n\nRelation rayon-arête : CFC \\(4R = a\\sqrt{2}\\) ; CC \\(4R = a\\sqrt{3}\\).'
+        },
+        {
+          titre: 'Compacité',
+          formule: 'C = \\frac{V_{motifs}}{V_{maille}} = \\frac{N \\cdot \\tfrac{4}{3}\\pi R^3}{a^3}',
+          contenu: 'La compacité = fraction du volume réellement occupée par les sphères.\n\n• CFC : \\(C \\approx 0{,}74\\) (74 % rempli — maximum pour des sphères identiques)\n• HC : \\(C \\approx 0{,}74\\)\n• CC : \\(C \\approx 0{,}68\\)\n\nLe reste (~26 %) est constitué de vides : les sites interstitiels.'
+        },
+        {
+          titre: 'Masse volumique théorique',
+          formule: '\\rho = \\frac{N \\cdot M}{N_A \\cdot a^3}',
+          contenu: 'Pour une maille de côté \\(a\\) contenant \\(N\\) motifs de masse molaire \\(M\\) :\n\\[ \\rho = \\frac{N\\,M}{N_A\\,a^3} \\]\navec \\(N_A = 6{,}02\\times10^{23}\\) mol⁻¹.\n\nComparer \\(\\rho\\) calculée aux valeurs mesurées permet d\'identifier le type de maille (CC, CFC…).'
+        },
+        {
+          titre: 'Sites interstitiels',
+          formule: '\\frac{R_{octa}}{R} = \\sqrt{2} - 1 \\approx 0{,}414 \\;(\\text{CFC})',
+          contenu: 'Les vides entre atomes peuvent accueillir de petits atomes :\n• Sites octaédriques (SO) et tétraédriques (ST).\n• CFC : 4 SO + 8 ST. Habitabilité octa \\(\\approx 0{,}414\\,R\\).\n\nExemple (fer) : l\'hydrogène (petit) s\'insère sans déformer → fragilisation ; le carbone/azote (plus gros) déforment → acier/fonte carburé ou nitruré.'
+        },
+        {
+          titre: 'Défauts des cristaux',
+          contenu: 'Un cristal réel n\'est jamais parfait :\n\n• Lacunes (dim. 0) : atomes manquants.\n• Solution solide (dim. 1) : atomes étrangers, par substitution ou insertion → alliages.\n• Dislocations (dim. 1) : responsables de la déformation plastique et du durcissement.\n• Joints de grains (dim. 2) : frontières entre cristaux → influencent la fragilité.\n\nLes défauts gouvernent une grande part des propriétés mécaniques.'
+        }
+      ]
+    },
+    methodes: [
+      {
+        titre: 'Compter les motifs d\'une maille',
+        contenu: 'On pondère chaque atome selon sa position (partagé entre mailles) :\n• sommet : compte \\(\\tfrac{1}{8}\\)\n• arête : \\(\\tfrac{1}{4}\\)\n• face : \\(\\tfrac{1}{2}\\)\n• intérieur : \\(1\\)\n\nCFC : \\(8\\times\\tfrac{1}{8}\\) (sommets) \\(+\\ 6\\times\\tfrac{1}{2}\\) (faces) \\(= 1 + 3 = 4\\) motifs.\nCC : \\(8\\times\\tfrac{1}{8} + 1 = 2\\) motifs.'
+      },
+      {
+        titre: 'Calculer une compacité (CFC)',
+        contenu: 'Relation rayon-arête (diagonale de face) : \\(4R = a\\sqrt{2}\\), donc \\(R = \\dfrac{a\\sqrt{2}}{4}\\).\n\nCompacité :\n\\[ C = \\frac{4 \\cdot \\tfrac{4}{3}\\pi R^3}{a^3} \\]\n\nEn remplaçant \\(R\\) :\n\\[ C = \\frac{\\pi\\sqrt{2}}{6} \\approx 0{,}74 \\]'
+      },
+      {
+        titre: 'Identifier une maille par la masse volumique',
+        contenu: 'On inverse la formule \\(\\rho = \\dfrac{N M}{N_A a^3}\\) pour trouver \\(N\\) :\n\\[ N = \\frac{\\rho\\,N_A\\,a^3}{M} \\]\n\nExemple : \\(\\rho = 2{,}6\\) g/cm³, \\(M = 87{,}62\\) g/mol, \\(a = 6{,}085\\times10^{-8}\\) cm.\n\nOn calcule \\(N\\) : si \\(N \\approx 4\\) → CFC ; \\(N \\approx 2\\) → CC.'
+      },
+      {
+        titre: '⚠️ Pièges en cristallographie',
+        contenu: '• Compacité CFC = 0,74, CC = 0,68 (ne pas confondre).\n• Bien pondérer les atomes partagés (sommet ⅛, face ½).\n• Relation rayon-arête différente selon la maille : CFC \\(4R=a\\sqrt2\\), CC \\(4R=a\\sqrt3\\).\n• Travailler en unités cohérentes (a en cm, \\(N_A\\) en mol⁻¹) pour \\(\\rho\\) en g/cm³.\n• Les dislocations, pas les lacunes, gouvernent la déformation plastique.'
+      }
+    ],
+    quiz: [
+      {
+        id: 'cri-q1',
+        question: 'Combien de motifs contient une maille CFC ?',
+        options: ['4', '2', '6', '8'],
+        reponse: 0,
+        explication: '\\(8\\times\\tfrac18\\) (sommets) \\(+ 6\\times\\tfrac12\\) (faces) \\(= 1+3 = 4\\).'
+      },
+      {
+        id: 'cri-q2',
+        question: 'La compacité de la structure CFC vaut :',
+        options: ['0,74', '0,68', '0,52', '1,00'],
+        reponse: 0,
+        explication: 'CFC : \\(C \\approx 0{,}74\\) (comme HC) ; CC : 0,68.'
+      },
+      {
+        id: 'cri-q3',
+        question: 'La coordinence d\'une structure CFC est :',
+        options: ['12', '8', '6', '4'],
+        reponse: 0,
+        explication: '12 plus proches voisins équidistants (comme HC). CC : 8.'
+      },
+      {
+        id: 'cri-q4',
+        question: 'Combien de motifs dans une maille cubique centrée (CC) ?',
+        options: ['2', '1', '4', '8'],
+        reponse: 0,
+        explication: '\\(8\\times\\tfrac18\\) (sommets) \\(+ 1\\) (centre) \\(= 2\\).'
+      },
+      {
+        id: 'cri-q5',
+        question: 'La masse volumique théorique d\'un cristal est :',
+        options: [
+          '\\(\\rho = \\dfrac{N M}{N_A a^3}\\)',
+          '\\(\\rho = \\dfrac{M a^3}{N_A}\\)',
+          '\\(\\rho = \\dfrac{N_A M}{N a^3}\\)',
+          '\\(\\rho = N M a^3\\)'
+        ],
+        reponse: 0,
+        explication: 'Masse des motifs (\\(N M/N_A\\)) divisée par le volume de maille (\\(a^3\\)).'
+      },
+      {
+        id: 'cri-q6',
+        question: 'Dans une maille CFC, un atome situé sur une face compte pour :',
+        options: ['1/2', '1/8', '1/4', '1'],
+        reponse: 0,
+        explication: 'Un atome de face est partagé entre 2 mailles → compte 1/2. Sommet : 1/8.'
+      },
+      {
+        id: 'cri-q7',
+        question: 'La relation rayon-arête d\'une maille CFC est :',
+        options: ['\\(4R = a\\sqrt{2}\\)', '\\(4R = a\\sqrt{3}\\)', '\\(2R = a\\)', '\\(R = a\\)'],
+        reponse: 0,
+        explication: 'Les atomes se touchent le long de la diagonale d\'une face : \\(4R = a\\sqrt2\\). (CC : \\(a\\sqrt3\\).)'
+      },
+      {
+        id: 'cri-q8',
+        question: 'Les dislocations sont responsables de :',
+        options: [
+          'La déformation plastique',
+          'La conductivité électrique',
+          'La couleur du métal',
+          'La masse volumique'
+        ],
+        reponse: 0,
+        explication: 'Les dislocations (défauts de dim. 1) permettent la déformation plastique et le durcissement.'
+      },
+      {
+        id: 'cri-q9',
+        question: 'Un atome de carbone inséré dans les sites interstitiels du fer crée :',
+        options: [
+          'Une solution solide d\'insertion',
+          'Une lacune',
+          'Un joint de grain',
+          'Un amorphe'
+        ],
+        reponse: 0,
+        explication: 'Le carbone se loge dans les interstices → solution solide d\'insertion (aciers, fontes).'
+      },
+      {
+        id: 'cri-q10',
+        question: 'Quel empilement correspond à la structure HC ?',
+        options: ['ABAB…', 'ABCABC…', 'AAAA…', 'ABBA…'],
+        reponse: 0,
+        explication: 'HC = empilement ABAB… ; CFC = ABCABC…'
+      }
+    ]
   }
 };
 
@@ -2122,7 +2614,8 @@ const MATIERES = [
       { id: 'maths-trigo', nom: 'Trigonométrie (rappel)' },
       { id: 'maths-analyse', nom: 'Analyse' },
       { id: 'maths-matrices', nom: 'Calcul matriciel' },
-      { id: 'maths-sl', nom: 'Systèmes linéaires' }
+      { id: 'maths-sl', nom: 'Systèmes linéaires' },
+      { id: 'maths-edo', nom: 'Équations différentielles & Laplace' }
     ]
   },
   {
@@ -2143,6 +2636,14 @@ const MATIERES = [
       { id: 'thermo-thermodynamique', nom: 'Thermodynamique' },
       { id: 'thermo-fluides', nom: 'Mécanique des fluides' },
       { id: 'thermo-confort', nom: 'Confort thermique (rappel)' }
+    ]
+  },
+  {
+    id: 'materiaux',
+    nom: 'Matériaux',
+    chapitres: [
+      { id: 'mat-structure', nom: 'Structure atomique & Liaisons' },
+      { id: 'mat-cristallo', nom: 'Cristallographie' }
     ]
   }
 ];
