@@ -1,6 +1,9 @@
 // ── SVG Circuit Schemas (static strings) ──────────────
 const SCHEMAS = {
 
+  // Moment d'une force : bras de levier
+  moment_levier: '<svg viewBox="0 0 300 190" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:300px;display:block;margin:10px auto" font-family="system-ui,sans-serif"><circle cx="60" cy="120" r="5" fill="#f59e0b"/><text x="46" y="118" fill="#f59e0b" font-size="13">O</text><line x1="60" y1="120" x2="230" y2="60" stroke="#475569" stroke-width="1" stroke-dasharray="4,3"/><line x1="200" y1="72" x2="270" y2="47" stroke="#22c55e" stroke-width="2.5"/><polygon points="262,42 276,45 264,54" fill="#22c55e"/><text x="250" y="40" fill="#22c55e" font-size="13">F</text><text x="150" y="58" fill="#94a3b8" font-size="11">ligne d\'action</text><line x1="60" y1="120" x2="139" y2="92" stroke="#ef4444" stroke-width="1.8"/><rect x="132" y="86" width="10" height="10" fill="none" stroke="#ef4444" stroke-width="1"/><text x="90" y="118" fill="#ef4444" font-size="12">d</text><path d="M96 108 A 40 40 0 0 1 108 96" fill="none" stroke="#ef4444" stroke-width="1"/><text x="60" y="165" text-anchor="middle" fill="#94a3b8" font-size="12">M_O = F &#xD7; d</text><text x="230" y="165" text-anchor="middle" fill="#94a3b8" font-size="11">= OA &#x2227; F</text></svg>',
+
   // Loi des nœuds
   noeuds: '<svg viewBox="0 0 260 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:260px;display:block;margin:10px auto"><line x1="20" y1="65" x2="124" y2="65" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round"/><polygon points="72,59 87,65 72,71" fill="#22c55e"/><text x="44" y="55" fill="#22c55e" font-size="12" font-family="system-ui,sans-serif">I&#x2081;</text><circle cx="130" cy="65" r="4" fill="#60a5fa"/><line x1="136" y1="65" x2="240" y2="65" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round"/><polygon points="183,59 198,65 183,71" fill="#22c55e"/><text x="200" y="55" fill="#22c55e" font-size="12" font-family="system-ui,sans-serif">I&#x2082;</text><line x1="130" y1="69" x2="130" y2="118" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round"/><polygon points="124,95 130,110 136,95" fill="#22c55e"/><text x="140" y="110" fill="#22c55e" font-size="12" font-family="system-ui,sans-serif">I&#x2083;</text><text x="130" y="18" text-anchor="middle" fill="#94a3b8" font-size="11" font-family="system-ui,sans-serif">I&#x2081; = I&#x2082; + I&#x2083;</text></svg>',
 
@@ -2583,6 +2586,342 @@ const CONTENT_DB = {
         explication: 'HC = empilement ABAB… ; CFC = ABCABC…'
       }
     ]
+  },
+
+  'rds-outils': {
+    id: 'rds-outils',
+    matiere: 'RDS',
+    chapitre: 'Outils mathématiques',
+    description: 'Repères, vecteurs, produits scalaire et vectoriel, changement de base et dérivation',
+    resume: {
+      sections: [
+        {
+          titre: 'Trigonométrie de base',
+          formule: 'H^2 = A^2 + B^2 \\qquad \\cos\\theta = \\frac{A}{H},\\ \\sin\\theta = \\frac{B}{H},\\ \\tan\\theta = \\frac{B}{A}',
+          contenu: 'Dans un triangle rectangle (H = hypoténuse, A = côté adjacent, B = opposé).\n\nTriangle quelconque :\n• Loi des sinus : \\(\\dfrac{a}{\\sin\\alpha} = \\dfrac{b}{\\sin\\beta} = \\dfrac{c}{\\sin\\gamma}\\)\n• Loi des cosinus : \\(a^2 = b^2 + c^2 - 2bc\\cos\\alpha\\)\n\n⚠️ Vérifier le mode (degrés/radians) de la calculatrice.'
+        },
+        {
+          titre: 'Systèmes de coordonnées',
+          formule: '\\begin{cases} x = r\\cos\\theta \\\\ y = r\\sin\\theta \\\\ z = z \\end{cases}',
+          contenu: 'Un repère = une origine O + une base orthonormée directe \\((\\vec{x}, \\vec{y}, \\vec{z})\\).\n\n• Cartésien : \\(\\vec{OM} = x\\vec{x} + y\\vec{y} + z\\vec{z}\\)\n• Cylindrique \\((r,\\theta,z)\\) : \\(\\vec{OM} = r\\vec{e_r} + z\\vec{e_z}\\) — utile en symétrie de révolution\n• Sphérique \\((\\rho,\\theta,\\psi)\\) : \\(\\vec{OM} = \\rho\\vec{u_r}\\) — utile en symétrie sphérique'
+        },
+        {
+          titre: 'Vecteurs et norme',
+          formule: '\\vec{u} = u_x\\vec{x} + u_y\\vec{y} + u_z\\vec{z} \\qquad \\|\\vec{u}\\| = \\sqrt{u_x^2 + u_y^2 + u_z^2}',
+          contenu: 'Un vecteur a une direction, un sens et une norme ; il est indépendant de son origine.\n\n⚠️ Ne pas confondre le vecteur \\(\\vec{u}\\) et sa valeur algébrique \\(u\\). La norme est un réel positif.\n\nLes projections d\'un vecteur sur la base s\'obtiennent par produit scalaire : \\(u_x = \\vec{u}\\cdot\\vec{x}\\), etc.'
+        },
+        {
+          titre: 'Produit scalaire',
+          formule: '\\vec{u}_1 \\cdot \\vec{u}_2 = \\|\\vec{u}_1\\|\\,\\|\\vec{u}_2\\|\\cos\\theta = x_1 x_2 + y_1 y_2 + z_1 z_2',
+          contenu: 'Le résultat est un SCALAIRE (nombre réel).\n\n• Commutatif : \\(\\vec{u}_1\\cdot\\vec{u}_2 = \\vec{u}_2\\cdot\\vec{u}_1\\)\n• Distributif : \\(\\vec{u}\\cdot(\\vec{v}+\\vec{w}) = \\vec{u}\\cdot\\vec{v} + \\vec{u}\\cdot\\vec{w}\\)\n• \\(\\vec{u}_1\\cdot\\vec{u}_2 = 0\\) si \\(\\vec{u}_1 = \\vec{0}\\), \\(\\vec{u}_2 = \\vec{0}\\), ou \\(\\vec{u}_1 \\perp \\vec{u}_2\\)\n\nBase orthonormée : \\(\\vec{x}\\cdot\\vec{x}=1\\), \\(\\vec{x}\\cdot\\vec{y}=0\\).'
+        },
+        {
+          titre: 'Produit vectoriel',
+          formule: '\\vec{w} = \\vec{u}\\wedge\\vec{v},\\quad \\|\\vec{w}\\| = \\|\\vec{u}\\|\\,\\|\\vec{v}\\|\\,\\sin\\theta',
+          contenu: 'Le résultat est un VECTEUR, orthogonal à \\(\\vec{u}\\) et \\(\\vec{v}\\) (sens : règle de la main droite).\n\nEn composantes :\n\\[ \\vec{u}\\wedge\\vec{v} = \\begin{pmatrix} y_1 z_2 - z_1 y_2 \\\\ z_1 x_2 - x_1 z_2 \\\\ x_1 y_2 - y_1 x_2 \\end{pmatrix} \\]\n\n• Antisymétrique : \\(\\vec{u}\\wedge\\vec{v} = -\\,\\vec{v}\\wedge\\vec{u}\\)\n• Base : \\(\\vec{x}\\wedge\\vec{y}=\\vec{z}\\), \\(\\vec{y}\\wedge\\vec{z}=\\vec{x}\\), \\(\\vec{z}\\wedge\\vec{x}=\\vec{y}\\)\n• Nul si les vecteurs sont colinéaires.'
+        },
+        {
+          titre: 'Changement de base (rotation)',
+          formule: '\\begin{cases} \\vec{x}_j = \\cos\\theta\\,\\vec{x}_i + \\sin\\theta\\,\\vec{y}_i \\\\ \\vec{y}_j = -\\sin\\theta\\,\\vec{x}_i + \\cos\\theta\\,\\vec{y}_i \\end{cases}',
+          contenu: 'Pour deux bases en rotation d\'angle \\(\\theta\\) autour de \\(\\vec{z}\\) commun (l\'angle va de \\(\\vec{x}_i\\) vers \\(\\vec{x}_j\\)).\n\n⚠️ Le SENS de l\'angle orienté est primordial : une orientation négative donne \\(\\sin\\theta < 0\\). Les erreurs de signe dans les projections sont la source d\'erreur n°1 en mécanique.\n\nMaîtriser cette projection est indispensable pour obtenir des résultats justes.'
+        },
+        {
+          titre: 'Dérivation d\'un vecteur',
+          formule: '\\left.\\frac{d\\vec{v}}{dt}\\right|_i = \\left.\\frac{d\\vec{v}}{dt}\\right|_j + \\vec{\\Omega}_{j/i} \\wedge \\vec{v}',
+          contenu: 'Formule de dérivation vectorielle entre deux bases en mouvement relatif.\n\n\\(\\vec{\\Omega}_{j/i}\\) = vecteur rotation de la base \\(j\\) par rapport à \\(i\\) :\n• Nul si les bases sont en translation.\n• Sinon dirigé selon l\'axe de rotation, de norme \\(\\dot{\\theta}\\) (rd/s).\n\nDériver un scalaire ne dépend pas de la base : \\(\\dfrac{df}{dt}\\big|_i = f\'(t)\\) pour toute base.'
+        }
+      ]
+    },
+    methodes: [
+      {
+        titre: 'Projeter un vecteur (composantes)',
+        contenu: 'On projette sur chaque axe par produit scalaire.\n\nPour un vecteur de norme \\(u\\) faisant un angle \\(\\theta\\) avec \\(\\vec{x}\\) :\n\\[ u_x = u\\cos\\theta, \\qquad u_y = u\\sin\\theta \\]\n\nInversement, à partir des composantes :\n\\[ u = \\sqrt{u_x^2 + u_y^2}, \\qquad \\tan\\theta = \\frac{u_y}{u_x} \\]\n\n⚠️ Bien surveiller les signes selon le quadrant.'
+      },
+      {
+        titre: 'Calculer un produit vectoriel',
+        contenu: 'Exemple : \\(\\vec{u}=(1,0,0)\\), \\(\\vec{v}=(0,1,0)\\).\n\nPar la formule des composantes :\n\\[ \\vec{u}\\wedge\\vec{v} = \\begin{pmatrix} 0{\\cdot}0 - 0{\\cdot}1 \\\\ 0{\\cdot}0 - 1{\\cdot}0 \\\\ 1{\\cdot}1 - 0{\\cdot}0 \\end{pmatrix} = \\begin{pmatrix} 0 \\\\ 0 \\\\ 1 \\end{pmatrix} = \\vec{z} \\]\n\nCohérent avec \\(\\vec{x}\\wedge\\vec{y} = \\vec{z}\\). Vérifier ensuite l\'orthogonalité par produit scalaire (\\(=0\\)).'
+      },
+      {
+        titre: 'Réussir un changement de base',
+        contenu: 'Méthode fiable :\n1. Repérer l\'axe commun (souvent \\(\\vec{z}\\)) et l\'angle orienté \\(\\theta\\) (de \\(\\vec{x}_i\\) vers \\(\\vec{x}_j\\)).\n2. Écrire les relations :\n\\[ \\vec{x}_j = \\cos\\theta\\,\\vec{x}_i + \\sin\\theta\\,\\vec{y}_i \\]\n\\[ \\vec{y}_j = -\\sin\\theta\\,\\vec{x}_i + \\cos\\theta\\,\\vec{y}_i \\]\n3. Le \\(\\sin\\) et le \\(\\cos\\) portent automatiquement les changements de signe : ne pas ré-ajouter de signe « à la main ».'
+      },
+      {
+        titre: '⚠️ Pièges sur les outils maths',
+        contenu: '• Produit scalaire → nombre (\\(\\cos\\)) ; produit vectoriel → vecteur (\\(\\sin\\)). Ne pas confondre.\n• Le produit vectoriel n\'est pas commutatif : \\(\\vec{u}\\wedge\\vec{v} = -\\vec{v}\\wedge\\vec{u}\\).\n• Signe de l\'angle orienté : une rotation négative change le signe des \\(\\sin\\).\n• Dériver un vecteur dans une base en rotation : ne pas oublier le terme \\(\\vec{\\Omega}\\wedge\\vec{v}\\).'
+      }
+    ],
+    quiz: [
+      {
+        id: 'rdo-q1',
+        question: 'Dans un triangle rectangle, \\(\\cos\\theta\\) vaut :',
+        options: ['adjacent / hypoténuse', 'opposé / hypoténuse', 'opposé / adjacent', 'hypoténuse / adjacent'],
+        reponse: 0,
+        explication: '\\(\\cos\\theta = A/H\\) (adjacent sur hypoténuse) ; \\(\\sin = B/H\\) ; \\(\\tan = B/A\\).'
+      },
+      {
+        id: 'rdo-q2',
+        question: 'La loi des cosinus s\'écrit :',
+        options: [
+          '\\(a^2 = b^2 + c^2 - 2bc\\cos\\alpha\\)',
+          '\\(a^2 = b^2 + c^2\\)',
+          '\\(a = b\\cos\\alpha\\)',
+          '\\(\\frac{a}{\\sin\\alpha} = b\\)'
+        ],
+        reponse: 0,
+        explication: 'Généralisation de Pythagore au triangle quelconque.'
+      },
+      {
+        id: 'rdo-q3',
+        question: 'Les coordonnées cylindriques sont adaptées à une symétrie :',
+        options: ['De révolution (autour d\'un axe)', 'Sphérique', 'Plane uniquement', 'Aucune'],
+        reponse: 0,
+        explication: 'Cylindriques \\((r,\\theta,z)\\) : idéales quand un axe de révolution existe.'
+      },
+      {
+        id: 'rdo-q4',
+        question: 'Le résultat d\'un produit scalaire est :',
+        options: ['Un scalaire', 'Un vecteur', 'Une matrice', 'Un angle'],
+        reponse: 0,
+        explication: '\\(\\vec{u}\\cdot\\vec{v}\\) est un nombre réel (avec \\(\\cos\\theta\\)).'
+      },
+      {
+        id: 'rdo-q5',
+        question: 'Le produit scalaire \\((2,3)\\cdot(4,-1)\\) vaut :',
+        options: ['5', '11', '8', '−3'],
+        reponse: 0,
+        explication: '\\(2\\times4 + 3\\times(-1) = 8 - 3 = 5\\).'
+      },
+      {
+        id: 'rdo-q6',
+        question: 'Le résultat d\'un produit vectoriel est :',
+        options: [
+          'Un vecteur orthogonal aux deux',
+          'Un scalaire',
+          'Toujours nul',
+          'Un vecteur colinéaire'
+        ],
+        reponse: 0,
+        explication: '\\(\\vec{u}\\wedge\\vec{v}\\) est orthogonal à \\(\\vec{u}\\) et \\(\\vec{v}\\) (main droite).'
+      },
+      {
+        id: 'rdo-q7',
+        question: 'Que vaut \\(\\vec{x}\\wedge\\vec{y}\\) dans une base directe ?',
+        options: ['\\(\\vec{z}\\)', '\\(-\\vec{z}\\)', '\\(\\vec{x}\\)', '\\(\\vec{0}\\)'],
+        reponse: 0,
+        explication: 'Base orthonormée directe : \\(\\vec{x}\\wedge\\vec{y}=\\vec{z}\\).'
+      },
+      {
+        id: 'rdo-q8',
+        question: 'Le produit vectoriel est :',
+        options: ['Antisymétrique', 'Commutatif', 'Un scalaire', 'Toujours nul'],
+        reponse: 0,
+        explication: '\\(\\vec{u}\\wedge\\vec{v} = -\\,\\vec{v}\\wedge\\vec{u}\\).'
+      },
+      {
+        id: 'rdo-q9',
+        question: 'Dans un changement de base par rotation \\(\\theta\\), \\(\\vec{x}_j\\) vaut :',
+        options: [
+          '\\(\\cos\\theta\\,\\vec{x}_i + \\sin\\theta\\,\\vec{y}_i\\)',
+          '\\(\\sin\\theta\\,\\vec{x}_i - \\cos\\theta\\,\\vec{y}_i\\)',
+          '\\(\\cos\\theta\\,\\vec{x}_i\\)',
+          '\\(-\\sin\\theta\\,\\vec{x}_i + \\cos\\theta\\,\\vec{y}_i\\)'
+        ],
+        reponse: 0,
+        explication: '\\(\\vec{x}_j = \\cos\\theta\\,\\vec{x}_i + \\sin\\theta\\,\\vec{y}_i\\) ; \\(\\vec{y}_j = -\\sin\\theta\\,\\vec{x}_i + \\cos\\theta\\,\\vec{y}_i\\).'
+      },
+      {
+        id: 'rdo-q10',
+        question: 'Le vecteur rotation \\(\\vec{\\Omega}_{j/i}\\) est nul quand les bases sont :',
+        options: ['En translation', 'En rotation', 'Orthogonales', 'Identiques en norme'],
+        reponse: 0,
+        explication: '\\(\\vec{\\Omega} = \\vec{0}\\) en translation ; non nul (selon l\'axe, norme \\(\\dot\\theta\\)) en rotation.'
+      }
+    ]
+  },
+
+  'rds-forces': {
+    id: 'rds-forces',
+    matiere: 'RDS',
+    chapitre: 'Forces, moments & couples',
+    description: 'Résultante, moment d\'une force, couple, centre de gravité et moments quadratiques',
+    resume: {
+      sections: [
+        {
+          titre: 'Forces concourantes & résultante',
+          formule: '\\vec{R} = \\vec{F}_1 + \\vec{F}_2 + \\cdots',
+          contenu: 'Des forces concourantes coplanaires ont le même point d\'application et sont dans un même plan.\n\nLa résultante \\(\\vec{R}\\) est la force unique équivalente au système. Graphiquement : forces bout à bout (dyname). Analytiquement : on somme les composantes.\n\\[ R = \\sqrt{R_x^2 + R_y^2}, \\qquad \\alpha_R = \\arctan\\frac{R_y}{R_x} \\]'
+        },
+        {
+          titre: 'Décomposition & action-réaction',
+          contenu: 'Une force peut être décomposée en plusieurs composantes de directions choisies (utile pour les problèmes d\'équilibre).\n\nPrincipe d\'action-réaction (Newton) : si A exerce une force sur B, B exerce sur A une force de même support, même grandeur, sens opposé. Les forces vont toujours par paires.\n\nUn corps en équilibre (immobile) ⟺ dyname fermé (\\(\\vec{R} = \\vec{0}\\)).'
+        },
+        {
+          titre: 'Moment d\'une force',
+          schema: 'moment_levier',
+          formule: 'M_O = F \\times d',
+          contenu: 'Le moment d\'une force \\(\\vec{F}\\) par rapport à un point O = produit de \\(F\\) par le bras de levier \\(d\\) (distance perpendiculaire de O à la ligne d\'action).\n\nUnité : N·m. Sens : positif dans le sens trigonométrique (anti-horaire).\n\nForme vectorielle : \\(\\vec{M}_O(\\vec{F}) = \\vec{OA}\\wedge\\vec{F}\\). En problème plan, \\(\\vec{M} = M_z\\,\\vec{z}\\).'
+        },
+        {
+          titre: 'Théorème de Varignon',
+          formule: 'M_O = F_x\\,d_y + F_y\\,d_x',
+          contenu: 'Le moment d\'une force par rapport à un point = somme des moments de ses composantes \\(F_x\\), \\(F_y\\) par rapport à ce point.\n\nPour plusieurs forces, le moment résultant = somme algébrique des moments de chaque force. Les moments s\'additionnent algébriquement.'
+        },
+        {
+          titre: 'Transport de moment',
+          formule: '\\vec{M}_B(\\vec{R}) = \\vec{M}_A(\\vec{R}) + \\vec{BA}\\wedge\\vec{R}',
+          contenu: 'Pour changer le point de calcul d\'un moment (« BABAR ») : le moment en B = moment en A + \\(\\vec{BA}\\wedge\\vec{R}\\).\n\nRappel produit vectoriel : \\(\\vec{x}\\wedge\\vec{y}=\\vec{z}\\), etc.\n\nLa résultante \\(\\vec{R}\\), elle, ne dépend pas du point.'
+        },
+        {
+          titre: 'Couple et réduction',
+          formule: 'M = F \\times d \\quad (\\vec{R} = \\vec{0})',
+          contenu: 'Un couple = deux forces égales, opposées, à lignes d\'action parallèles. Sa résultante est nulle mais son moment \\(M = F\\,d\\) est constant (indépendant du point) → le couple peut être déplacé librement.\n\nRéduction : toute force appliquée en un point peut être transportée en un autre point A à condition d\'ajouter un couple de moment \\(\\pm F\\,d\\). On obtient un système « couple-force » équivalent.'
+        },
+        {
+          titre: 'Centre de gravité',
+          formule: 'Y_G = \\frac{\\displaystyle\\iint y\\,dS}{S} \\qquad X_G = \\frac{\\displaystyle\\iint x\\,dS}{S}',
+          contenu: 'Le centre de gravité (barycentre) d\'une section est la moyenne pondérée des positions.\n\nPour une section décomposable en sous-sections d\'aires \\(S_i\\) et centres \\((X_{Gi}, Y_{Gi})\\) :\n\\[ X_G = \\frac{\\sum S_i X_{Gi}}{\\sum S_i} \\]\n\nSi la section a un axe de symétrie, G est forcément sur cet axe.'
+        },
+        {
+          titre: 'Théorèmes de Guldin',
+          formule: 'S = L\\cdot 2\\pi r_G \\qquad V = S\\cdot 2\\pi r_G',
+          contenu: '• 1er (surface) : l\'aire engendrée par une courbe tournant autour d\'un axe (ne la traversant pas) = longueur de la courbe × circonférence décrite par son barycentre.\n• 2e (volume) : le volume engendré par une surface tournant autour d\'un axe = aire × circonférence décrite par son barycentre.\n\nPratique pour trouver un centre de gravité ou une aire/volume de révolution.'
+        },
+        {
+          titre: 'Moment quadratique (inertie)',
+          formule: 'I_{Ox} = \\iint y^2\\,dS \\qquad I_{rect/GZ} = \\frac{b\\,h^3}{12}',
+          contenu: 'Le moment quadratique caractérise la répartition géométrique de la matière autour d\'un axe (toujours positif). Il est d\'autant plus grand que la matière est éloignée de l\'axe.\n\n• Rectangle (base b, hauteur h) : \\(I_{GZ} = \\dfrac{b h^3}{12}\\)\n• Moment polaire : \\(I_O = \\iint r^2\\,dS = I_{Ox} + I_{Oy}\\) (car \\(r^2 = x^2 + y^2\\))\n\nÀ ne pas confondre avec le moment statique \\(\\iint y\\,dS\\).'
+        },
+        {
+          titre: 'Théorème de Huygens',
+          formule: 'I_{\\Delta} = I_{G} + S\\,d^2',
+          contenu: 'Le moment quadratique par rapport à un axe \\(\\Delta\\) = moment par rapport à l\'axe parallèle passant par G, augmenté de \\(S\\,d^2\\) (\\(d\\) = distance entre les deux axes).\n\nPour une section composée : \\(I_\\Delta = \\sum (I_{Gi} + S_i d_i^2)\\).\n\nLes moments quadratiques s\'ajoutent et se retranchent → pratique pour les sections composées (ex : profilé en I).'
+        }
+      ]
+    },
+    methodes: [
+      {
+        titre: 'Calculer une résultante (méthode analytique)',
+        contenu: 'On projette chaque force sur x et y, on somme, puis on recompose.\n\n1. Pour chaque force : \\(F_{ix} = F_i\\cos\\alpha_i\\), \\(F_{iy} = F_i\\sin\\alpha_i\\).\n2. Sommer : \\(R_x = \\sum F_{ix}\\), \\(R_y = \\sum F_{iy}\\).\n3. Recomposer :\n\\[ R = \\sqrt{R_x^2 + R_y^2}, \\qquad \\alpha_R = \\arctan\\frac{R_y}{R_x} \\]\n\n⚠️ Attention au quadrant pour l\'angle final.'
+      },
+      {
+        titre: 'Calculer un moment (bras de levier ou vectoriel)',
+        contenu: 'Deux méthodes équivalentes :\n\n• Bras de levier : \\(M_O = F \\times d\\), avec \\(d\\) la distance perpendiculaire de O à la ligne d\'action. Signe : + si anti-horaire.\n\n• Vectorielle : \\(\\vec{M}_O = \\vec{OA}\\wedge\\vec{F}\\) où A est un point quelconque de la ligne d\'action.\n\nEn plan : \\(M_z = x F_y - y F_x\\) (Varignon).'
+      },
+      {
+        titre: 'Transporter un moment en un autre point',
+        contenu: 'On utilise la relation « BABAR » :\n\\[ \\vec{M}_B = \\vec{M}_A + \\vec{BA}\\wedge\\vec{R} \\]\n\nÉtapes :\n1. Connaître le moment en A et la résultante \\(\\vec{R}\\).\n2. Calculer le vecteur \\(\\vec{BA}\\).\n3. Faire le produit vectoriel et l\'ajouter.\n\nUtile pour réduire un système de forces en un point choisi.'
+      },
+      {
+        titre: 'Appliquer Huygens à une section composée',
+        contenu: 'Pour le moment quadratique d\'une section en I, T… décomposée en rectangles :\n\n1. Trouver le centre de gravité G global.\n2. Pour chaque sous-section : \\(I_{Gi} = \\dfrac{b_i h_i^3}{12}\\).\n3. Transporter à G global :\n\\[ I_i = I_{Gi} + S_i d_i^2 \\]\n4. Sommer : \\(I_G = \\sum I_i\\).\n\nLes aires évidées (trous) se retranchent.'
+      },
+      {
+        titre: '⚠️ Pièges en statique',
+        contenu: '• Le bras de levier \\(d\\) est la distance PERPENDICULAIRE à la ligne d\'action, pas la distance au point d\'application.\n• Un couple a une résultante nulle mais un moment non nul.\n• Moment statique (\\(\\iint y\\,dS\\), peut être nul/négatif) ≠ moment quadratique (\\(\\iint y^2\\,dS\\), toujours positif).\n• Huygens : le terme \\(S d^2\\) s\'AJOUTE toujours (on s\'éloigne de G).\n• Toujours travailler par rapport au bon axe (celui passant par G pour les contraintes).'
+      }
+    ],
+    quiz: [
+      {
+        id: 'rdf-q1',
+        question: 'La résultante d\'un système de forces concourantes est :',
+        options: [
+          'La force unique équivalente au système',
+          'La plus grande des forces',
+          'Toujours nulle',
+          'La moyenne des forces'
+        ],
+        reponse: 0,
+        explication: 'C\'est la force unique dont l\'effet équivaut à celui de tout le système.'
+      },
+      {
+        id: 'rdf-q2',
+        question: 'Un corps est en équilibre (immobile) lorsque :',
+        options: [
+          'Le dyname est fermé (R = 0)',
+          'Une seule force agit',
+          'La résultante est maximale',
+          'Les moments sont maximaux'
+        ],
+        reponse: 0,
+        explication: 'Dyname fermé ⟺ \\(\\vec{R} = \\vec{0}\\) ⟺ corps en équilibre.'
+      },
+      {
+        id: 'rdf-q3',
+        question: 'Le moment d\'une force par rapport à un point vaut :',
+        options: ['\\(M = F \\times d\\)', '\\(M = F / d\\)', '\\(M = F + d\\)', '\\(M = F \\times F\\)'],
+        reponse: 0,
+        explication: '\\(M_O = F \\times d\\), où \\(d\\) est le bras de levier (distance perpendiculaire). Unité : N·m.'
+      },
+      {
+        id: 'rdf-q4',
+        question: 'Le bras de levier d est :',
+        options: [
+          'La distance perpendiculaire de O à la ligne d\'action',
+          'La distance de O au point d\'application',
+          'La longueur de la force',
+          'L\'angle de la force'
+        ],
+        reponse: 0,
+        explication: 'C\'est la distance perpendiculaire abaissée de O sur la ligne d\'action de F.'
+      },
+      {
+        id: 'rdf-q5',
+        question: 'La forme vectorielle du moment est :',
+        options: ['\\(\\vec{M}_O = \\vec{OA}\\wedge\\vec{F}\\)', '\\(\\vec{M}_O = \\vec{OA}\\cdot\\vec{F}\\)', '\\(\\vec{M}_O = \\vec{OA}+\\vec{F}\\)', '\\(\\vec{M}_O = \\vec{F}/\\vec{OA}\\)'],
+        reponse: 0,
+        explication: 'Produit vectoriel : \\(\\vec{M}_O(\\vec{F}) = \\vec{OA}\\wedge\\vec{F}\\).'
+      },
+      {
+        id: 'rdf-q6',
+        question: 'Un couple de forces se caractérise par :',
+        options: [
+          'Résultante nulle, moment non nul',
+          'Résultante non nulle, moment nul',
+          'Résultante et moment nuls',
+          'Une seule force'
+        ],
+        reponse: 0,
+        explication: 'Deux forces égales opposées parallèles : \\(\\vec{R}=\\vec{0}\\) mais \\(M = F d \\neq 0\\).'
+      },
+      {
+        id: 'rdf-q7',
+        question: 'Le théorème de Varignon dit que le moment résultant est :',
+        options: [
+          'La somme des moments de chaque force',
+          'Le produit des moments',
+          'Le moment de la plus grande force',
+          'Toujours nul'
+        ],
+        reponse: 0,
+        explication: 'Les moments s\'additionnent algébriquement.'
+      },
+      {
+        id: 'rdf-q8',
+        question: 'Si une section a un axe de symétrie, son centre de gravité :',
+        options: [
+          'Est situé sur cet axe',
+          'Est au coin de la section',
+          'N\'existe pas',
+          'Est hors de la section'
+        ],
+        reponse: 0,
+        explication: 'Le barycentre appartient nécessairement à tout axe de symétrie.'
+      },
+      {
+        id: 'rdf-q9',
+        question: 'Le moment quadratique d\'une section rectangulaire (base b, hauteur h) par rapport à GZ est :',
+        options: ['\\(\\dfrac{b h^3}{12}\\)', '\\(\\dfrac{b h^3}{3}\\)', '\\(\\dfrac{b h^2}{6}\\)', '\\(b h\\)'],
+        reponse: 0,
+        explication: '\\(I_{GZ} = \\dfrac{b h^3}{12}\\) (axe passant par le centre de gravité).'
+      },
+      {
+        id: 'rdf-q10',
+        question: 'Le théorème de Huygens s\'écrit :',
+        options: ['\\(I_\\Delta = I_G + S d^2\\)', '\\(I_\\Delta = I_G - S d^2\\)', '\\(I_\\Delta = I_G \\times d\\)', '\\(I_\\Delta = S d^2\\)'],
+        reponse: 0,
+        explication: 'On ajoute \\(S d^2\\) au moment par rapport à l\'axe passant par G (d = distance entre axes).'
+      }
+    ]
   }
 };
 
@@ -2644,6 +2983,14 @@ const MATIERES = [
     chapitres: [
       { id: 'mat-structure', nom: 'Structure atomique & Liaisons' },
       { id: 'mat-cristallo', nom: 'Cristallographie' }
+    ]
+  },
+  {
+    id: 'rds',
+    nom: 'Résistance des structures',
+    chapitres: [
+      { id: 'rds-outils', nom: 'Outils mathématiques' },
+      { id: 'rds-forces', nom: 'Forces, moments & couples' }
     ]
   }
 ];
