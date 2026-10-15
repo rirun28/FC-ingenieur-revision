@@ -1,6 +1,18 @@
 // ── SVG Circuit Schemas (static strings) ──────────────
 const SCHEMAS = {
 
+  // Boucle d'asservissement (retour unitaire)
+  boucle_fermee: '<svg viewBox="0 0 360 150" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:360px;display:block;margin:10px auto" font-family="system-ui,sans-serif"><line x1="12" y1="55" x2="52" y2="55" stroke="#94a3b8" stroke-width="2"/><polygon points="46,51 56,55 46,59" fill="#94a3b8"/><text x="10" y="46" fill="#cbd5e1" font-size="11">X_c(p)</text><circle cx="66" cy="55" r="12" fill="#334155" stroke="#60a5fa" stroke-width="1.5"/><text x="66" y="60" text-anchor="middle" fill="#60a5fa" font-size="13">+</text><text x="55" y="80" fill="#ef4444" font-size="12">&#x2212;</text><line x1="78" y1="55" x2="120" y2="55" stroke="#94a3b8" stroke-width="2"/><polygon points="114,51 124,55 114,59" fill="#94a3b8"/><text x="90" y="48" fill="#22c55e" font-size="11">&#x3B5;(p)</text><rect x="124" y="38" width="56" height="34" fill="#334155" stroke="#f59e0b" stroke-width="1.5" rx="3"/><text x="152" y="59" text-anchor="middle" fill="#f59e0b" font-size="13">C(p)</text><line x1="180" y1="55" x2="212" y2="55" stroke="#94a3b8" stroke-width="2"/><polygon points="206,51 216,55 206,59" fill="#94a3b8"/><rect x="216" y="38" width="56" height="34" fill="#334155" stroke="#f59e0b" stroke-width="1.5" rx="3"/><text x="244" y="59" text-anchor="middle" fill="#f59e0b" font-size="13">H(p)</text><line x1="272" y1="55" x2="340" y2="55" stroke="#94a3b8" stroke-width="2"/><polygon points="334,51 344,55 334,59" fill="#94a3b8"/><text x="320" y="46" fill="#cbd5e1" font-size="11">X(p)</text><circle cx="306" cy="55" r="3.5" fill="#94a3b8"/><line x1="306" y1="55" x2="306" y2="120" stroke="#94a3b8" stroke-width="2"/><line x1="306" y1="120" x2="66" y2="120" stroke="#94a3b8" stroke-width="2"/><line x1="66" y1="120" x2="66" y2="67" stroke="#94a3b8" stroke-width="2"/><polygon points="62,75 66,65 70,75" fill="#94a3b8"/><text x="150" y="137" text-anchor="middle" fill="#94a3b8" font-size="10">retour (mesure de la sortie)</text></svg>',
+
+  // Masse - ressort - amortisseur (1 ddl)
+  masse_ressort_amortisseur: '<svg viewBox="0 0 220 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:200px;display:block;margin:10px auto" font-family="system-ui,sans-serif"><line x1="20" y1="20" x2="200" y2="20" stroke="#94a3b8" stroke-width="2.5"/><line x1="25" y1="20" x2="18" y2="12" stroke="#94a3b8" stroke-width="1"/><line x1="45" y1="20" x2="38" y2="12" stroke="#94a3b8" stroke-width="1"/><line x1="65" y1="20" x2="58" y2="12" stroke="#94a3b8" stroke-width="1"/><line x1="160" y1="20" x2="153" y2="12" stroke="#94a3b8" stroke-width="1"/><line x1="180" y1="20" x2="173" y2="12" stroke="#94a3b8" stroke-width="1"/><path d="M70 20 L70 40 L58 46 L82 54 L58 62 L82 70 L58 78 L70 84 L70 100" fill="none" stroke="#60a5fa" stroke-width="2"/><text x="40" y="65" fill="#60a5fa" font-size="13">K</text><line x1="150" y1="20" x2="150" y2="40" stroke="#22c55e" stroke-width="2"/><rect x="138" y="40" width="24" height="30" fill="none" stroke="#22c55e" stroke-width="2"/><line x1="150" y1="48" x2="150" y2="100" stroke="#22c55e" stroke-width="2"/><rect x="142" y="55" width="16" height="14" fill="#22c55e" opacity="0.5"/><text x="170" y="60" fill="#22c55e" font-size="13">C</text><rect x="55" y="100" width="110" height="50" fill="#334155" stroke="#f59e0b" stroke-width="2" rx="4"/><text x="110" y="130" text-anchor="middle" fill="#f59e0b" font-size="16">M</text><line x1="110" y1="150" x2="110" y2="185" stroke="#ef4444" stroke-width="2"/><polygon points="105,178 110,190 115,178" fill="#ef4444"/><text x="116" y="180" fill="#ef4444" font-size="12">x(t)</text><text x="110" y="215" text-anchor="middle" fill="#94a3b8" font-size="11">M&#xB7;x&#x308; + C&#xB7;x&#x307; + K&#xB7;x = F(t)</text></svg>',
+
+  // Courbe contrainte-déformation (essai de traction)
+  courbe_traction: '<svg viewBox="0 0 300 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:300px;display:block;margin:10px auto" font-family="system-ui,sans-serif"><line x1="40" y1="175" x2="285" y2="175" stroke="#475569" stroke-width="1.5"/><line x1="40" y1="20" x2="40" y2="175" stroke="#475569" stroke-width="1.5"/><text x="278" y="195" fill="#94a3b8" font-size="12">&#x3B5;</text><text x="20" y="28" fill="#94a3b8" font-size="12">&#x3C3;</text><line x1="40" y1="175" x2="110" y2="80" stroke="#60a5fa" stroke-width="2.5"/><path d="M110 80 Q150 45 200 48 Q230 50 255 95" fill="none" stroke="#60a5fa" stroke-width="2.5"/><circle cx="255" cy="95" r="4" fill="#ef4444"/><text x="258" y="90" fill="#ef4444" font-size="11">rupture</text><line x1="40" y1="80" x2="110" y2="80" stroke="#475569" stroke-width="0.8" stroke-dasharray="3,2"/><text x="44" y="76" fill="#22c55e" font-size="10">Re</text><line x1="40" y1="48" x2="200" y2="48" stroke="#475569" stroke-width="0.8" stroke-dasharray="3,2"/><text x="44" y="44" fill="#f59e0b" font-size="10">Rm</text><text x="62" y="135" fill="#60a5fa" font-size="10">&#xE9;lastique</text><text x="150" y="38" fill="#60a5fa" font-size="10">plastique</text><text x="150" y="130" text-anchor="middle" fill="#94a3b8" font-size="10">pente = E (Young)</text></svg>',
+
+  // Programmation linéaire : domaine réalisable
+  polygone_lp: '<svg viewBox="0 0 240 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:240px;display:block;margin:10px auto" font-family="system-ui,sans-serif"><line x1="35" y1="175" x2="225" y2="175" stroke="#475569" stroke-width="1.5"/><line x1="35" y1="20" x2="35" y2="175" stroke="#475569" stroke-width="1.5"/><text x="218" y="193" fill="#94a3b8" font-size="12">x&#x2081;</text><text x="18" y="28" fill="#94a3b8" font-size="12">x&#x2082;</text><polygon points="35,175 160,175 130,90 70,60 35,80" fill="#3b82f6" fill-opacity="0.22" stroke="#60a5fa" stroke-width="2"/><circle cx="130" cy="90" r="4.5" fill="#f59e0b"/><text x="136" y="86" fill="#f59e0b" font-size="11">optimum</text><line x1="150" y1="40" x2="70" y2="150" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="5,3"/><text x="150" y="150" fill="#94a3b8" font-size="10">domaine</text><text x="150" y="163" fill="#94a3b8" font-size="10">r&#xE9;alisable</text><text x="155" y="45" fill="#ef4444" font-size="10">iso-profit</text></svg>',
+
   // Moment d'une force : bras de levier
   moment_levier: '<svg viewBox="0 0 300 190" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:300px;display:block;margin:10px auto" font-family="system-ui,sans-serif"><circle cx="60" cy="120" r="5" fill="#f59e0b"/><text x="46" y="118" fill="#f59e0b" font-size="13">O</text><line x1="60" y1="120" x2="230" y2="60" stroke="#475569" stroke-width="1" stroke-dasharray="4,3"/><line x1="200" y1="72" x2="270" y2="47" stroke="#22c55e" stroke-width="2.5"/><polygon points="262,42 276,45 264,54" fill="#22c55e"/><text x="250" y="40" fill="#22c55e" font-size="13">F</text><text x="150" y="58" fill="#94a3b8" font-size="11">ligne d\'action</text><line x1="60" y1="120" x2="139" y2="92" stroke="#ef4444" stroke-width="1.8"/><rect x="132" y="86" width="10" height="10" fill="none" stroke="#ef4444" stroke-width="1"/><text x="90" y="118" fill="#ef4444" font-size="12">d</text><path d="M96 108 A 40 40 0 0 1 108 96" fill="none" stroke="#ef4444" stroke-width="1"/><text x="60" y="165" text-anchor="middle" fill="#94a3b8" font-size="12">M_O = F &#xD7; d</text><text x="230" y="165" text-anchor="middle" fill="#94a3b8" font-size="11">= OA &#x2227; F</text></svg>',
 
@@ -2922,6 +2934,683 @@ const CONTENT_DB = {
         explication: 'On ajoute \\(S d^2\\) au moment par rapport à l\'axe passant par G (d = distance entre axes).'
       }
     ]
+  },
+
+  'mat-proprietes': {
+    id: 'mat-proprietes',
+    matiere: 'Matériaux',
+    chapitre: 'Propriétés mécaniques',
+    description: 'Contrainte, déformation, essai de traction, dureté, résilience et fatigue',
+    resume: {
+      sections: [
+        {
+          titre: 'Contrainte et déformation',
+          formule: '\\sigma = \\frac{F}{S} \\qquad \\varepsilon = \\frac{\\Delta L}{L_0}',
+          contenu: 'Deux grandeurs fondamentales :\n• Contrainte \\(\\sigma\\) : force rapportée à la surface, en Pa (souvent MPa ou GPa). Intensité de la sollicitation.\n• Déformation \\(\\varepsilon\\) : variation relative de longueur, sans unité (souvent en %).\n\nDeux types de déformation :\n• Élastique : réversible (le matériau reprend sa forme).\n• Plastique : irréversible (déformation permanente).'
+        },
+        {
+          titre: 'Essai de traction',
+          schema: 'courbe_traction',
+          contenu: 'On tire sur une éprouvette et on trace la courbe \\(\\sigma\\)–\\(\\varepsilon\\). Elle révèle les propriétés mécaniques :\n\n• Domaine élastique (linéaire) : pente = module de Young.\n• Limite d\'élasticité \\(R_e\\) : fin du domaine réversible.\n• Résistance à la traction \\(R_m\\) : contrainte maximale.\n• Striction puis rupture.\n\nLa striction (réduction de section) apparaît après \\(R_m\\).'
+        },
+        {
+          titre: 'Loi de Hooke & module de Young',
+          formule: '\\sigma = E\\,\\varepsilon',
+          contenu: 'Dans le domaine élastique, contrainte et déformation sont proportionnelles (loi de Hooke).\n\nLe module de Young \\(E\\) (en GPa) mesure la RIGIDITÉ : un \\(E\\) élevé = peu de déformation sous charge.\n\nExemples : acier \\(E \\approx 210\\) GPa, aluminium \\(E \\approx 70\\) GPa. L\'aluminium se déforme donc ~3× plus que l\'acier à contrainte égale.'
+        },
+        {
+          titre: 'Limite élastique, résistance, ductilité',
+          formule: 'R_e,\\ R_m\\ (\\text{MPa}) \\qquad A\\% = \\frac{L_f - L_0}{L_0}\\times 100',
+          contenu: '• \\(R_e\\) (ou \\(R_{e0{,}2}\\)) : limite d\'élasticité — au-delà, déformation permanente.\n• \\(R_m\\) : résistance maximale à la traction.\n• Allongement à la rupture \\(A\\%\\) : mesure la ductilité.\n\nMatériau ductile : grande déformation plastique avant rupture (métaux). Matériau fragile : rupture sans déformation plastique (céramiques, verre).'
+        },
+        {
+          titre: 'Dureté',
+          contenu: 'La dureté = résistance à une déformation plastique localisée (pénétration d\'un indenteur). Sans unité (indice).\n\nTrois essais principaux :\n• Brinell (HBW) : bille\n• Vickers (HV) : pyramide diamant\n• Rockwell (HRC, HRB) : cône ou bille, lecture directe\n\nLa dureté est corrélée à la résistance \\(R_m\\).'
+        },
+        {
+          titre: 'Résilience et ténacité',
+          contenu: '• Résilience : énergie absorbée à la rupture lors d\'un choc (essai de flexion par choc — mouton pendule Charpy), en Joules.\n• Ténacité : capacité à absorber de l\'énergie et à s\'opposer à la propagation des fissures (aire sous la courbe \\(\\sigma\\)–\\(\\varepsilon\\), ou \\(K_{IC}\\)).\n\nUn matériau tenace résiste à la fissuration ; un matériau fragile non.\n\nPour les plastiques, la température de transition vitreuse \\(T_g\\) sépare les comportements fragile / ductile.'
+        },
+        {
+          titre: 'Fatigue',
+          formule: '\\sigma_D \\text{ : limite de fatigue}',
+          contenu: 'La fatigue est la rupture sous des contraintes répétées (cycliques), même inférieures à la limite d\'élasticité, après un grand nombre de cycles.\n\nLa limite de fatigue \\(\\sigma_D\\) est la contrainte en dessous de laquelle la pièce ne rompt jamais (courbe de Wöhler).\n\n⚠️ Les défauts géométriques (angles vifs, entailles) concentrent les contraintes et réduisent fortement la tenue en fatigue.'
+        },
+        {
+          titre: 'Écrouissage',
+          contenu: 'L\'écrouissage = durcissement d\'un métal par déformation plastique (ex : laminage, emboutissage). La multiplication des dislocations gêne leur mouvement.\n\nEffet : \\(R_e\\), \\(R_m\\) et la dureté AUGMENTENT, mais la ductilité DIMINUE.\n\nUn recuit (traitement thermique) permet ensuite de restaurer la ductilité. La relation de Hall-Petch lie la limite élastique à la taille de grain (grain plus fin → plus dur).'
+        }
+      ]
+    },
+    methodes: [
+      {
+        titre: 'Calculer une contrainte de traction',
+        contenu: 'Exemple : fil d\'aluminium de diamètre 2 mm soutenant 15 kg.\n\nSection :\n\\[ S = \\pi r^2 = \\pi (10^{-3})^2 \\approx 3{,}14\\times10^{-6}\\ \\text{m}^2 \\]\n\nForce (poids) : \\(F = mg = 15\\times 9{,}81 \\approx 147\\ \\text{N}\\).\n\nContrainte :\n\\[ \\sigma = \\frac{F}{S} = \\frac{147}{3{,}14\\times10^{-6}} \\approx 47\\ \\text{MPa} \\]\n\nÀ comparer à \\(R_e = 60\\) MPa : \\(47 < 60\\) → le fil reste dans le domaine élastique (pas de rupture).'
+      },
+      {
+        titre: 'Exploiter la loi de Hooke',
+        contenu: 'Dans le domaine élastique, \\(\\sigma = E\\varepsilon\\) donne la déformation :\n\\[ \\varepsilon = \\frac{\\sigma}{E} \\]\n\nÀ contrainte égale, le rapport des déformations de deux matériaux est l\'inverse du rapport des modules :\n\\[ \\frac{\\varepsilon_{alu}}{\\varepsilon_{acier}} = \\frac{E_{acier}}{E_{alu}} = \\frac{210}{70} = 3 \\]\n\nL\'aluminium se déforme 3× plus que l\'acier.'
+      },
+      {
+        titre: 'Lire une courbe de traction',
+        contenu: 'Dans l\'ordre, sur la courbe \\(\\sigma\\)–\\(\\varepsilon\\) :\n1. Partie linéaire (élastique) → pente = \\(E\\).\n2. Fin de la linéarité → limite élastique \\(R_e\\).\n3. Sommet de la courbe → résistance \\(R_m\\).\n4. Striction (la section diminue localement).\n5. Point final → rupture, donne \\(A\\%\\).\n\nL\'aire sous la courbe représente la ténacité (énergie absorbée).'
+      },
+      {
+        titre: '⚠️ Pièges sur les propriétés mécaniques',
+        contenu: '• La loi de Hooke \\(\\sigma = E\\varepsilon\\) ne vaut que dans le domaine ÉLASTIQUE.\n• La striction apparaît APRÈS \\(R_m\\), pas entre \\(R_e\\) et \\(R_m\\).\n• Écrouissage : augmente \\(R_e\\)/\\(R_m\\)/dureté mais DIMINUE la ductilité.\n• Ductile ≠ élastique : la ductilité est une capacité de déformation PLASTIQUE.\n• La fatigue peut rompre une pièce sous une contrainte pourtant inférieure à \\(R_e\\).'
+      }
+    ],
+    quiz: [
+      {
+        id: 'mpr-q1',
+        question: 'La contrainte \\(\\sigma\\) est définie par :',
+        options: ['\\(F/S\\)', '\\(\\Delta L/L_0\\)', '\\(F \\times S\\)', '\\(E \\times S\\)'],
+        reponse: 0,
+        explication: 'Contrainte = force / surface (en Pa, souvent MPa).'
+      },
+      {
+        id: 'mpr-q2',
+        question: 'La déformation \\(\\varepsilon\\) est :',
+        options: ['\\(\\Delta L/L_0\\) (sans unité)', '\\(F/S\\) en MPa', 'une force', 'en Newton'],
+        reponse: 0,
+        explication: 'Variation relative de longueur, sans unité (souvent en %).'
+      },
+      {
+        id: 'mpr-q3',
+        question: 'La loi de Hooke (domaine élastique) s\'écrit :',
+        options: ['\\(\\sigma = E\\,\\varepsilon\\)', '\\(\\sigma = E/\\varepsilon\\)', '\\(\\varepsilon = E\\,\\sigma\\)', '\\(\\sigma = F\\,\\varepsilon\\)'],
+        reponse: 0,
+        explication: 'Contrainte proportionnelle à la déformation, coefficient = module de Young E.'
+      },
+      {
+        id: 'mpr-q4',
+        question: 'Le module de Young E caractérise :',
+        options: ['La rigidité', 'La dureté', 'La ductilité', 'La densité'],
+        reponse: 0,
+        explication: 'E = rigidité : un E élevé signifie peu de déformation sous charge.'
+      },
+      {
+        id: 'mpr-q5',
+        question: 'Un matériau fragile se caractérise par :',
+        options: [
+          'Une rupture sans déformation plastique',
+          'Une grande déformation plastique',
+          'Un module de Young nul',
+          'Une forte ductilité'
+        ],
+        reponse: 0,
+        explication: 'Fragile = casse net, sans se déformer plastiquement (ex : verre, céramique).'
+      },
+      {
+        id: 'mpr-q6',
+        question: 'La limite d\'élasticité \\(R_e\\) marque :',
+        options: [
+          'Le début de la déformation permanente',
+          'La rupture du matériau',
+          'Le début de l\'essai',
+          'La fin de la striction'
+        ],
+        reponse: 0,
+        explication: 'Au-delà de \\(R_e\\), la déformation devient irréversible (plastique).'
+      },
+      {
+        id: 'mpr-q7',
+        question: 'Quel essai mesure la dureté ?',
+        options: ['Vickers / Brinell / Rockwell', 'Charpy', 'Traction', 'Wöhler'],
+        reponse: 0,
+        explication: 'Vickers (HV), Brinell (HBW), Rockwell (HRC) : résistance à la pénétration.'
+      },
+      {
+        id: 'mpr-q8',
+        question: 'La fatigue provoque la rupture :',
+        options: [
+          'Sous contraintes cycliques répétées',
+          'En une seule charge',
+          'uniquement au-dessus de Rm',
+          'par chauffage'
+        ],
+        reponse: 0,
+        explication: 'Sous sollicitations répétées, même sous \\(R_e\\), après de nombreux cycles.'
+      },
+      {
+        id: 'mpr-q9',
+        question: 'L\'écrouissage d\'un métal a pour effet :',
+        options: [
+          'Augmenter Re/Rm/dureté, diminuer la ductilité',
+          'Diminuer la dureté',
+          'Augmenter la ductilité',
+          'Ne rien changer'
+        ],
+        reponse: 0,
+        explication: 'Le durcissement par déformation plastique augmente la résistance mais fragilise (↓ ductilité).'
+      },
+      {
+        id: 'mpr-q10',
+        question: 'La résilience se mesure par :',
+        options: [
+          'L\'essai de choc au mouton pendule (Charpy)',
+          'L\'essai de traction',
+          'L\'essai Rockwell',
+          'La masse volumique'
+        ],
+        reponse: 0,
+        explication: 'Énergie absorbée à la rupture par choc → mouton pendule Charpy (en Joules).'
+      }
+    ]
+  },
+
+  'vib-1ddl': {
+    id: 'vib-1ddl',
+    matiere: 'Vibration des structures',
+    chapitre: 'Vibrations à 1 degré de liberté',
+    description: 'Système masse-ressort-amortisseur, mise en équation et réponse libre',
+    resume: {
+      sections: [
+        {
+          titre: 'Généralités sur les vibrations',
+          contenu: 'Une vibration est un mouvement oscillatoire autour d\'une position d\'équilibre. Tout système vibratoire combine :\n• une masse (énergie cinétique),\n• une raideur / ressort (énergie potentielle),\n• un amortissement (dissipation d\'énergie).\n\nClassification :\n• Libres (après une excitation initiale) vs forcées (force externe entretenue).\n• Non amorties (sans perte) vs amorties.'
+        },
+        {
+          titre: 'Modèle à 1 ddl',
+          schema: 'masse_ressort_amortisseur',
+          contenu: 'Le système à 1 degré de liberté = une masse \\(M\\), un ressort de raideur \\(K\\), un amortisseur visqueux de coefficient \\(C\\).\n\nC\'est le modèle de base : un système complexe est souvent ramené à un 1 ddl pour une première analyse (ex : machine sur suspension).\n\nLe déplacement total se décompose : \\(x_{tot} = x_{sta} + x(t)\\), où \\(x(t)\\) est l\'oscillation autour de l\'équilibre.'
+        },
+        {
+          titre: 'Mise en équation (PFD)',
+          formule: 'M\\ddot{x} + C\\dot{x} + K x = F(t)',
+          contenu: 'Le principe fondamental de la dynamique appliqué à la masse donne l\'équation du mouvement.\n\nBilan des forces : rappel du ressort \\(-Kx\\), amortisseur \\(-C\\dot{x}\\), poids, force \\(F(t)\\).\n\n⚠️ Les efforts constants (poids) disparaissent car on travaille autour de la position d\'équilibre statique (\\(Kx_{sta} + Mg = 0\\)).'
+        },
+        {
+          titre: 'Grandeurs caractéristiques',
+          formule: '\\omega_0 = \\sqrt{\\frac{K}{M}} \\qquad C_c = 2\\sqrt{KM} \\qquad \\xi = \\frac{C}{2\\sqrt{KM}}',
+          contenu: '• Pulsation propre \\(\\omega_0 = \\sqrt{K/M}\\) (rad/s) ; fréquence propre \\(f_0 = \\omega_0/2\\pi\\).\n• Amortissement critique \\(C_c = 2\\sqrt{KM}\\).\n• Facteur d\'amortissement \\(\\xi = C/C_c = C/(2M\\omega_0)\\).\n\nForme canonique :\n\\[ \\ddot{x} + 2\\xi\\omega_0\\dot{x} + \\omega_0^2 x = 0 \\]'
+        },
+        {
+          titre: 'Réponse libre — les 3 régimes',
+          formule: 'p^2 + 2\\xi\\omega_0 p + \\omega_0^2 = 0,\\quad \\Delta = 4\\omega_0^2(\\xi^2 - 1)',
+          contenu: 'On résout l\'équation caractéristique. Selon \\(\\xi\\) :\n\n• \\(0 < \\xi < 1\\) : régime pseudo-périodique (sous-amorti) — oscillations qui décroissent.\n• \\(\\xi = 1\\) : régime critique — retour le plus rapide sans osciller.\n• \\(\\xi > 1\\) : régime apériodique (sur-amorti) — retour lent sans oscillation.'
+        },
+        {
+          titre: 'Régime pseudo-périodique (ξ < 1)',
+          formule: 'x(t) = X\\,e^{-\\xi\\omega_0 t}\\sin(\\omega_a t - \\varphi)',
+          contenu: 'Cas le plus fréquent (structures réelles : \\(\\xi\\) de quelques %).\n\nPulsation amortie :\n\\[ \\omega_a = \\omega_0\\sqrt{1 - \\xi^2} \\]\n\nLe déplacement oscille entre deux enveloppes exponentielles \\(\\pm X e^{-\\xi\\omega_0 t}\\) et tend vers 0. Pseudo-période : \\(T = 2\\pi/\\omega_a\\). Plus \\(\\xi\\) est grand, plus l\'amortissement est rapide.'
+        },
+        {
+          titre: 'Régimes transitoire et forcé',
+          contenu: 'Pour une EDO avec second membre, la solution est \\(x(t) = x_h(t) + x_p(t)\\) :\n• Régime transitoire : la partie amortie \\(x_h(t)\\), qui s\'éteint avec le temps.\n• Régime permanent (forcé) : \\(x_p(t)\\) imposé par \\(F(t)\\), qui subsiste.\n\nQuand la fréquence d\'excitation s\'approche de \\(\\omega_0\\), l\'amplitude devient maximale : c\'est la résonance (dangereuse pour les structures).'
+        }
+      ]
+    },
+    methodes: [
+      {
+        titre: 'Mettre un système 1 ddl en équation',
+        contenu: '1. Isoler la masse et faire le bilan des forces.\n2. Appliquer le PFD : \\(M\\ddot{x} = \\sum F\\).\n3. Travailler autour de l\'équilibre statique → les poids disparaissent.\n\nOn obtient toujours la même forme :\n\\[ M\\ddot{x} + C\\dot{x} + K x = F(t) \\]\n\nMême un circuit RLC série suit cette forme : \\(L\\ddot{q} + R\\dot{q} + \\frac{1}{C}q = e(t)\\).'
+      },
+      {
+        titre: 'Calculer pulsation propre et amortissement',
+        contenu: 'À partir de \\(M\\), \\(K\\), \\(C\\) :\n\\[ \\omega_0 = \\sqrt{\\frac{K}{M}}, \\qquad \\xi = \\frac{C}{2\\sqrt{KM}} \\]\n\nExemple : \\(M = 10\\) kg, \\(K = 1000\\) N/m, \\(C = 20\\) N·s/m.\n\\[ \\omega_0 = \\sqrt{100} = 10\\ \\text{rad/s} \\]\n\\[ \\xi = \\frac{20}{2\\sqrt{10000}} = \\frac{20}{200} = 0{,}1 \\]\n\\(\\xi < 1\\) → régime pseudo-périodique.'
+      },
+      {
+        titre: 'Déterminer le régime d\'un système',
+        contenu: 'On compare \\(\\xi\\) à 1 (ou \\(C\\) à \\(C_c = 2\\sqrt{KM}\\)) :\n\n• \\(\\xi < 1\\) → pseudo-périodique : \\(\\omega_a = \\omega_0\\sqrt{1-\\xi^2}\\), oscillations amorties.\n• \\(\\xi = 1\\) → critique : retour le plus rapide.\n• \\(\\xi > 1\\) → apériodique : pas d\'oscillation.\n\nPour un amortissement faible (\\(\\xi \\ll 1\\)), \\(\\omega_a \\approx \\omega_0\\).'
+      },
+      {
+        titre: '⚠️ Pièges en vibrations',
+        contenu: '• Le poids disparaît de l\'équation du mouvement (on est autour de l\'équilibre).\n• Ne pas confondre pulsation propre \\(\\omega_0 = \\sqrt{K/M}\\) et pulsation amortie \\(\\omega_a = \\omega_0\\sqrt{1-\\xi^2}\\).\n• La résonance se produit près de \\(\\omega_0\\), pas à \\(\\xi = 0\\) seulement.\n• \\(\\xi\\) est sans dimension ; \\(C_c = 2\\sqrt{KM}\\) est la référence.'
+      }
+    ],
+    quiz: [
+      {
+        id: 'vib-q1',
+        question: 'Un système vibratoire à 1 ddl comporte :',
+        options: [
+          'Une masse, une raideur, un amortisseur',
+          'Deux masses',
+          'Un seul ressort',
+          'Aucune masse'
+        ],
+        reponse: 0,
+        explication: 'Masse (cinétique) + raideur/ressort (potentielle) + amortisseur (dissipation).'
+      },
+      {
+        id: 'vib-q2',
+        question: 'L\'équation du mouvement d\'un système 1 ddl est :',
+        options: [
+          '\\(M\\ddot{x} + C\\dot{x} + Kx = F(t)\\)',
+          '\\(M\\dot{x} + Kx = 0\\)',
+          '\\(Kx = F\\)',
+          '\\(M\\ddot{x} = Kx\\)'
+        ],
+        reponse: 0,
+        explication: 'PFD : masse × accélération = somme des forces (rappel, amortissement, excitation).'
+      },
+      {
+        id: 'vib-q3',
+        question: 'La pulsation propre \\(\\omega_0\\) vaut :',
+        options: ['\\(\\sqrt{K/M}\\)', '\\(\\sqrt{M/K}\\)', '\\(K/M\\)', '\\(2\\sqrt{KM}\\)'],
+        reponse: 0,
+        explication: '\\(\\omega_0 = \\sqrt{K/M}\\) en rad/s ; \\(f_0 = \\omega_0/2\\pi\\).'
+      },
+      {
+        id: 'vib-q4',
+        question: 'Le facteur d\'amortissement \\(\\xi\\) vaut :',
+        options: ['\\(\\dfrac{C}{2\\sqrt{KM}}\\)', '\\(\\dfrac{C}{M}\\)', '\\(2\\sqrt{KM}\\)', '\\(\\dfrac{K}{C}\\)'],
+        reponse: 0,
+        explication: '\\(\\xi = C/C_c\\) avec \\(C_c = 2\\sqrt{KM}\\) l\'amortissement critique.'
+      },
+      {
+        id: 'vib-q5',
+        question: 'Pour \\(0 < \\xi < 1\\), le régime est :',
+        options: ['Pseudo-périodique (oscillations amorties)', 'Apériodique', 'Critique', 'Divergent'],
+        reponse: 0,
+        explication: 'Sous-amorti : oscillations qui décroissent sous une enveloppe exponentielle.'
+      },
+      {
+        id: 'vib-q6',
+        question: 'Le régime critique correspond à :',
+        options: ['\\(\\xi = 1\\) (retour le plus rapide)', '\\(\\xi = 0\\)', '\\(\\xi > 1\\)', '\\(\\xi < 0\\)'],
+        reponse: 0,
+        explication: '\\(\\xi = 1\\) : retour à l\'équilibre le plus rapide sans oscillation.'
+      },
+      {
+        id: 'vib-q7',
+        question: 'La pulsation amortie \\(\\omega_a\\) vaut :',
+        options: ['\\(\\omega_0\\sqrt{1-\\xi^2}\\)', '\\(\\omega_0\\sqrt{1+\\xi^2}\\)', '\\(\\omega_0/\\xi\\)', '\\(\\omega_0\\,\\xi\\)'],
+        reponse: 0,
+        explication: 'En régime pseudo-périodique : \\(\\omega_a = \\omega_0\\sqrt{1-\\xi^2}\\).'
+      },
+      {
+        id: 'vib-q8',
+        question: 'Dans l\'équation du mouvement, le poids :',
+        options: [
+          'N\'apparaît pas (étude autour de l\'équilibre)',
+          'Double la raideur',
+          'Est le terme dominant',
+          'Remplace la force F(t)'
+        ],
+        reponse: 0,
+        explication: 'Les efforts constants sont compensés par la déformation statique d\'équilibre.'
+      },
+      {
+        id: 'vib-q9',
+        question: 'La résonance se produit lorsque la fréquence d\'excitation est proche de :',
+        options: ['La fréquence propre', 'Zéro', 'L\'infini', 'La fréquence d\'amortissement critique'],
+        reponse: 0,
+        explication: 'Près de \\(\\omega_0\\), l\'amplitude devient maximale → résonance.'
+      },
+      {
+        id: 'vib-q10',
+        question: 'Pour \\(M=10\\) kg et \\(K=1000\\) N/m, \\(\\omega_0\\) vaut :',
+        options: ['10 rad/s', '100 rad/s', '1 rad/s', '0,1 rad/s'],
+        reponse: 0,
+        explication: '\\(\\omega_0 = \\sqrt{1000/10} = \\sqrt{100} = 10\\) rad/s.'
+      }
+    ]
+  },
+
+  'asserv-systemes': {
+    id: 'asserv-systemes',
+    matiere: 'Asservissement',
+    chapitre: 'Systèmes asservis',
+    description: 'Boucle fermée, fonction de transfert, réponses, stabilité et correcteurs',
+    resume: {
+      sections: [
+        {
+          titre: 'Système et système de contrôle',
+          contenu: 'Un système est un agencement de composants agissant ensemble pour une tâche.\n\nUn système de contrôle interconnecte des éléments pour s\'auto-réguler ou réguler un autre système. Deux objectifs fondamentaux :\n• minimiser l\'erreur (écart entre valeur réelle et souhaitée),\n• minimiser le temps de réponse.\n\nUn système peut être électrique, mécanique, thermique, hydraulique…'
+        },
+        {
+          titre: 'Fonction de transfert',
+          formule: 'H(p) = \\frac{X(p)}{E(p)}',
+          contenu: 'La modélisation d\'un système (mécanique ou électrique) conduit à sa fonction de transfert \\(H(p)\\) dans le domaine de Laplace : rapport sortie / entrée.\n\nConnaissant \\(H(p)\\), on obtient la sortie : \\(X(p) = H(p)\\,E(p)\\), puis on revient au temps par transformée inverse (décomposition en éléments simples).\n\nPrérequis : transformée de Laplace, décomposition en éléments simples.'
+        },
+        {
+          titre: 'Boucle fermée (asservissement)',
+          schema: 'boucle_fermee',
+          formule: 'FTBF = \\frac{C(p)H(p)}{1 + C(p)H(p)}',
+          contenu: 'Un système asservi compare la sortie mesurée à la consigne \\(X_c\\) via un comparateur, qui produit l\'erreur \\(\\varepsilon(p)\\).\n\n• FTBO (boucle ouverte) : \\(C(p)H(p)\\)\n• FTBF (boucle fermée, retour unitaire) : \\(\\dfrac{C(p)H(p)}{1 + C(p)H(p)}\\)\n\nLe retour (feedback) permet de corriger automatiquement les écarts et perturbations.'
+        },
+        {
+          titre: 'Schéma-blocs',
+          contenu: 'Un schéma-blocs représente graphiquement les relations entre signaux. Règles de manipulation :\n• Blocs en série : les fonctions de transfert se multiplient.\n• Blocs en parallèle : elles s\'additionnent.\n• Déplacement d\'un sommateur (vers l\'amont / l\'aval) : on compense en ajoutant un bloc \\(1/H\\) ou \\(H\\).\n\nObjectif : se ramener à un schéma à retour unitaire pour calculer la FTBF.'
+        },
+        {
+          titre: 'Système du 1er ordre',
+          formule: 'H(p) = \\frac{K}{1 + \\tau p}',
+          contenu: 'Caractérisé par un gain statique \\(K\\) et une constante de temps \\(\\tau\\).\n\nRéponse indicielle (à un échelon) :\n\\[ x(t) = K\\left(1 - e^{-t/\\tau}\\right) \\]\n\nÀ \\(t = \\tau\\) : 63 % de la valeur finale ; à \\(t = 5\\tau\\) : > 99 % (régime établi). Pas de dépassement.'
+        },
+        {
+          titre: 'Système du 2nd ordre',
+          formule: 'G(p) = \\frac{K\\,\\omega_n^2}{p^2 + 2m\\omega_n p + \\omega_n^2}',
+          contenu: 'Forme canonique avec gain \\(K\\), pulsation propre \\(\\omega_n\\), amortissement \\(m\\). Selon \\(m\\) (racines du dénominateur) :\n\n• \\(m > 1\\) : apériodique (pas de dépassement)\n• \\(m = 1\\) : régime critique\n• \\(0 < m < 1\\) : pseudo-périodique (dépassement, oscillations)\n• \\(m = 0\\) : oscillations entretenues à \\(\\omega_n\\)\n\nMême structure qu\'un système masse-ressort-amortisseur.'
+        },
+        {
+          titre: 'Stabilité & critère de Routh',
+          contenu: 'Un système est stable si, écarté de son équilibre, il y revient (analogie de la bille).\n\nCondition : tous les pôles de la FTBF (racines du dénominateur) doivent être à partie réelle négative.\n\nLe critère de Routh permet de conclure sans calculer les racines (tableau de Routh) :\n• ordre 1 \\((\\tau p + 1)\\) : stable si \\(\\tau > 0\\)\n• ordre 2 \\((p^2 + 2\\alpha\\omega_0 p + \\omega_0^2)\\) : stable si \\(\\alpha\\omega_0 > 0\\)\n\nUn pôle à partie réelle positive → système divergent (instable).'
+        },
+        {
+          titre: 'Correcteurs (P, I, D, PID)',
+          formule: 'C(p) = K_p + \\frac{K_i}{p} + K_d\\,p',
+          contenu: 'Pour améliorer les performances, on insère un correcteur \\(C(p)\\) dans la boucle :\n• Proportionnel (P) : \\(C = K_p\\) — réduit l\'erreur, augmente la rapidité (mais peut déstabiliser).\n• Intégral (I) : annule l\'erreur statique.\n• Dérivé (D) : améliore la stabilité et réduit le dépassement.\n\nLe PID combine les trois. Plus de la moitié des régulations industrielles sont des PID.'
+        }
+      ]
+    },
+    methodes: [
+      {
+        titre: 'Calculer la fonction de transfert en boucle fermée',
+        contenu: 'Pour un retour unitaire avec correcteur \\(C(p)\\) et procédé \\(H(p)\\) :\n\n1. FTBO = \\(C(p)H(p)\\).\n2. Appliquer la formule :\n\\[ FTBF = \\frac{C(p)H(p)}{1 + C(p)H(p)} \\]\n\nPour un schéma complexe, le simplifier d\'abord (séries, parallèles, déplacement de sommateurs) pour se ramener à un retour unitaire.'
+      },
+      {
+        titre: 'Résoudre un système avec Laplace',
+        contenu: 'Connaissant \\(H(p)\\) et l\'entrée \\(e(t)\\) :\n1. Transformer l\'entrée : \\(E(p) = \\mathcal{L}\\{e(t)\\}\\).\n2. Calculer la sortie : \\(X(p) = H(p)\\,E(p)\\).\n3. Décomposer \\(X(p)\\) en éléments simples.\n4. Revenir au temps : \\(x(t) = \\mathcal{L}^{-1}\\{X(p)\\}\\).\n\nExemple (1er ordre, échelon) : \\(x(t) = K(1 - e^{-t/\\tau})\\).'
+      },
+      {
+        titre: 'Étudier la stabilité',
+        contenu: '1. Déterminer le dénominateur de la FTBF (polynôme caractéristique).\n2. Vérifier que tous ses pôles sont à partie réelle négative.\n3. Sinon, construire le tableau de Routh : le système est stable si tous les termes de la 1re colonne sont de même signe.\n\nExemple ordre 2 : \\(p^2 + 2\\alpha\\omega_0 p + \\omega_0^2\\) stable si \\(\\alpha\\omega_0 > 0\\).'
+      },
+      {
+        titre: 'Régler un correcteur proportionnel',
+        contenu: 'Exemple : viser une marge de phase de 45°.\n\n1. Choisir le correcteur (ici proportionnel \\(C = K_p\\)).\n2. Sur le diagramme de Bode, repérer la pulsation où la phase vaut −135° (pour 45° de marge).\n3. Déplacer la courbe de gain pour que cette pulsation devienne la nouvelle coupure (ex : +45 dB) :\n\\[ 20\\log_{10}(K_p) = 45 \\Rightarrow K_p = 10^{45/20} \\]'
+      },
+      {
+        titre: '⚠️ Pièges en asservissement',
+        contenu: '• FTBF = \\(\\dfrac{FTBO}{1 + FTBO}\\) (ne pas oublier le « 1 + » au dénominateur).\n• Augmenter le gain \\(K_p\\) accélère mais peut rendre le système instable.\n• Un correcteur intégral annule l\'erreur statique ; le dérivé stabilise.\n• Stabilité ⟺ pôles à partie réelle négative (pas seulement un pôle sur deux).\n• Toujours travailler en Laplace, puis revenir au temps par transformée inverse.'
+      }
+    ],
+    quiz: [
+      {
+        id: 'asr-q1',
+        question: 'Les deux objectifs d\'un système de contrôle sont :',
+        options: [
+          'Minimiser l\'erreur et le temps de réponse',
+          'Maximiser le gain et l\'erreur',
+          'Augmenter la masse',
+          'Supprimer la consigne'
+        ],
+        reponse: 0,
+        explication: 'On cherche à minimiser l\'écart à la consigne et à répondre vite.'
+      },
+      {
+        id: 'asr-q2',
+        question: 'La fonction de transfert H(p) est :',
+        options: [
+          'Le rapport sortie / entrée en Laplace',
+          'La dérivée de la sortie',
+          'L\'entrée moins la sortie',
+          'Toujours égale à 1'
+        ],
+        reponse: 0,
+        explication: '\\(H(p) = X(p)/E(p)\\) dans le domaine de Laplace.'
+      },
+      {
+        id: 'asr-q3',
+        question: 'La FTBF (retour unitaire) vaut :',
+        options: [
+          '\\(\\dfrac{CH}{1 + CH}\\)',
+          '\\(CH\\)',
+          '\\(1 + CH\\)',
+          '\\(\\dfrac{1}{CH}\\)'
+        ],
+        reponse: 0,
+        explication: 'Boucle fermée : \\(FTBF = FTBO/(1 + FTBO)\\) avec FTBO = CH.'
+      },
+      {
+        id: 'asr-q4',
+        question: 'Le comparateur d\'une boucle produit :',
+        options: [
+          'L\'erreur ε = consigne − mesure',
+          'La somme consigne + mesure',
+          'La fonction de transfert',
+          'La perturbation'
+        ],
+        reponse: 0,
+        explication: 'Il calcule l\'écart \\(\\varepsilon(p)\\) entre la consigne et la sortie mesurée.'
+      },
+      {
+        id: 'asr-q5',
+        question: 'Deux blocs en série ont pour fonction de transfert équivalente :',
+        options: ['Le produit des deux', 'La somme des deux', 'La différence', 'Le quotient'],
+        reponse: 0,
+        explication: 'En série, les fonctions de transfert se multiplient.'
+      },
+      {
+        id: 'asr-q6',
+        question: 'La réponse indicielle d\'un 1er ordre \\(K/(1+\\tau p)\\) est :',
+        options: [
+          '\\(K(1 - e^{-t/\\tau})\\)',
+          '\\(K e^{-t/\\tau}\\)',
+          '\\(K\\sin(\\omega t)\\)',
+          '\\(K\\tau t\\)'
+        ],
+        reponse: 0,
+        explication: 'Montée exponentielle : 63 % à \\(t=\\tau\\), >99 % à \\(5\\tau\\), sans dépassement.'
+      },
+      {
+        id: 'asr-q7',
+        question: 'Un 2nd ordre avec \\(0 < m < 1\\) a une réponse :',
+        options: [
+          'Pseudo-périodique (avec dépassement)',
+          'Apériodique',
+          'Constante',
+          'Divergente'
+        ],
+        reponse: 0,
+        explication: 'Amortissement faible → oscillations amorties et dépassement.'
+      },
+      {
+        id: 'asr-q8',
+        question: 'Un système est stable si ses pôles sont :',
+        options: [
+          'À partie réelle négative',
+          'À partie réelle positive',
+          'Tous nuls',
+          'Imaginaires purs'
+        ],
+        reponse: 0,
+        explication: 'Pôles à partie réelle < 0 → la réponse libre décroît (stable).'
+      },
+      {
+        id: 'asr-q9',
+        question: 'Le correcteur qui annule l\'erreur statique est :',
+        options: ['L\'intégral (I)', 'Le proportionnel (P)', 'Le dérivé (D)', 'Aucun'],
+        reponse: 0,
+        explication: 'L\'action intégrale annule l\'erreur statique en régime permanent.'
+      },
+      {
+        id: 'asr-q10',
+        question: 'Augmenter le gain proportionnel \\(K_p\\) a tendance à :',
+        options: [
+          'Accélérer mais risquer l\'instabilité',
+          'Ralentir le système',
+          'Toujours stabiliser',
+          'Annuler la sortie'
+        ],
+        reponse: 0,
+        explication: 'Un gain trop élevé rend le système plus rapide mais peut le déstabiliser.'
+      }
+    ]
+  },
+
+  'ro-progra-lineaire': {
+    id: 'ro-progra-lineaire',
+    matiere: 'Recherche opérationnelle',
+    chapitre: 'Programmation linéaire',
+    description: 'Formulation, domaine réalisable, résolution graphique et simplexe',
+    resume: {
+      sections: [
+        {
+          titre: 'Qu\'est-ce que la programmation linéaire ?',
+          contenu: 'La programmation linéaire (PL) est une technique d\'optimisation : trouver les valeurs de variables de décision qui maximisent (ou minimisent) un objectif, sous des contraintes.\n\nTrès utilisée en entreprise : production, transport, finance, planification des ressources, compagnies aériennes…\n\nToutes les relations (objectif et contraintes) sont LINÉAIRES.'
+        },
+        {
+          titre: 'Forme générale d\'un programme linéaire',
+          formule: '\\max z = c_1 x_1 + c_2 x_2 + \\cdots + c_n x_n',
+          contenu: 'Un programme linéaire comporte :\n• une fonction économique (objectif) à maximiser ou minimiser,\n• des contraintes (inéquations \\(\\leq\\), \\(\\geq\\) ou \\(=\\)),\n• des restrictions de signe : \\(x_j \\geq 0\\).\n\nSous contraintes :\n\\[ a_{i1}x_1 + \\cdots + a_{in}x_n \\leq b_i \\]\n\nAstuce : minimiser revient à maximiser l\'opposé : \\(\\min z = -\\max(-z)\\).'
+        },
+        {
+          titre: 'Hypothèses du modèle',
+          contenu: 'La PL repose sur 4 hypothèses :\n• Proportionnalité : chaque contribution est proportionnelle à la variable.\n• Additivité : les contributions des variables s\'ajoutent (indépendantes).\n• Divisibilité : les variables peuvent prendre des valeurs fractionnaires.\n• Certitude : tous les paramètres sont connus avec certitude.\n\n(Si les variables doivent être entières, on parle de programmation en nombres entiers.)'
+        },
+        {
+          titre: 'Variables d\'écart',
+          formule: 'a_1 x_1 + a_2 x_2 + e = b \\quad (e \\geq 0)',
+          contenu: 'Pour passer d\'une inéquation (\\(\\leq\\)) à une équation, on ajoute une variable d\'écart \\(e \\geq 0\\).\n\nExemple : \\(2x_1 + x_2 \\leq 8\\) devient \\(2x_1 + x_2 + e_1 = 8\\).\n\nC\'est indispensable pour la méthode du simplexe (qui travaille sur des égalités).'
+        },
+        {
+          titre: 'Domaine réalisable & solution optimale',
+          contenu: '• Domaine réalisable : ensemble de tous les jeux de variables satisfaisant TOUTES les contraintes (solutions admissibles).\n• Solution optimale : solution réalisable qui optimise la fonction économique.\n\nQuestions clés : la solution optimale existe-t-elle ? est-elle unique ?\n\nGéométriquement (2 variables), le domaine réalisable est un polygone convexe.'
+        },
+        {
+          titre: 'Résolution graphique (2 variables)',
+          schema: 'polygone_lp',
+          contenu: 'Pour 2 variables, on résout graphiquement :\n1. Tracer le domaine réalisable (polygone convexe).\n2. Tracer les droites d\'iso-profit \\(z = \\) constante (droites parallèles).\n3. L\'optimum est atteint sur un SOMMET du polygone (le dernier touché en déplaçant la droite d\'iso-profit).\n\nUn côté du polygone = une variable nulle ; un sommet = intersection de deux côtés.'
+        },
+        {
+          titre: 'Méthode du simplexe',
+          contenu: 'Au-delà de 2 variables, la résolution graphique est impossible → méthode du simplexe.\n\nPrincipe : partir d\'un sommet du domaine réalisable et se déplacer de sommet en sommet, en améliorant l\'objectif à chaque étape, jusqu\'à l\'optimum.\n\nElle utilise les variables d\'écart et un tableau (tableau du simplexe) avec des opérations de pivot. La méthode duale est une approche complémentaire.'
+        }
+      ]
+    },
+    methodes: [
+      {
+        titre: 'Formuler un problème de PL',
+        contenu: 'Exemple : fabriquer A (marge 740 €) et B (marge 1200 €), ressources limitées.\n\n1. Variables de décision : \\(x_1\\) = quantité de A, \\(x_2\\) = quantité de B.\n2. Objectif :\n\\[ \\max z = 740x_1 + 1200x_2 \\]\n3. Contraintes (ressources) et signes :\n\\[ 2x_1 + 3x_2 \\leq 46,\\quad \\ldots,\\quad x_1, x_2 \\geq 0 \\]'
+      },
+      {
+        titre: 'Résoudre graphiquement',
+        contenu: 'Exemple : \\(\\max(2x + y)\\) sous \\(y \\leq 4\\), \\(x + 2y \\leq 10\\), \\(3x + y \\leq 15\\), \\(x,y \\geq 0\\).\n\n1. Tracer chaque contrainte et hachurer le domaine réalisable.\n2. Déplacer la droite \\(2x + y = \\text{cste}\\) vers les valeurs croissantes.\n3. Le dernier sommet touché est l\'optimum : ici \\(C(4, 3)\\).\n\\[ \\max(2x+y) = 2(4) + 3 = 11 \\]'
+      },
+      {
+        titre: 'Préparer pour le simplexe',
+        contenu: 'Transformer les inéquations en égalités avec des variables d\'écart.\n\nExemple : \\(\\max z = 40x_1 + 30x_2\\) sous \\(2x_1 \\leq 8\\), \\(x_2 \\leq 6\\), \\(x_1 + 2x_2 \\leq 15\\), \\(x_1 + x_2 \\leq 18\\) devient :\n\\[ 2x_1 + t_1 = 8,\\ x_2 + t_2 = 6,\\ \\ldots \\]\navec toutes les variables \\(\\geq 0\\). On applique ensuite le pivot du simplexe.'
+      },
+      {
+        titre: '⚠️ Pièges en programmation linéaire',
+        contenu: '• Ne pas oublier les contraintes de signe \\(x_j \\geq 0\\).\n• L\'optimum est toujours sur un SOMMET du polygone (en PL).\n• Minimiser = maximiser l\'opposé : \\(\\min z = -\\max(-z)\\).\n• Les variables d\'écart doivent rester positives.\n• Au-delà de 2 variables : passer au simplexe (le graphique ne suffit plus).'
+      }
+    ],
+    quiz: [
+      {
+        id: 'rop-q1',
+        question: 'La programmation linéaire sert à :',
+        options: [
+          'Optimiser un objectif sous contraintes',
+          'Résoudre des équations différentielles',
+          'Calculer des dérivées',
+          'Dessiner des circuits'
+        ],
+        reponse: 0,
+        explication: 'C\'est une technique d\'optimisation (max ou min) sous contraintes linéaires.'
+      },
+      {
+        id: 'rop-q2',
+        question: 'Un programme linéaire comporte toujours :',
+        options: [
+          'Objectif + contraintes + restrictions de signe',
+          'Une seule équation',
+          'Uniquement des inéquations',
+          'Des dérivées'
+        ],
+        reponse: 0,
+        explication: 'Fonction économique à optimiser, contraintes, et \\(x_j \\geq 0\\).'
+      },
+      {
+        id: 'rop-q3',
+        question: 'Pour minimiser z, on peut :',
+        options: [
+          'Maximiser \\(-z\\)',
+          'Maximiser \\(z\\)',
+          'Diviser par z',
+          'Ignorer les contraintes'
+        ],
+        reponse: 0,
+        explication: '\\(\\min z = -\\max(-z)\\).'
+      },
+      {
+        id: 'rop-q4',
+        question: 'Une variable d\'écart sert à :',
+        options: [
+          'Transformer une inéquation en équation',
+          'Supprimer une contrainte',
+          'Augmenter l\'objectif',
+          'Rendre le problème non linéaire'
+        ],
+        reponse: 0,
+        explication: 'On ajoute \\(e \\geq 0\\) pour passer de \\(\\leq\\) à \\(=\\) (nécessaire au simplexe).'
+      },
+      {
+        id: 'rop-q5',
+        question: 'Le domaine réalisable est :',
+        options: [
+          'L\'ensemble des solutions satisfaisant toutes les contraintes',
+          'La solution optimale',
+          'La fonction objectif',
+          'Un seul point'
+        ],
+        reponse: 0,
+        explication: 'Ensemble des solutions admissibles ; en 2D, un polygone convexe.'
+      },
+      {
+        id: 'rop-q6',
+        question: 'En résolution graphique, l\'optimum se trouve :',
+        options: [
+          'Sur un sommet du polygone',
+          'Au centre du polygone',
+          'Hors du domaine',
+          'À l\'origine toujours'
+        ],
+        reponse: 0,
+        explication: 'L\'optimum d\'un PL est atteint sur un sommet du domaine réalisable.'
+      },
+      {
+        id: 'rop-q7',
+        question: 'Les droites d\'iso-profit sont :',
+        options: [
+          'Des droites parallèles z = constante',
+          'Les contraintes du problème',
+          'Les axes du repère',
+          'Des courbes quelconques'
+        ],
+        reponse: 0,
+        explication: 'La fonction objectif \\(z = \\text{cste}\\) donne des droites parallèles.'
+      },
+      {
+        id: 'rop-q8',
+        question: 'Quand utilise-t-on le simplexe plutôt que le graphique ?',
+        options: [
+          'Au-delà de 2 variables',
+          'Toujours pour 2 variables',
+          'Jamais',
+          'Uniquement sans contraintes'
+        ],
+        reponse: 0,
+        explication: 'Le graphique ne marche qu\'à 2 variables ; au-delà → simplexe.'
+      },
+      {
+        id: 'rop-q9',
+        question: 'Dans un polygone réalisable 2D, un sommet correspond à :',
+        options: [
+          'L\'intersection de deux contraintes',
+          'Le centre du domaine',
+          'Une variable négative',
+          'L\'objectif'
+        ],
+        reponse: 0,
+        explication: 'Un sommet = intersection de deux côtés (deux variables nulles).'
+      },
+      {
+        id: 'rop-q10',
+        question: 'Le principe du simplexe est de :',
+        options: [
+          'Passer de sommet en sommet en améliorant l\'objectif',
+          'Tester tous les points du plan',
+          'Dériver la fonction objectif',
+          'Ignorer les variables d\'écart'
+        ],
+        reponse: 0,
+        explication: 'On se déplace de sommet en sommet jusqu\'à l\'optimum, via des pivots.'
+      }
+    ]
   }
 };
 
@@ -2982,7 +3671,8 @@ const MATIERES = [
     nom: 'Matériaux',
     chapitres: [
       { id: 'mat-structure', nom: 'Structure atomique & Liaisons' },
-      { id: 'mat-cristallo', nom: 'Cristallographie' }
+      { id: 'mat-cristallo', nom: 'Cristallographie' },
+      { id: 'mat-proprietes', nom: 'Propriétés mécaniques' }
     ]
   },
   {
@@ -2991,6 +3681,27 @@ const MATIERES = [
     chapitres: [
       { id: 'rds-outils', nom: 'Outils mathématiques' },
       { id: 'rds-forces', nom: 'Forces, moments & couples' }
+    ]
+  },
+  {
+    id: 'vibration',
+    nom: 'Vibration des structures',
+    chapitres: [
+      { id: 'vib-1ddl', nom: 'Vibrations à 1 degré de liberté' }
+    ]
+  },
+  {
+    id: 'asservissement',
+    nom: 'Asservissement',
+    chapitres: [
+      { id: 'asserv-systemes', nom: 'Systèmes asservis' }
+    ]
+  },
+  {
+    id: 'ro',
+    nom: 'Recherche opérationnelle',
+    chapitres: [
+      { id: 'ro-progra-lineaire', nom: 'Programmation linéaire' }
     ]
   }
 ];
