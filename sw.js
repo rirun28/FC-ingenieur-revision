@@ -1,4 +1,4 @@
-const CACHE_NAME = 'icam-revision-v14';
+const CACHE_NAME = 'icam-revision-v15';
 
 // Ressources de base à mettre en cache dès l'installation
 const CORE = [

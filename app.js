@@ -2117,16 +2117,16 @@ const CONTENT_DB = {
     ]
   },
 
-  'thermo-fluides': {
-    id: 'thermo-fluides',
-    matiere: 'Thermique',
-    chapitre: 'Mécanique des fluides',
-    description: 'Propriétés des fluides, hydrostatique, Archimède, continuité et Bernoulli',
+  'fluides-statique': {
+    id: 'fluides-statique',
+    matiere: 'Mécanique des fluides',
+    chapitre: 'Statique des fluides',
+    description: 'Propriétés des fluides, hydrostatique, théorème de Pascal et poussée d\'Archimède',
     resume: {
       sections: [
         {
           titre: 'Types de fluides',
-          contenu: 'La mécanique des fluides étudie les lois de l\'écoulement.\n\n• Fluide parfait : on néglige les frottements internes (un fluide au repos est toujours parfait).\n• Fluide réel : les forces de frottement interne (viscosité) sont prises en compte.\n\n• Incompressible : le volume ne varie pas avec la pression (liquides, eau, huile).\n• Compressible : le volume varie avec la pression (gaz, air).'
+          contenu: 'La mécanique des fluides étudie les lois de l\'écoulement et de l\'équilibre des fluides.\n\n• Fluide parfait : on néglige les frottements internes (un fluide au repos est toujours considéré comme parfait).\n• Fluide réel : les forces de frottement interne (viscosité) sont prises en compte.\n\n• Incompressible : le volume ne varie pas avec la pression (liquides, eau, huile).\n• Compressible : le volume varie avec la pression (gaz, air).'
         },
         {
           titre: 'Masse volumique et densité',
@@ -2139,59 +2139,47 @@ const CONTENT_DB = {
           contenu: 'La viscosité caractérise les frottements internes du fluide (sa résistance à l\'écoulement).\n\n• Viscosité dynamique \\(\\mu\\) : en Pa·s (= kg·m⁻¹·s⁻¹).\n• Viscosité cinématique \\(\\nu = \\mu/\\rho\\) : en m²/s.\n\nFluide newtonien : viscosité constante (eau, air). Non-newtonien : viscosité variable (sang, gels).\n\n⚠️ Quand la température augmente, la viscosité d\'un liquide diminue.'
         },
         {
-          titre: 'Hydrostatique',
+          titre: 'Pression dans un fluide',
+          formule: 'P = \\frac{F_n}{S}',
+          contenu: 'La pression est la force normale exercée par unité de surface. Unité : le Pascal (Pa = N/m²).\n\n• \\(1\\ \\text{bar} = 10^5\\) Pa\n• \\(1\\ \\text{atm} = 101\\,325\\) Pa\n\nDans un fluide au repos, la pression est la même en tout point d\'un même plan horizontal.'
+        },
+        {
+          titre: 'Relation fondamentale de l\'hydrostatique',
           formule: 'P_1 - P_2 = \\rho g\\,(z_2 - z_1)',
-          contenu: 'La différence de pression entre deux points d\'un même fluide est proportionnelle à leur différence de profondeur.\n\nThéorème de Pascal : dans un fluide incompressible en équilibre, toute variation de pression en un point se transmet intégralement en tout autre point.'
+          contenu: 'La différence de pression entre deux points d\'un même fluide au repos est proportionnelle à leur différence de profondeur.\n\nConséquence : la pression augmente avec la profondeur (\\(P = P_0 + \\rho g h\\)).\n\nElle ne dépend que de la hauteur de fluide, pas de la forme du récipient (paradoxe hydrostatique).'
+        },
+        {
+          titre: 'Théorème de Pascal',
+          contenu: 'Dans un fluide incompressible en équilibre, toute variation de pression en un point se transmet intégralement en tout autre point du fluide.\n\nApplication : la presse hydraulique. Une petite force sur un petit piston crée une grande force sur un grand piston :\n\\[ \\frac{F_1}{S_1} = \\frac{F_2}{S_2} \\]\n\nC\'est le principe des vérins et freins hydrauliques.'
         },
         {
           titre: 'Poussée d\'Archimède',
           formule: 'P_{Arch} = \\rho_{fluide}\\, V_{imm}\\, g',
-          contenu: 'Tout corps plongé dans un fluide subit une force verticale, vers le haut, égale au poids du volume de fluide déplacé.\n\n\\(V_{imm}\\) = volume immergé du corps.\n\nPour un solide hétérogène, le centre de poussée (point d\'application) n\'est pas confondu avec le centre de gravité.'
-        },
-        {
-          titre: 'Équation de continuité',
-          schema: 'conduite_bernoulli',
-          formule: '\\rho_1 S_1 v_1 = \\rho_2 S_2 v_2 \\;\\Rightarrow\\; S_1 v_1 = S_2 v_2',
-          contenu: 'En régime permanent (vitesse indépendante du temps), le débit massique se conserve.\n\nPour un fluide incompressible (\\(\\rho_1 = \\rho_2\\)) : \\(S_1 v_1 = S_2 v_2\\).\n\nConséquence : quand la section diminue, la vitesse augmente.'
-        },
-        {
-          titre: 'Équation de Bernoulli',
-          formule: '\\tfrac{1}{2}\\rho v^2 + \\rho g z + P = \\text{constante}',
-          contenu: 'Pour un fluide parfait, incompressible, en écoulement permanent dans une conduite lisse, la pression totale est invariante :\n\\[ P_1 + \\rho g z_1 + \\tfrac{1}{2}\\rho v_1^2 = P_2 + \\rho g z_2 + \\tfrac{1}{2}\\rho v_2^2 \\]\n\n• \\(\\tfrac{1}{2}\\rho v^2\\) : pression dynamique\n• \\(\\rho g z\\) : pression hydrostatique\n• \\(P\\) : pression motrice'
-        },
-        {
-          titre: 'Tube de Pitot',
-          formule: '\\Delta P = P_A - P_B = \\rho g h',
-          contenu: 'Mesure une vitesse d\'écoulement par la différence entre la pression totale (point d\'arrêt, \\(v_A = 0\\)) et la pression statique.\n\nHypothèses : points A et B sur la même ligne de courant, même altitude.'
-        },
-        {
-          titre: 'Fluides réels — Reynolds et pertes de charge',
-          formule: 'Re = \\frac{\\rho\\, U\\, D_h}{\\mu} = \\frac{U\\, D_h}{\\nu}',
-          contenu: 'Le nombre de Reynolds (sans dimension) compare forces d\'inertie et forces de viscosité, et prédit le régime d\'écoulement (laminaire ou turbulent).\n\nDiamètre hydraulique : \\(D_h = \\dfrac{4S}{P}\\).\n\nBernoulli pour un fluide réel ajoute les pertes de charge \\(J_{12}\\) (énergie dissipée par frottement) :\n• pertes singulières (changement de section/direction)\n• pertes linéaires (le long des conduites)'
+          contenu: 'Tout corps plongé dans un fluide subit une force verticale, dirigée vers le haut, égale au poids du volume de fluide déplacé.\n\n\\(V_{imm}\\) = volume immergé du corps.\n\nUn corps flotte si la poussée équilibre son poids. Pour un solide hétérogène, le centre de poussée (point d\'application) n\'est pas confondu avec le centre de gravité.'
         }
       ]
     },
     methodes: [
       {
         titre: 'Calculer une pression hydrostatique',
-        contenu: 'La pression augmente avec la profondeur :\n\\[ P_1 - P_2 = \\rho g (z_2 - z_1) \\]\n\nExemple : pression à 10 m sous l\'eau (\\(\\rho = 1000\\), \\(g = 9{,}81\\)) par rapport à la surface :\n\\[ \\Delta P = 1000 \\times 9{,}81 \\times 10 \\approx 98\\,100\\ \\text{Pa} \\approx 0{,}98\\ \\text{bar} \\]\n\nÀ 10 m, on a donc environ 1 bar de plus qu\'en surface.'
+        contenu: 'La pression augmente avec la profondeur :\n\\[ P = P_0 + \\rho g h \\]\n\nExemple : pression à 10 m sous l\'eau (\\(\\rho = 1000\\), \\(g = 9{,}81\\)) par rapport à la surface :\n\\[ \\Delta P = 1000 \\times 9{,}81 \\times 10 \\approx 98\\,100\\ \\text{Pa} \\approx 0{,}98\\ \\text{bar} \\]\n\nÀ 10 m, on a donc environ 1 bar de plus qu\'en surface.'
       },
       {
-        titre: 'Appliquer la continuité',
-        contenu: 'Fluide incompressible : \\(S_1 v_1 = S_2 v_2\\).\n\nExemple : un tuyau passe de \\(S_1 = 10\\) cm² (\\(v_1 = 2\\) m/s) à \\(S_2 = 5\\) cm².\n\\[ v_2 = \\frac{S_1 v_1}{S_2} = \\frac{10 \\times 2}{5} = 4\\ \\text{m/s} \\]\n\nLa section divisée par 2 → la vitesse doublée.'
+        titre: 'Appliquer le théorème de Pascal (presse hydraulique)',
+        contenu: 'La pression se transmet intégralement :\n\\[ \\frac{F_1}{S_1} = \\frac{F_2}{S_2} \\Rightarrow F_2 = F_1\\,\\frac{S_2}{S_1} \\]\n\nExemple : \\(F_1 = 100\\) N sur un piston de \\(S_1 = 2\\) cm², grand piston \\(S_2 = 50\\) cm² :\n\\[ F_2 = 100 \\times \\frac{50}{2} = 2500\\ \\text{N} \\]\n\nLe rapport des surfaces multiplie la force.'
       },
       {
-        titre: 'Appliquer Bernoulli',
-        contenu: 'Pour un fluide parfait entre deux points :\n\\[ P_1 + \\rho g z_1 + \\tfrac{1}{2}\\rho v_1^2 = P_2 + \\rho g z_2 + \\tfrac{1}{2}\\rho v_2^2 \\]\n\nMéthode :\n1. Choisir deux points sur la même ligne de courant.\n2. Repérer les termes connus/nuls (même altitude → \\(z_1 = z_2\\)).\n3. Combiner avec la continuité si les vitesses sont inconnues.\n\nPour un fluide réel, ajouter les pertes de charge \\(J_{12}\\) du côté aval.'
+        titre: 'Déterminer si un corps flotte',
+        contenu: 'On compare la poussée d\'Archimède au poids du corps.\n\nUn corps flotte si sa masse volumique moyenne est inférieure à celle du fluide : \\(\\rho_{corps} < \\rho_{fluide}\\).\n\nÀ l\'équilibre de flottaison :\n\\[ \\rho_{fluide}\\, V_{imm}\\, g = \\rho_{corps}\\, V_{tot}\\, g \\]\nce qui donne la fraction immergée \\(V_{imm}/V_{tot} = \\rho_{corps}/\\rho_{fluide}\\).'
       },
       {
-        titre: '⚠️ Pièges en mécanique des fluides',
-        contenu: '• Bernoulli ne s\'applique qu\'à un fluide PARFAIT, incompressible, en régime permanent.\n• Pour un fluide réel, ne pas oublier les pertes de charge.\n• Section qui diminue ⟹ vitesse qui augmente (continuité), et donc pression qui baisse (Bernoulli).\n• La poussée d\'Archimède dépend du volume IMMERGÉ, pas du volume total.\n• Reynolds et viscosité sont sans objet pour un fluide parfait.'
+        titre: '⚠️ Pièges en statique des fluides',
+        contenu: '• La pression hydrostatique ne dépend que de la profondeur, pas de la forme du récipient.\n• La poussée d\'Archimède dépend du volume IMMERGÉ, pas du volume total.\n• Pascal : la variation de pression se transmet intégralement (base de l\'hydraulique).\n• Bien distinguer masse volumique \\(\\rho\\) (kg/m³) et densité \\(d\\) (sans unité).'
       }
     ],
     quiz: [
       {
-        id: 'flu-q1',
+        id: 'fst-q1',
         question: 'Un fluide incompressible est un fluide dont :',
         options: [
           'Le volume ne varie pas avec la pression',
@@ -2203,33 +2191,59 @@ const CONTENT_DB = {
         explication: 'Incompressible = volume constant sous l\'effet de la pression (liquides, eau, huile).'
       },
       {
-        id: 'flu-q2',
+        id: 'fst-q2',
         question: 'La densité d\'un fluide est :',
-        options: [
-          'Un nombre sans unité',
-          'En kg/m³',
-          'En Pa·s',
-          'En m²/s'
-        ],
+        options: ['Un nombre sans unité', 'En kg/m³', 'En Pa·s', 'En m²/s'],
         reponse: 0,
         explication: 'C\'est un rapport de deux masses volumiques → adimensionnel (densité de l\'eau = 1).'
       },
       {
-        id: 'flu-q3',
+        id: 'fst-q3',
         question: 'La viscosité cinématique vaut :',
         options: ['\\(\\nu = \\mu/\\rho\\)', '\\(\\nu = \\mu\\rho\\)', '\\(\\nu = \\rho/\\mu\\)', '\\(\\nu = \\mu + \\rho\\)'],
         reponse: 0,
         explication: '\\(\\nu = \\mu/\\rho\\), en m²/s (\\(\\mu\\) = viscosité dynamique en Pa·s).'
       },
       {
-        id: 'flu-q4',
-        question: 'Quand la température d\'un liquide augmente, sa viscosité :',
-        options: ['Diminue', 'Augmente', 'Reste constante', 'S\'annule'],
+        id: 'fst-q4',
+        question: 'La pression s\'exprime en :',
+        options: ['Pascal (N/m²)', 'Newton', 'Joule', 'kg/m³'],
         reponse: 0,
-        explication: 'La viscosité d\'un liquide diminue quand la température augmente.'
+        explication: 'Pression = force normale / surface, en Pa (1 bar = 10⁵ Pa).'
       },
       {
-        id: 'flu-q5',
+        id: 'fst-q5',
+        question: 'La pression hydrostatique dépend :',
+        options: [
+          'De la profondeur (pas de la forme du récipient)',
+          'De la forme du récipient',
+          'Du volume total',
+          'De la couleur du fluide'
+        ],
+        reponse: 0,
+        explication: '\\(P = P_0 + \\rho g h\\) : seule la hauteur de fluide compte (paradoxe hydrostatique).'
+      },
+      {
+        id: 'fst-q6',
+        question: 'Le théorème de Pascal énonce que dans un fluide incompressible :',
+        options: [
+          'Une variation de pression se transmet intégralement',
+          'La pression diminue avec la profondeur',
+          'La viscosité est nulle',
+          'Le débit se conserve'
+        ],
+        reponse: 0,
+        explication: 'Toute variation de pression en un point se transmet en tout autre point (presse hydraulique).'
+      },
+      {
+        id: 'fst-q7',
+        question: 'Dans une presse hydraulique, \\(F_1/S_1 = F_2/S_2\\). Si \\(S_2 = 25\\,S_1\\), alors \\(F_2\\) vaut :',
+        options: ['\\(25\\,F_1\\)', '\\(F_1/25\\)', '\\(F_1\\)', '\\(5\\,F_1\\)'],
+        reponse: 0,
+        explication: '\\(F_2 = F_1\\,S_2/S_1 = 25\\,F_1\\) : la force est multipliée par le rapport des surfaces.'
+      },
+      {
+        id: 'fst-q8',
         question: 'La poussée d\'Archimède vaut :',
         options: [
           '\\(\\rho_{fluide}\\, V_{imm}\\, g\\)',
@@ -2241,54 +2255,23 @@ const CONTENT_DB = {
         explication: 'Poids du volume de fluide déplacé : \\(P_{Arch} = \\rho_{fluide}\\, V_{imm}\\, g\\).'
       },
       {
-        id: 'flu-q6',
-        question: 'L\'équation de continuité (fluide incompressible) est :',
-        options: ['\\(S_1 v_1 = S_2 v_2\\)', '\\(S_1 v_2 = S_2 v_1\\)', '\\(S_1 + v_1 = S_2 + v_2\\)', '\\(P_1 v_1 = P_2 v_2\\)'],
+        id: 'fst-q9',
+        question: 'La poussée d\'Archimède dépend du :',
+        options: ['Volume immergé', 'Volume total du corps', 'Poids du corps', 'Matériau du corps'],
         reponse: 0,
-        explication: 'Conservation du débit volumique : \\(S_1 v_1 = S_2 v_2\\).'
+        explication: 'Seul le volume IMMERGÉ (= volume de fluide déplacé) intervient.'
       },
       {
-        id: 'flu-q7',
-        question: 'Dans une conduite, si la section diminue, la vitesse du fluide :',
-        options: ['Augmente', 'Diminue', 'Reste constante', 'S\'annule'],
-        reponse: 0,
-        explication: 'Par continuité \\(S_1 v_1 = S_2 v_2\\) : section ↓ ⟹ vitesse ↑.'
-      },
-      {
-        id: 'flu-q8',
-        question: 'L\'équation de Bernoulli suppose un fluide :',
+        id: 'fst-q10',
+        question: 'Un corps flotte si :',
         options: [
-          'Parfait, incompressible, en régime permanent',
-          'Réel et visqueux',
-          'Compressible',
-          'Au repos'
+          '\\(\\rho_{corps} < \\rho_{fluide}\\)',
+          '\\(\\rho_{corps} > \\rho_{fluide}\\)',
+          '\\(\\rho_{corps} = 0\\)',
+          'Le corps est métallique'
         ],
         reponse: 0,
-        explication: 'Hypothèses de Bernoulli : fluide parfait, incompressible, écoulement permanent, conduite lisse.'
-      },
-      {
-        id: 'flu-q9',
-        question: 'Le nombre de Reynolds compare :',
-        options: [
-          'Forces d\'inertie / forces de viscosité',
-          'Pression / température',
-          'Vitesse / accélération',
-          'Masse / volume'
-        ],
-        reponse: 0,
-        explication: '\\(Re = \\rho U D_h/\\mu\\) : rapport inertie/viscosité, il prédit le régime (laminaire/turbulent).'
-      },
-      {
-        id: 'flu-q10',
-        question: 'Les pertes de charge dans un fluide réel sont dues :',
-        options: [
-          'Aux frottements visqueux',
-          'À la poussée d\'Archimède',
-          'À la compressibilité',
-          'À la température'
-        ],
-        reponse: 0,
-        explication: 'Elles représentent l\'énergie dissipée par frottement (singulières + linéaires).'
+        explication: 'Si la masse volumique moyenne du corps est inférieure à celle du fluide, il flotte.'
       }
     ]
   },
@@ -4282,7 +4265,6 @@ const MATIERES = [
       { id: 'thermo-bases', nom: 'Bases de la thermique' },
       { id: 'thermo-modes', nom: 'Modes de transfert' },
       { id: 'thermo-thermodynamique', nom: 'Thermodynamique' },
-      { id: 'thermo-fluides', nom: 'Mécanique des fluides' },
       { id: 'thermo-confort', nom: 'Confort thermique (rappel)' }
     ]
   },
@@ -4329,6 +4311,7 @@ const MATIERES = [
     id: 'fluides',
     nom: 'Mécanique des fluides',
     chapitres: [
+      { id: 'fluides-statique', nom: 'Statique des fluides' },
       { id: 'fluides-bernoulli', nom: 'Dynamique des fluides — Bernoulli' }
     ]
   }
