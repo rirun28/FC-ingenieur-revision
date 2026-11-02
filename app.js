@@ -1,6 +1,9 @@
 // ── SVG Circuit Schemas (static strings) ──────────────
 const SCHEMAS = {
 
+  // Couplages triphasés étoile / triangle
+  triphase: '<svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:320px;display:block;margin:10px auto" font-family="system-ui,sans-serif"><text x="80" y="20" text-anchor="middle" fill="#e2e8f0" font-size="12">Étoile (Y)</text><line x1="80" y1="90" x2="80" y2="55" stroke="#60a5fa" stroke-width="2"/><line x1="80" y1="90" x2="50" y2="120" stroke="#60a5fa" stroke-width="2"/><line x1="80" y1="90" x2="110" y2="120" stroke="#60a5fa" stroke-width="2"/><circle cx="80" cy="90" r="3.5" fill="#f59e0b"/><text x="86" y="92" fill="#f59e0b" font-size="10">N</text><circle cx="80" cy="52" r="3" fill="#60a5fa"/><circle cx="47" cy="123" r="3" fill="#60a5fa"/><circle cx="113" cy="123" r="3" fill="#60a5fa"/><text x="70" y="145" text-anchor="middle" fill="#94a3b8" font-size="9">U = &#x221A;3&#xB7;V</text><text x="80" y="160" text-anchor="middle" fill="#94a3b8" font-size="9">neutre dispo.</text><text x="240" y="20" text-anchor="middle" fill="#e2e8f0" font-size="12">Triangle (&#x394;)</text><polygon points="240,55 210,120 270,120" fill="none" stroke="#22c55e" stroke-width="2"/><circle cx="240" cy="55" r="3" fill="#22c55e"/><circle cx="210" cy="120" r="3" fill="#22c55e"/><circle cx="270" cy="120" r="3" fill="#22c55e"/><text x="240" y="145" text-anchor="middle" fill="#94a3b8" font-size="9">I = &#x221A;3&#xB7;J</text><text x="240" y="160" text-anchor="middle" fill="#94a3b8" font-size="9">pas de neutre</text></svg>',
+
   // Boucle d'asservissement (retour unitaire)
   boucle_fermee: '<svg viewBox="0 0 360 150" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:360px;display:block;margin:10px auto" font-family="system-ui,sans-serif"><line x1="12" y1="55" x2="52" y2="55" stroke="#94a3b8" stroke-width="2"/><polygon points="46,51 56,55 46,59" fill="#94a3b8"/><text x="10" y="46" fill="#cbd5e1" font-size="11">X_c(p)</text><circle cx="66" cy="55" r="12" fill="#334155" stroke="#60a5fa" stroke-width="1.5"/><text x="66" y="60" text-anchor="middle" fill="#60a5fa" font-size="13">+</text><text x="55" y="80" fill="#ef4444" font-size="12">&#x2212;</text><line x1="78" y1="55" x2="120" y2="55" stroke="#94a3b8" stroke-width="2"/><polygon points="114,51 124,55 114,59" fill="#94a3b8"/><text x="90" y="48" fill="#22c55e" font-size="11">&#x3B5;(p)</text><rect x="124" y="38" width="56" height="34" fill="#334155" stroke="#f59e0b" stroke-width="1.5" rx="3"/><text x="152" y="59" text-anchor="middle" fill="#f59e0b" font-size="13">C(p)</text><line x1="180" y1="55" x2="212" y2="55" stroke="#94a3b8" stroke-width="2"/><polygon points="206,51 216,55 206,59" fill="#94a3b8"/><rect x="216" y="38" width="56" height="34" fill="#334155" stroke="#f59e0b" stroke-width="1.5" rx="3"/><text x="244" y="59" text-anchor="middle" fill="#f59e0b" font-size="13">H(p)</text><line x1="272" y1="55" x2="340" y2="55" stroke="#94a3b8" stroke-width="2"/><polygon points="334,51 344,55 334,59" fill="#94a3b8"/><text x="320" y="46" fill="#cbd5e1" font-size="11">X(p)</text><circle cx="306" cy="55" r="3.5" fill="#94a3b8"/><line x1="306" y1="55" x2="306" y2="120" stroke="#94a3b8" stroke-width="2"/><line x1="306" y1="120" x2="66" y2="120" stroke="#94a3b8" stroke-width="2"/><line x1="66" y1="120" x2="66" y2="67" stroke="#94a3b8" stroke-width="2"/><polygon points="62,75 66,65 70,75" fill="#94a3b8"/><text x="150" y="137" text-anchor="middle" fill="#94a3b8" font-size="10">retour (mesure de la sortie)</text></svg>',
 
@@ -3611,6 +3614,621 @@ const CONTENT_DB = {
         explication: 'On se déplace de sommet en sommet jusqu\'à l\'optimum, via des pivots.'
       }
     ]
+  },
+
+  'maths-multivariable': {
+    id: 'maths-multivariable',
+    matiere: 'Maths',
+    chapitre: 'Calcul multivariable',
+    description: 'Dérivées partielles, gradient, différentielle, extrema et multiplicateurs de Lagrange',
+    resume: {
+      sections: [
+        {
+          titre: 'Champ scalaire & dérivée partielle',
+          formule: '\\frac{\\partial f}{\\partial x} = \\lim_{h\\to 0}\\frac{f(a+h,b) - f(a,b)}{h}',
+          contenu: 'Un champ scalaire \\(f(x,y,\\ldots)\\) associe un nombre à chaque point.\n\nLa dérivée partielle \\(\\dfrac{\\partial f}{\\partial x}\\) = taux de variation de \\(f\\) selon \\(x\\), les autres variables étant gardées constantes.\n\nThéorème de Schwarz : les dérivées croisées sont égales\n\\[ \\frac{\\partial^2 f}{\\partial x\\,\\partial y} = \\frac{\\partial^2 f}{\\partial y\\,\\partial x} \\]'
+        },
+        {
+          titre: 'Gradient',
+          formule: '\\vec{\\nabla} f = \\operatorname{grad} f = \\begin{pmatrix} \\partial f/\\partial x \\\\ \\partial f/\\partial y \\\\ \\partial f/\\partial z \\end{pmatrix}',
+          contenu: 'Le gradient rassemble les dérivées partielles en un vecteur.\n\nPropriétés géométriques :\n• Il pointe dans la direction de plus forte croissance de \\(f\\).\n• Il est orthogonal aux lignes (ou surfaces) de niveau \\(f = \\text{cste}\\).\n\nC\'est la généralisation de la dérivée aux fonctions de plusieurs variables.'
+        },
+        {
+          titre: 'Différentielle',
+          formule: 'df = \\frac{\\partial f}{\\partial x}\\,dx + \\frac{\\partial f}{\\partial y}\\,dy',
+          contenu: 'La différentielle donne la variation de \\(f\\) pour de petites variations \\(dx, dy\\) des variables.\n\nC\'est le produit scalaire du gradient par le vecteur déplacement :\n\\[ df = \\vec{\\nabla} f \\cdot \\begin{pmatrix} dx \\\\ dy \\end{pmatrix} \\]\n\nUtile en physique pour propager des incertitudes ou relier des variations (ex : thermodynamique).'
+        },
+        {
+          titre: 'Points critiques',
+          formule: '\\vec{\\nabla} f(a,b) = \\vec{0}',
+          contenu: 'Un point critique annule le gradient : \\(\\dfrac{\\partial f}{\\partial x} = 0\\) ET \\(\\dfrac{\\partial f}{\\partial y} = 0\\).\n\nC\'est une condition NÉCESSAIRE (mais non suffisante) pour un extremum local. Un point critique peut être un maximum, un minimum, ou un point-selle (col).'
+        },
+        {
+          titre: 'Nature d\'un point critique — hessien',
+          formule: '\\Delta = rt - s^2,\\quad r=f_{xx},\\ s=f_{xy},\\ t=f_{yy}',
+          contenu: 'Au point critique, on calcule les dérivées secondes \\(r, s, t\\) et \\(\\Delta = rt - s^2\\) :\n\n• \\(\\Delta > 0\\) et \\(r > 0\\) : minimum local\n• \\(\\Delta > 0\\) et \\(r < 0\\) : maximum local\n• \\(\\Delta < 0\\) : point-selle (col)\n• \\(\\Delta = 0\\) : cas non concluant\n\nUn équilibre stable (énergie potentielle) correspond à un minimum local.'
+        },
+        {
+          titre: 'Multiplicateurs de Lagrange',
+          formule: '\\vec{\\nabla} f = \\lambda\\,\\vec{\\nabla} g \\quad \\text{et} \\quad g = 0',
+          contenu: 'Pour optimiser \\(f(x,y)\\) SOUS la contrainte \\(g(x,y) = 0\\) :\n\nÀ l\'optimum, la ligne de niveau de \\(f\\) est tangente à la contrainte → les gradients sont parallèles.\n\nMéthode :\n1. Écrire \\(\\vec{\\nabla} f = \\lambda\\,\\vec{\\nabla} g\\) (une équation par variable).\n2. Ajouter la contrainte \\(g = 0\\).\n3. Résoudre le système.'
+        }
+      ]
+    },
+    methodes: [
+      {
+        titre: 'Calculer un gradient',
+        contenu: 'On dérive partiellement selon chaque variable.\n\nExemple : \\(f(x,y) = x^2 + y^2 - 4x - 6y + 13\\).\n\\[ \\frac{\\partial f}{\\partial x} = 2x - 4, \\qquad \\frac{\\partial f}{\\partial y} = 2y - 6 \\]\n\\[ \\vec{\\nabla} f = \\begin{pmatrix} 2x-4 \\\\ 2y-6 \\end{pmatrix} \\]'
+      },
+      {
+        titre: 'Trouver et classer les points critiques',
+        contenu: 'Exemple : \\(f(x,y) = x^3 + y^3 - 3xy\\).\n\n1. Annuler le gradient : \\(3x^2 - 3y = 0\\) et \\(3y^2 - 3x = 0\\) → points \\((0,0)\\) et \\((1,1)\\).\n2. Dérivées secondes : \\(r = 6x\\), \\(s = -3\\), \\(t = 6y\\), \\(\\Delta = 36xy - 9\\).\n3. En \\((0,0)\\) : \\(\\Delta = -9 < 0\\) → point-selle.\n   En \\((1,1)\\) : \\(\\Delta = 27 > 0\\), \\(r > 0\\) → minimum local, \\(f = -1\\).'
+      },
+      {
+        titre: 'Optimiser sous contrainte (Lagrange)',
+        contenu: 'Exemple : maximiser \\(xy\\) sous \\(x + y = 10\\).\n\n\\(\\vec{\\nabla} f = (y, x)\\), \\(\\vec{\\nabla} g = (1, 1)\\) :\n\\[ y = \\lambda, \\quad x = \\lambda \\Rightarrow x = y \\]\nContrainte : \\(2x = 10\\) → \\((5, 5)\\), \\(f = 25\\).\n\n(À périmètre fixé, le carré maximise l\'aire.)'
+      },
+      {
+        titre: '⚠️ Pièges en calcul multivariable',
+        contenu: '• Dériver partiellement selon \\(x\\) : traiter \\(y\\) comme une CONSTANTE.\n• Gradient nul = condition nécessaire, pas suffisante (penser au point-selle).\n• Bien distinguer \\(\\Delta = rt - s^2\\) (nature) du discriminant d\'un trinôme.\n• Lagrange : une équation par variable \\(+\\) la contrainte (ne pas oublier \\(g = 0\\)).'
+      }
+    ],
+    quiz: [
+      {
+        id: 'mul-q1',
+        question: 'La dérivée partielle \\(\\partial f/\\partial x\\) se calcule en :',
+        options: [
+          'Dérivant selon x, y constant',
+          'Dérivant selon x et y ensemble',
+          'Intégrant selon x',
+          'Annulant f'
+        ],
+        reponse: 0,
+        explication: 'On traite les autres variables comme des constantes.'
+      },
+      {
+        id: 'mul-q2',
+        question: 'Le théorème de Schwarz affirme que :',
+        options: [
+          '\\(\\partial^2 f/\\partial x\\partial y = \\partial^2 f/\\partial y\\partial x\\)',
+          'le gradient est nul',
+          '\\(\\partial f/\\partial x = \\partial f/\\partial y\\)',
+          'f est linéaire'
+        ],
+        reponse: 0,
+        explication: 'Les dérivées croisées secondes sont égales (fonctions régulières).'
+      },
+      {
+        id: 'mul-q3',
+        question: 'Le gradient d\'une fonction est :',
+        options: [
+          'Orthogonal aux lignes de niveau',
+          'Tangent aux lignes de niveau',
+          'Toujours nul',
+          'Un scalaire'
+        ],
+        reponse: 0,
+        explication: 'Le gradient est orthogonal aux lignes de niveau et pointe vers la plus forte croissance.'
+      },
+      {
+        id: 'mul-q4',
+        question: 'Le gradient de \\(f = x^2 + y^2\\) est :',
+        options: ['\\((2x, 2y)\\)', '\\((x^2, y^2)\\)', '\\((2x+2y)\\)', '\\((x, y)\\)'],
+        reponse: 0,
+        explication: '\\(\\partial f/\\partial x = 2x\\), \\(\\partial f/\\partial y = 2y\\).'
+      },
+      {
+        id: 'mul-q5',
+        question: 'Un point critique vérifie :',
+        options: [
+          '\\(\\vec{\\nabla} f = \\vec{0}\\)',
+          '\\(f = 0\\)',
+          '\\(\\Delta = 0\\)',
+          'f maximal'
+        ],
+        reponse: 0,
+        explication: 'Gradient nul : condition nécessaire d\'extremum (ou point-selle).'
+      },
+      {
+        id: 'mul-q6',
+        question: 'Avec \\(\\Delta = rt - s^2 > 0\\) et \\(r > 0\\), le point critique est :',
+        options: ['Un minimum local', 'Un maximum local', 'Un point-selle', 'Indéterminé'],
+        reponse: 0,
+        explication: '\\(\\Delta > 0\\) et \\(r > 0\\) → minimum local.'
+      },
+      {
+        id: 'mul-q7',
+        question: 'Si \\(\\Delta = rt - s^2 < 0\\), le point critique est :',
+        options: ['Un point-selle (col)', 'Un minimum', 'Un maximum', 'Un extremum global'],
+        reponse: 0,
+        explication: '\\(\\Delta < 0\\) → point-selle : f monte dans une direction, descend dans une autre.'
+      },
+      {
+        id: 'mul-q8',
+        question: 'La méthode des multiplicateurs de Lagrange sert à :',
+        options: [
+          'Optimiser sous contrainte',
+          'Calculer une dérivée',
+          'Résoudre une EDO',
+          'Inverser une matrice'
+        ],
+        reponse: 0,
+        explication: 'Optimiser \\(f\\) sous la contrainte \\(g=0\\) via \\(\\vec{\\nabla} f = \\lambda\\vec{\\nabla} g\\).'
+      },
+      {
+        id: 'mul-q9',
+        question: 'À l\'optimum sous contrainte, les gradients de f et g sont :',
+        options: ['Parallèles', 'Orthogonaux', 'Nuls', 'Opposés en norme'],
+        reponse: 0,
+        explication: '\\(\\vec{\\nabla} f = \\lambda\\vec{\\nabla} g\\) : la ligne de niveau est tangente à la contrainte.'
+      },
+      {
+        id: 'mul-q10',
+        question: 'La différentielle \\(df\\) s\'écrit :',
+        options: [
+          '\\(\\frac{\\partial f}{\\partial x}dx + \\frac{\\partial f}{\\partial y}dy\\)',
+          '\\(\\frac{\\partial f}{\\partial x} \\cdot \\frac{\\partial f}{\\partial y}\\)',
+          '\\(f(x)\\,dx\\)',
+          '\\(\\vec{\\nabla} f \\wedge d\\vec{r}\\)'
+        ],
+        reponse: 0,
+        explication: 'Somme des contributions de chaque variable : \\(df = \\vec{\\nabla} f \\cdot d\\vec{r}\\).'
+      }
+    ]
+  },
+
+  'rds-torseurs': {
+    id: 'rds-torseurs',
+    matiere: 'RDS',
+    chapitre: 'Torseurs, liaisons & PFS',
+    description: 'Torseurs, loi des moments, invariants, liaisons parfaites et principe fondamental de la statique',
+    resume: {
+      sections: [
+        {
+          titre: 'Notion de torseur',
+          formule: '\\{\\mathcal{T}\\} = \\begin{Bmatrix} \\vec{R} \\\\ \\vec{M}_A \\end{Bmatrix}_A',
+          contenu: 'Un torseur \\(\\{\\mathcal{T}\\}\\) est un outil condensant deux champs de vecteurs :\n• une résultante \\(\\vec{R}\\) (champ uniforme),\n• un champ de moment \\(\\vec{M}\\).\n\nCes deux vecteurs sont les éléments de réduction du torseur en un point A. Il sert à décrire les actions mécaniques (ou le champ des vitesses d\'un solide).'
+        },
+        {
+          titre: 'Loi des moments (transport)',
+          formule: '\\vec{M}(A) = \\vec{M}(B) + \\vec{AB} \\wedge \\vec{R}',
+          contenu: 'Le moment change avec le point où on le calcule, selon la loi des moments (ou loi de transport).\n\nC\'est la même formule que le transport de moment d\'une force vu au chapitre précédent.\n\nLa résultante \\(\\vec{R}\\), elle, ne dépend pas du point : c\'est pourquoi on précise toujours le point de réduction pour le moment.'
+        },
+        {
+          titre: 'Invariants d\'un torseur',
+          formule: '\\vec{R}\\cdot\\vec{M}(A) = \\vec{R}\\cdot\\vec{M}(B) = \\text{cste}',
+          contenu: 'Deux quantités ne dépendent pas du point de réduction :\n• 1er invariant : la résultante \\(\\vec{R}\\) (invariant vectoriel).\n• 2e invariant : le produit scalaire \\(\\vec{R}\\cdot\\vec{M}\\) (invariant scalaire).\n\nEn effet \\(\\vec{R}\\cdot(\\vec{BA}\\wedge\\vec{R}) = 0\\) (produit mixte avec deux vecteurs égaux), donc \\(\\vec{R}\\cdot\\vec{M}\\) est constant.'
+        },
+        {
+          titre: 'Sollicitations extérieures',
+          contenu: 'Une sollicitation = ensemble des forces ou moments appliqués à un solide, susceptibles de modifier son état mécanique (forme, dimensions, position).\n\nSur une poutre, la direction et le sens des efforts par rapport à la ligne moyenne définissent le type de sollicitation (traction, flexion, torsion…).\n\nOn regroupe ces actions dans un torseur d\'action mécanique.'
+        },
+        {
+          titre: 'Liaisons parfaites',
+          schema: 'moment_levier',
+          contenu: 'Une liaison = contact entre deux solides. Elle impose :\n• des conditions cinématiques (blocage de certains degrés de liberté),\n• des actions mécaniques transmissibles (forces et/ou moments).\n\nHypothèse : liaison PARFAITE (sans jeu ni frottement). Trois liaisons planes usuelles :\n• Appui simple : transmet 1 force (perpendiculaire)\n• Articulation (pivot) : transmet 2 forces, pas de moment\n• Encastrement : transmet 2 forces + 1 moment (bloque tout)'
+        },
+        {
+          titre: 'Principe fondamental de la statique (PFS)',
+          formule: '\\sum \\vec{F} = \\vec{0} \\qquad \\sum \\vec{M} = \\vec{0}',
+          contenu: 'Un solide est en équilibre si la somme des forces ET la somme des moments qui s\'exercent sur lui sont nulles.\n\nEn langage torseur : le torseur des actions mécaniques extérieures est nul.\n\nEn plan, cela donne 3 équations scalaires : \\(\\sum F_x = 0\\), \\(\\sum F_y = 0\\), \\(\\sum M_z = 0\\).'
+        },
+        {
+          titre: 'Méthode de résolution analytique',
+          contenu: 'Pour déterminer les actions de liaison inconnues (méthode analytique) :\n1. Tracer le graphe des liaisons et actions mécaniques.\n2. Isoler le solide (ou l\'ensemble de solides) étudié.\n3. Appliquer le PFS (bilan des actions extérieures).\n4. Gérer les chaînes ouvertes / fermées.\n5. Résoudre le système d\'équations.\n\nUne méthode graphique (dynamique des forces) existe aussi pour les cas simples.'
+        }
+      ]
+    },
+    methodes: [
+      {
+        titre: 'Transporter un torseur en un autre point',
+        contenu: 'La résultante \\(\\vec{R}\\) est inchangée ; seul le moment se transporte :\n\\[ \\vec{M}(A) = \\vec{M}(B) + \\vec{AB} \\wedge \\vec{R} \\]\n\nÉtapes :\n1. Garder \\(\\vec{R}\\) identique.\n2. Calculer le vecteur \\(\\vec{AB}\\).\n3. Produit vectoriel \\(\\vec{AB}\\wedge\\vec{R}\\), puis l\'ajouter à \\(\\vec{M}(B)\\).'
+      },
+      {
+        titre: 'Modéliser une liaison par son torseur',
+        contenu: 'À chaque liaison parfaite correspond un torseur d\'action transmissible :\n\n• Appui simple → 1 inconnue (une force normale).\n• Articulation (pivot) → 2 inconnues (\\(R_x, R_y\\)), moment nul.\n• Encastrement → 3 inconnues (\\(R_x, R_y, M\\)).\n\nCompter les inconnues de liaison est essentiel pour vérifier qu\'un système est isostatique (résoluble par le PFS seul).'
+      },
+      {
+        titre: 'Résoudre un problème de statique (PFS)',
+        contenu: '1. Isoler le solide et faire le bilan des actions extérieures (poids, liaisons, charges).\n2. Choisir un repère.\n3. Écrire les 3 équations (en plan) :\n\\[ \\sum F_x = 0,\\quad \\sum F_y = 0,\\quad \\sum M_{/P} = 0 \\]\n4. Astuce : prendre les moments en un point où passe une inconnue l\'élimine de l\'équation des moments.\n5. Résoudre.'
+      },
+      {
+        titre: '⚠️ Pièges sur les torseurs & le PFS',
+        contenu: '• La résultante est invariante ; le moment dépend du point (toujours préciser le point).\n• Le PFS exige DEUX conditions : forces nulles ET moments nuls.\n• Un appui simple ne transmet pas de moment ; un encastrement, si.\n• Choisir le point de calcul des moments pour éliminer une inconnue simplifie le calcul.\n• Vérifier l\'isostatisme : nb d\'inconnues de liaison = nb d\'équations disponibles.'
+      }
+    ],
+    quiz: [
+      {
+        id: 'tor-q1',
+        question: 'Un torseur est défini par :',
+        options: [
+          'Une résultante et un moment',
+          'Une seule force',
+          'Deux moments',
+          'Un scalaire'
+        ],
+        reponse: 0,
+        explication: 'Éléments de réduction : résultante \\(\\vec{R}\\) + moment \\(\\vec{M}\\) en un point.'
+      },
+      {
+        id: 'tor-q2',
+        question: 'La loi des moments (transport) s\'écrit :',
+        options: [
+          '\\(\\vec{M}(A) = \\vec{M}(B) + \\vec{AB}\\wedge\\vec{R}\\)',
+          '\\(\\vec{M}(A) = \\vec{M}(B)\\)',
+          '\\(\\vec{M}(A) = \\vec{AB}\\cdot\\vec{R}\\)',
+          '\\(\\vec{M}(A) = \\vec{R}\\)'
+        ],
+        reponse: 0,
+        explication: 'Le moment se transporte par un produit vectoriel avec la résultante.'
+      },
+      {
+        id: 'tor-q3',
+        question: 'Quel élément d\'un torseur ne dépend PAS du point ?',
+        options: ['La résultante \\(\\vec{R}\\)', 'Le moment', 'Les deux', 'Aucun'],
+        reponse: 0,
+        explication: '\\(\\vec{R}\\) est invariante ; le moment, lui, dépend du point de réduction.'
+      },
+      {
+        id: 'tor-q4',
+        question: 'L\'invariant scalaire d\'un torseur est :',
+        options: ['\\(\\vec{R}\\cdot\\vec{M}\\)', '\\(\\vec{R}\\wedge\\vec{M}\\)', '\\(\\|\\vec{M}\\|\\)', '\\(\\vec{R} + \\vec{M}\\)'],
+        reponse: 0,
+        explication: '\\(\\vec{R}\\cdot\\vec{M}\\) est constant car \\(\\vec{R}\\cdot(\\vec{BA}\\wedge\\vec{R}) = 0\\).'
+      },
+      {
+        id: 'tor-q5',
+        question: 'Une liaison parfaite est supposée :',
+        options: ['Sans jeu ni frottement', 'Avec frottement sec', 'Rigide et collée', 'Toujours encastrée'],
+        reponse: 0,
+        explication: 'Hypothèse de liaison parfaite : ni jeu ni frottement.'
+      },
+      {
+        id: 'tor-q6',
+        question: 'Un encastrement transmet :',
+        options: [
+          '2 forces et 1 moment',
+          '1 force seulement',
+          'Aucune action',
+          'Un moment seulement'
+        ],
+        reponse: 0,
+        explication: 'L\'encastrement bloque tout → transmet 2 forces + 1 moment (en plan).'
+      },
+      {
+        id: 'tor-q7',
+        question: 'Une articulation (pivot) transmet :',
+        options: [
+          '2 forces, pas de moment',
+          '1 force et 1 moment',
+          'Un moment seulement',
+          'Rien'
+        ],
+        reponse: 0,
+        explication: 'Le pivot laisse tourner → moment nul, mais transmet 2 composantes de force.'
+      },
+      {
+        id: 'tor-q8',
+        question: 'Le PFS impose :',
+        options: [
+          '\\(\\sum\\vec{F} = \\vec{0}\\) et \\(\\sum\\vec{M} = \\vec{0}\\)',
+          '\\(\\sum\\vec{F} = \\vec{0}\\) seulement',
+          '\\(\\sum\\vec{M} = \\vec{0}\\) seulement',
+          '\\(\\sum\\vec{F} = \\sum\\vec{M}\\)'
+        ],
+        reponse: 0,
+        explication: 'Équilibre : résultante nulle ET moment résultant nul (torseur nul).'
+      },
+      {
+        id: 'tor-q9',
+        question: 'En statique plane, le PFS donne :',
+        options: ['3 équations scalaires', '2 équations', '6 équations', '1 équation'],
+        reponse: 0,
+        explication: '\\(\\sum F_x = 0\\), \\(\\sum F_y = 0\\), \\(\\sum M_z = 0\\).'
+      },
+      {
+        id: 'tor-q10',
+        question: 'Première étape de la méthode analytique en statique :',
+        options: [
+          'Isoler le solide et faire le bilan des actions',
+          'Résoudre directement',
+          'Calculer le moment quadratique',
+          'Tracer la courbe de traction'
+        ],
+        reponse: 0,
+        explication: 'On isole le solide et on recense toutes les actions extérieures avant d\'appliquer le PFS.'
+      }
+    ]
+  },
+
+  'physique-triphase': {
+    id: 'physique-triphase',
+    matiere: 'Physique',
+    chapitre: 'Systèmes triphasés',
+    description: 'Monophasé/triphasé, tensions simples et composées, couplages étoile et triangle',
+    resume: {
+      sections: [
+        {
+          titre: 'Monophasé et triphasé',
+          contenu: 'Le courant monophasé est un courant alternatif à une seule phase (le « secteur » domestique).\n\nLe courant triphasé est constitué de trois phases : trois tensions alternatives de même amplitude, déphasées de 120°. Il transporte plus d\'énergie et alimente les machines industrielles.\n\nEn France, EDF distribue un réseau triphasé 400 V (entre phases). Le secteur domestique utilise le neutre + une des trois phases.'
+        },
+        {
+          titre: 'Tensions simples et composées',
+          formule: 'U = \\sqrt{3}\\;V',
+          contenu: 'Deux types de tensions dans un système triphasé :\n• Tensions simples \\(v_i\\) : entre une phase et le neutre (valeur efficace \\(V\\)).\n• Tensions composées \\(u_{ij}\\) : entre deux phases (valeur efficace \\(U\\)).\n\nRelation : \\(U = \\sqrt{3}\\,V\\).\n\nExemple réseau EDF : \\(U = 400\\) V entre phases, donc \\(V = 400/\\sqrt{3} \\approx 230\\) V (le secteur).'
+        },
+        {
+          titre: 'Système équilibré',
+          contenu: 'Un récepteur triphasé est équilibré s\'il est constitué de trois dipôles identiques. Sinon, il est déséquilibré.\n\nConséquence (récepteur linéaire équilibré) : les trois courants de ligne forment un système triphasé — mêmes valeurs efficaces \\(I\\) et déphasages de 120° entre eux.\n\nEn monophasé, le récepteur est un simple dipôle ; en triphasé, il a 3 bornes (une par phase) + éventuellement le neutre.'
+        },
+        {
+          titre: 'Couplage étoile (Y)',
+          schema: 'triphase',
+          formule: 'U = \\sqrt{3}\\,V \\qquad I = J',
+          contenu: 'Les trois dipôles sont reliés à un point commun : le neutre \\(N\\).\n\n• Le courant de ligne \\(I\\) = courant dans chaque dipôle \\(J\\) (\\(I = J\\)).\n• La tension aux bornes d\'un dipôle est la tension simple \\(V = U/\\sqrt{3}\\).\n\nUn fil de neutre peut être disponible (4 bornes). Couplage utilisé quand chaque élément supporte la tension simple.'
+        },
+        {
+          titre: 'Couplage triangle (Δ)',
+          formule: 'I = \\sqrt{3}\\,J \\qquad U_{dipole} = U',
+          contenu: 'Les trois dipôles sont reliés en boucle (triangle) : pas de neutre.\n\n• Les courants \\(j_1, j_2, j_3\\) dans les dipôles sont les courants de phase.\n• Le courant de ligne \\(I = \\sqrt{3}\\,J\\).\n• Chaque dipôle supporte la pleine tension composée \\(U\\).\n\nCouplage utilisé quand chaque élément supporte la tension entre phases.'
+        },
+        {
+          titre: 'Puissances en triphasé',
+          formule: 'P = \\sqrt{3}\\,U\\,I\\cos\\varphi',
+          contenu: 'Pour un système triphasé équilibré, quel que soit le couplage :\n\\[ P = \\sqrt{3}\\,U\\,I\\cos\\varphi \\quad (\\text{active, W}) \\]\n\\[ Q = \\sqrt{3}\\,U\\,I\\sin\\varphi \\quad (\\text{réactive, VAR}) \\]\n\\[ S = \\sqrt{3}\\,U\\,I \\quad (\\text{apparente, VA}) \\]\n\\(U\\) et \\(I\\) sont les grandeurs de ligne ; \\(\\cos\\varphi\\) est le facteur de puissance.'
+        }
+      ]
+    },
+    methodes: [
+      {
+        titre: 'Passer de tension composée à tension simple',
+        contenu: 'La relation fondamentale est \\(U = \\sqrt{3}\\,V\\).\n\nExemple (réseau EDF, \\(U = 400\\) V) :\n\\[ V = \\frac{U}{\\sqrt{3}} = \\frac{400}{1{,}732} \\approx 230\\ \\text{V} \\]\n\nC\'est la tension du secteur domestique (phase + neutre).'
+      },
+      {
+        titre: 'Choisir le couplage',
+        contenu: 'On choisit le couplage selon la tension que chaque élément peut supporter :\n\n• Étoile (Y) : chaque dipôle voit la tension simple \\(V = U/\\sqrt{3}\\) (plus faible).\n• Triangle (Δ) : chaque dipôle voit la pleine tension composée \\(U\\).\n\nPour un moteur prévu pour 230 V sur un réseau 400 V → couplage étoile.'
+      },
+      {
+        titre: 'Calculer la puissance d\'un récepteur triphasé',
+        contenu: 'Formule unique (équilibré, grandeurs de ligne) :\n\\[ P = \\sqrt{3}\\,U\\,I\\cos\\varphi \\]\n\nExemple : \\(U = 400\\) V, \\(I = 10\\) A, \\(\\cos\\varphi = 0{,}8\\) :\n\\[ P = \\sqrt{3}\\times 400\\times 10\\times 0{,}8 \\approx 5540\\ \\text{W} \\]'
+      },
+      {
+        titre: '⚠️ Pièges sur le triphasé',
+        contenu: '• \\(U = \\sqrt{3}\\,V\\) : la composée est plus grande que la simple (facteur √3).\n• Étoile : \\(I = J\\) ; Triangle : \\(I = \\sqrt{3}\\,J\\) (ne pas confondre).\n• La puissance \\(P = \\sqrt{3}\\,UI\\cos\\varphi\\) utilise les grandeurs de LIGNE.\n• Triangle : pas de neutre disponible.'
+      }
+    ],
+    quiz: [
+      {
+        id: 'tri-q1',
+        question: 'Un système triphasé comporte trois tensions déphasées de :',
+        options: ['120°', '90°', '180°', '60°'],
+        reponse: 0,
+        explication: 'Trois phases de même amplitude, déphasées de 120° entre elles.'
+      },
+      {
+        id: 'tri-q2',
+        question: 'La relation entre tension composée U et tension simple V est :',
+        options: ['\\(U = \\sqrt{3}\\,V\\)', '\\(U = V/\\sqrt{3}\\)', '\\(U = 3V\\)', '\\(U = V\\)'],
+        reponse: 0,
+        explication: 'La tension entre phases vaut \\(\\sqrt{3}\\) fois la tension phase-neutre.'
+      },
+      {
+        id: 'tri-q3',
+        question: 'Sur un réseau 400 V (entre phases), la tension simple vaut environ :',
+        options: ['230 V', '400 V', '690 V', '120 V'],
+        reponse: 0,
+        explication: '\\(V = U/\\sqrt{3} = 400/1{,}732 \\approx 230\\) V (le secteur domestique).'
+      },
+      {
+        id: 'tri-q4',
+        question: 'La tension simple est mesurée entre :',
+        options: ['Une phase et le neutre', 'Deux phases', 'Deux neutres', 'La terre et la phase'],
+        reponse: 0,
+        explication: 'Tension simple = phase-neutre ; tension composée = entre deux phases.'
+      },
+      {
+        id: 'tri-q5',
+        question: 'Un récepteur triphasé équilibré est constitué de :',
+        options: ['Trois dipôles identiques', 'Trois dipôles différents', 'Un seul dipôle', 'Deux dipôles'],
+        reponse: 0,
+        explication: 'Équilibré = trois dipôles identiques → courants de ligne égaux, déphasés de 120°.'
+      },
+      {
+        id: 'tri-q6',
+        question: 'En couplage étoile (Y), le courant de ligne I est :',
+        options: ['Égal au courant de dipôle (I = J)', '\\(\\sqrt{3}\\,J\\)', '\\(3J\\)', '\\(J/\\sqrt{3}\\)'],
+        reponse: 0,
+        explication: 'En étoile, \\(I = J\\) ; la tension du dipôle est la tension simple.'
+      },
+      {
+        id: 'tri-q7',
+        question: 'En couplage triangle (Δ), le courant de ligne I est :',
+        options: ['\\(\\sqrt{3}\\,J\\)', '\\(J\\)', '\\(J/\\sqrt{3}\\)', '\\(3J\\)'],
+        reponse: 0,
+        explication: 'En triangle, \\(I = \\sqrt{3}\\,J\\) ; chaque dipôle supporte la tension composée U.'
+      },
+      {
+        id: 'tri-q8',
+        question: 'Quel couplage ne dispose pas de neutre ?',
+        options: ['Triangle (Δ)', 'Étoile (Y)', 'Les deux', 'Aucun'],
+        reponse: 0,
+        explication: 'Le triangle relie les dipôles en boucle : pas de point neutre.'
+      },
+      {
+        id: 'tri-q9',
+        question: 'La puissance active d\'un système triphasé équilibré est :',
+        options: [
+          '\\(P = \\sqrt{3}\\,U\\,I\\cos\\varphi\\)',
+          '\\(P = U\\,I\\cos\\varphi\\)',
+          '\\(P = 3U\\,I\\)',
+          '\\(P = \\sqrt{3}\\,U\\,I\\sin\\varphi\\)'
+        ],
+        reponse: 0,
+        explication: '\\(P = \\sqrt{3}\\,U\\,I\\cos\\varphi\\), avec U, I les grandeurs de ligne.'
+      },
+      {
+        id: 'tri-q10',
+        question: 'Pour un moteur 230 V branché sur un réseau 400 V, on choisit :',
+        options: ['Le couplage étoile', 'Le couplage triangle', 'Peu importe', 'Du monophasé'],
+        reponse: 0,
+        explication: 'En étoile, chaque enroulement voit \\(V = 400/\\sqrt{3} \\approx 230\\) V : adapté.'
+      }
+    ]
+  },
+
+  'fluides-bernoulli': {
+    id: 'fluides-bernoulli',
+    matiere: 'Mécanique des fluides',
+    chapitre: 'Dynamique des fluides — Bernoulli',
+    description: 'Conservation de l\'énergie, théorème de Bernoulli et applications',
+    resume: {
+      sections: [
+        {
+          titre: 'Conservation de l\'énergie',
+          contenu: 'La dynamique des fluides applique la conservation de l\'énergie à un fluide en écoulement.\n\nL\'énergie d\'une particule fluide comprend :\n• l\'énergie cinétique (liée à la vitesse),\n• l\'énergie potentielle (liée à l\'altitude),\n• l\'énergie de pression (travail des forces de pression).\n\nLe théorème de Bernoulli traduit le bilan de ces énergies le long d\'une ligne de courant.'
+        },
+        {
+          titre: 'Hypothèses de Bernoulli',
+          contenu: 'Le théorème de Bernoulli (forme de base) suppose :\n• écoulement permanent (stationnaire) : \\(\\partial/\\partial t = 0\\),\n• fluide parfait (sans viscosité, pas de frottement),\n• fluide incompressible (\\(\\rho = \\text{cste}\\)),\n• pas de machine (ni pompe, ni turbine) entre les deux points.\n\nOn écrit l\'équation entre deux points d\'une même ligne de courant.'
+        },
+        {
+          titre: 'Bernoulli — forme pression',
+          formule: 'P_1 + \\tfrac{1}{2}\\rho v_1^2 + \\rho g z_1 = P_2 + \\tfrac{1}{2}\\rho v_2^2 + \\rho g z_2',
+          contenu: 'C\'est la forme la plus utilisée. Chaque terme est une pression :\n• \\(P\\) : pression statique\n• \\(\\tfrac{1}{2}\\rho v^2\\) : pression dynamique\n• \\(\\rho g z\\) : pression hydrostatique\n\nLa somme (pression totale) est constante le long de l\'écoulement.'
+        },
+        {
+          titre: 'Bernoulli — forme hauteur (charge)',
+          formule: '\\frac{P}{\\rho g} + \\frac{v^2}{2g} + z = \\text{cste}',
+          contenu: 'En divisant par \\(\\rho g\\), chaque terme devient une hauteur (en mètres). La somme est appelée la charge.\n\n• \\(\\dfrac{P}{\\rho g}\\) : hauteur de pression\n• \\(\\dfrac{v^2}{2g}\\) : hauteur dynamique\n• \\(z\\) : hauteur géométrique\n\nPour un fluide parfait, la charge se conserve.'
+        },
+        {
+          titre: 'Continuité (débit)',
+          schema: 'conduite_bernoulli',
+          formule: 'Q = S\\,v = \\text{cste} \\;\\Rightarrow\\; S_1 v_1 = S_2 v_2',
+          contenu: 'La conservation du débit volumique \\(Q = S\\,v\\) accompagne toujours Bernoulli.\n\nQuand la section diminue, la vitesse augmente (donc la pression statique baisse : effet Venturi).\n\nOn combine souvent continuité + Bernoulli pour résoudre un problème à deux inconnues.'
+        },
+        {
+          titre: 'Application : vidange (Torricelli)',
+          formule: 'v = \\sqrt{2gh}',
+          contenu: 'Vidange d\'un réservoir par un orifice à une profondeur \\(h\\) sous la surface libre : la vitesse du jet est\n\\[ v = \\sqrt{2gh} \\quad (\\text{formule de Torricelli}) \\]\n\nDébit réel : \\(Q = C\\,S\\,v\\), où \\(C\\) est un coefficient de contraction :\n• parois minces : \\(C \\approx 0{,}6\\)\n• bords profilés : \\(C \\approx 1\\)\n• bords rentrants : \\(C \\approx 0{,}5\\)'
+        },
+        {
+          titre: 'Fluide réel : pertes de charge',
+          formule: '\\frac{P_1}{\\rho g} + \\frac{v_1^2}{2g} + z_1 = \\frac{P_2}{\\rho g} + \\frac{v_2^2}{2g} + z_2 + J_{12}',
+          contenu: 'Pour un fluide réel (visqueux), Bernoulli doit inclure les pertes de charge \\(J_{12}\\) (énergie dissipée par frottement) côté aval :\n\n• pertes linéaires (le long des conduites),\n• pertes singulières (changements de section/direction).\n\nSi une pompe ajoute de l\'énergie, on l\'ajoute côté amont ; une turbine en prélève.'
+        }
+      ]
+    },
+    methodes: [
+      {
+        titre: 'Appliquer Bernoulli entre deux points',
+        contenu: '1. Vérifier les hypothèses (permanent, parfait, incompressible, pas de machine).\n2. Choisir deux points sur une même ligne de courant (souvent surface libre + sortie).\n3. Écrire :\n\\[ P_1 + \\tfrac{1}{2}\\rho v_1^2 + \\rho g z_1 = P_2 + \\tfrac{1}{2}\\rho v_2^2 + \\rho g z_2 \\]\n4. Simplifier les termes connus/nuls (pression atmosphérique, \\(v \\approx 0\\) à la surface d\'un grand réservoir).'
+      },
+      {
+        titre: 'Combiner continuité et Bernoulli',
+        contenu: 'Quand les deux vitesses sont inconnues, on couple les deux équations.\n\nContinuité : \\(S_1 v_1 = S_2 v_2\\) donne \\(v_1\\) en fonction de \\(v_2\\).\n\nOn substitue dans Bernoulli pour n\'avoir qu\'une inconnue. Typique d\'un Venturi ou d\'un rétrécissement de conduite.'
+      },
+      {
+        titre: 'Calculer une vitesse de vidange',
+        contenu: 'Pour un réservoir ouvert, grand devant l\'orifice :\n• point 1 : surface libre (\\(v_1 \\approx 0\\), \\(P_1 = P_{atm}\\)),\n• point 2 : orifice (\\(P_2 = P_{atm}\\)).\n\nBernoulli se réduit à :\n\\[ \\rho g h = \\tfrac{1}{2}\\rho v^2 \\Rightarrow v = \\sqrt{2gh} \\]\n\nDébit réel : \\(Q = C\\,S\\sqrt{2gh}\\).'
+      },
+      {
+        titre: '⚠️ Pièges en dynamique des fluides',
+        contenu: '• Bernoulli de base : fluide PARFAIT ; pour un fluide réel, ajouter les pertes de charge \\(J_{12}\\).\n• Section ↓ → vitesse ↑ → pression statique ↓ (effet Venturi).\n• Les deux points doivent être sur la MÊME ligne de courant.\n• Torricelli \\(v = \\sqrt{2gh}\\) : \\(h\\) est la hauteur de fluide au-dessus de l\'orifice.\n• Ne pas oublier le coefficient \\(C\\) pour le débit réel.'
+      }
+    ],
+    quiz: [
+      {
+        id: 'ber-q1',
+        question: 'Le théorème de Bernoulli traduit :',
+        options: [
+          'La conservation de l\'énergie du fluide',
+          'La conservation de la masse seulement',
+          'La loi de Newton',
+          'La conduction thermique'
+        ],
+        reponse: 0,
+        explication: 'C\'est un bilan d\'énergie (cinétique + potentielle + pression) le long d\'une ligne de courant.'
+      },
+      {
+        id: 'ber-q2',
+        question: 'Quelle hypothèse N\'EST PAS requise pour Bernoulli (forme de base) ?',
+        options: [
+          'Fluide visqueux',
+          'Écoulement permanent',
+          'Fluide incompressible',
+          'Fluide parfait'
+        ],
+        reponse: 0,
+        explication: 'Bernoulli de base suppose un fluide PARFAIT (non visqueux). La viscosité introduit des pertes de charge.'
+      },
+      {
+        id: 'ber-q3',
+        question: 'Dans Bernoulli, le terme \\(\\tfrac{1}{2}\\rho v^2\\) est :',
+        options: ['La pression dynamique', 'La pression statique', 'La pression hydrostatique', 'La charge'],
+        reponse: 0,
+        explication: '\\(\\tfrac12\\rho v^2\\) = pression dynamique ; \\(\\rho g z\\) = hydrostatique ; \\(P\\) = statique.'
+      },
+      {
+        id: 'ber-q4',
+        question: 'L\'équation de continuité (incompressible) est :',
+        options: ['\\(S_1 v_1 = S_2 v_2\\)', '\\(P_1 v_1 = P_2 v_2\\)', '\\(S_1/v_1 = S_2/v_2\\)', '\\(v_1 = v_2\\)'],
+        reponse: 0,
+        explication: 'Conservation du débit volumique \\(Q = Sv\\).'
+      },
+      {
+        id: 'ber-q5',
+        question: 'Quand la section d\'une conduite diminue, la vitesse :',
+        options: ['Augmente', 'Diminue', 'Reste constante', 'S\'annule'],
+        reponse: 0,
+        explication: 'Par continuité \\(S_1 v_1 = S_2 v_2\\) : section ↓ → vitesse ↑ (et pression ↓, effet Venturi).'
+      },
+      {
+        id: 'ber-q6',
+        question: 'La formule de Torricelli donne la vitesse de vidange :',
+        options: ['\\(v = \\sqrt{2gh}\\)', '\\(v = 2gh\\)', '\\(v = \\sqrt{gh}\\)', '\\(v = \\rho g h\\)'],
+        reponse: 0,
+        explication: 'Bernoulli surface-orifice : \\(\\rho g h = \\tfrac12\\rho v^2 \\Rightarrow v = \\sqrt{2gh}\\).'
+      },
+      {
+        id: 'ber-q7',
+        question: 'Dans la forme « hauteur », chaque terme s\'exprime en :',
+        options: ['Mètres', 'Pascals', 'Joules', 'Newtons'],
+        reponse: 0,
+        explication: 'En divisant par \\(\\rho g\\), chaque terme est une hauteur (charge) en mètres.'
+      },
+      {
+        id: 'ber-q8',
+        question: 'Pour un fluide réel, Bernoulli doit inclure :',
+        options: [
+          'Les pertes de charge \\(J_{12}\\)',
+          'La poussée d\'Archimède',
+          'La masse molaire',
+          'Rien de plus'
+        ],
+        reponse: 0,
+        explication: 'La viscosité dissipe de l\'énergie : on ajoute les pertes de charge (linéaires + singulières).'
+      },
+      {
+        id: 'ber-q9',
+        question: 'Le coefficient C pour un orifice à parois minces vaut environ :',
+        options: ['0,6', '1,0', '0,5', '2,0'],
+        reponse: 0,
+        explication: 'Parois minces : \\(C \\approx 0{,}6\\) ; bords profilés \\(\\approx 1\\) ; bords rentrants \\(\\approx 0{,}5\\).'
+      },
+      {
+        id: 'ber-q10',
+        question: 'Bernoulli s\'applique entre deux points situés :',
+        options: [
+          'Sur la même ligne de courant',
+          'N\'importe où dans le fluide',
+          'Sur deux fluides différents',
+          'À la même pression'
+        ],
+        reponse: 0,
+        explication: 'Les deux points doivent appartenir à une même ligne de courant.'
+      }
+    ]
   }
 };
 
@@ -3631,7 +4249,8 @@ const MATIERES = [
     id: 'physique',
     nom: 'Physique',
     chapitres: [
-      { id: 'physique-electronique', nom: 'Électronique Analogique — Bases' }
+      { id: 'physique-electronique', nom: 'Électronique Analogique — Bases' },
+      { id: 'physique-triphase', nom: 'Systèmes triphasés' }
     ]
   },
   {
@@ -3643,7 +4262,8 @@ const MATIERES = [
       { id: 'maths-analyse', nom: 'Analyse' },
       { id: 'maths-matrices', nom: 'Calcul matriciel' },
       { id: 'maths-sl', nom: 'Systèmes linéaires' },
-      { id: 'maths-edo', nom: 'Équations différentielles & Laplace' }
+      { id: 'maths-edo', nom: 'Équations différentielles & Laplace' },
+      { id: 'maths-multivariable', nom: 'Calcul multivariable' }
     ]
   },
   {
@@ -3680,7 +4300,8 @@ const MATIERES = [
     nom: 'Résistance des structures',
     chapitres: [
       { id: 'rds-outils', nom: 'Outils mathématiques' },
-      { id: 'rds-forces', nom: 'Forces, moments & couples' }
+      { id: 'rds-forces', nom: 'Forces, moments & couples' },
+      { id: 'rds-torseurs', nom: 'Torseurs, liaisons & PFS' }
     ]
   },
   {
@@ -3702,6 +4323,13 @@ const MATIERES = [
     nom: 'Recherche opérationnelle',
     chapitres: [
       { id: 'ro-progra-lineaire', nom: 'Programmation linéaire' }
+    ]
+  },
+  {
+    id: 'fluides',
+    nom: 'Mécanique des fluides',
+    chapitres: [
+      { id: 'fluides-bernoulli', nom: 'Dynamique des fluides — Bernoulli' }
     ]
   }
 ];
